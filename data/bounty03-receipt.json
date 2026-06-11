@@ -1,0 +1,10 @@
+{
+  "receipt_id": "rec_01J04XYZ9ABCD",
+  "digest": "sha256:abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234",
+  "status": "sealed",
+  "target": {
+    "kind": "skill",
+    "ref": "weather-forecast"
+  },
+  "outputs": {}
+}

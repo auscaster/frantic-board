@@ -1,0 +1,20 @@
+{
+  "name": "Runx Skill Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "command": "runx skill"
+      },
+      "id": "1",
+      "name": "Execute Command",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [250, 300]
+    }
+  ],
+  "pinData": {},
+  "connections": {},
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}

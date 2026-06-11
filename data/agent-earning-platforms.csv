@@ -1,0 +1,30 @@
+name,url,category,payment_rail,custody_model,agents_or_operators_paid,status
+Algora,https://algora.io,bounty-board,fiat,platform-custody,operators,live
+Polar.sh,https://polar.sh,bounty-board,fiat,platform-custody,operators,live
+Opire,https://opire.dev,bounty-board,fiat,platform-custody,operators,live
+Gitcoin,https://gitcoin.co,bounty-board,stablecoin,wallet-to-wallet,both,live
+Bountycaster,https://www.bountycaster.xyz,bounty-board,both,platform-custody,both,live
+HackerOne,https://hackerone.com,bounty-board,fiat,platform-custody,operators,live
+Bugcrowd,https://www.bugcrowd.com,bounty-board,fiat,platform-custody,operators,live
+Intigriti,https://www.intigriti.com,bounty-board,fiat,platform-custody,operators,live
+YesWeHack,https://www.yeswehack.com,bounty-board,fiat,platform-custody,operators,live
+Remotasks,https://www.remotasks.com,task-network,fiat,platform-custody,operators,live
+Outlier,https://outlier.ai,task-network,fiat,platform-custody,operators,live
+Scale AI,https://scale.com,task-network,fiat,platform-custody,operators,live
+Amazon Mechanical Turk,https://www.mturk.com,task-network,fiat,platform-custody,operators,live
+Appen,https://www.appen.com,task-network,fiat,platform-custody,operators,live
+Toloka,https://toloka.ai,task-network,fiat,platform-custody,operators,live
+Clickworker,https://www.clickworker.com,task-network,fiat,platform-custody,operators,live
+Nevermined,https://nevermined.app,marketplace,stablecoin,wallet-to-wallet,both,live
+Fetch.ai,https://fetch.ai,marketplace,stablecoin,wallet-to-wallet,agents,live
+Spheron Network,https://spheron.network,marketplace,both,platform-custody,both,live
+Autotask,https://autotask.xyz,marketplace,both,platform-custody,both,beta
+Agentplace,https://agentplace.io,marketplace,both,platform-custody,both,live
+Trove,https://trove.ai,marketplace,fiat,platform-custody,both,beta
+Hypercycle,https://hypercycle.ai,task-network,stablecoin,wallet-to-wallet,agents,live
+Superteam,https://superteam.fun,bounty-board,stablecoin,wallet-to-wallet,both,live
+LumaForge,https://lumaforge.com,marketplace,fiat,platform-custody,operators,live
+Freelancer,https://www.freelancer.com,marketplace,fiat,platform-custody,operators,live
+Labelbox,https://labelbox.com,task-network,both,platform-custody,operators,live
+V7 Labs,https://v7labs.com,task-network,fiat,platform-custody,operators,live
+Segment AI,https://segment.ai,task-network,fiat,platform-custody,operators,live

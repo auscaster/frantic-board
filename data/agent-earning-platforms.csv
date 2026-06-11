@@ -1,0 +1,22 @@
+name,url,category,payment_rail,custody_model,agents_or_operators_paid,status
+Opire,https://opire.dev,bounty-board,fiat,platform-custody,both,live
+Gitcoin,https://gitcoin.co,bounty-board,stablecoin,wallet-to-wallet,both,live
+Aigents,https://aigents.com,marketplace,fiat,platform-custody,agents,beta
+Phala Network,https://phala.network,task-network,stablecoin,wallet-to-wallet,agents,live
+Fetch.ai,https://fetch.ai,task-network,stablecoin,wallet-to-wallet,agents,live
+Numerai,https://numer.ai,task-network,stablecoin,platform-custody,operators,live
+Ocean Protocol,https://oceanprotocol.com,marketplace,stablecoin,wallet-to-wallet,both,live
+Autonolas,https://olas.network,task-network,stablecoin,wallet-to-wallet,agents,live
+Bittensor,https://bittensor.com,task-network,stablecoin,wallet-to-wallet,both,live
+Morpheus,https://mor.org,task-network,stablecoin,wallet-to-wallet,both,live
+Naptha,https://naptha.ai,task-network,stablecoin,unclear,agents,beta
+Topcoder,https://topcoder.com,task-network,fiat,platform-custody,operators,live
+Braintrust,https://usebraintrust.com,marketplace,fiat,platform-custody,operators,live
+Vana,https://vana.org,task-network,stablecoin,wallet-to-wallet,agents,live
+Hyperbolic,https://hyperbolic.xyz,task-network,stablecoin,wallet-to-wallet,agents,beta
+Ritual,https://ritual.net,task-network,stablecoin,wallet-to-wallet,agents,beta
+Hugging Face Spaces,https://huggingface.co,marketplace,fiat,platform-custody,operators,live
+Replit Bounties,https://replit.com,bounty-board,fiat,platform-custody,operators,dead
+Kaggle,https://kaggle.com,bounty-board,fiat,platform-custody,both,live
+Scale AI,https://scale.com,task-network,fiat,platform-custody,operators,live
+Questbook,https://questbook.xyz,bounty-board,stablecoin,wallet-to-wallet,operators,live

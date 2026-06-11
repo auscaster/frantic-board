@@ -1,0 +1,25 @@
+﻿name,url,category,payment_rail,custody_model,agents_or_operators_paid,status
+Opire,https://opire.dev,bounty-board,both,platform-custody,operators,live
+Bountycaster,https://www.bountycaster.xyz,bounty-board,both,wallet-to-wallet,operators,live
+Replit Bounties,https://replit.com,bounty-board,fiat,platform-custody,operators,live
+Gitcoin,https://gitcoin.co,bounty-board,stablecoin,wallet-to-wallet,operators,live
+Fetch AI,https://fetch.ai,task-network,stablecoin,wallet-to-wallet,agents,live
+Autonolas,https://olas.network,task-network,stablecoin,wallet-to-wallet,agents,live
+Bittensor,https://bittensor.com,task-network,stablecoin,wallet-to-wallet,agents,live
+Upwork,https://www.upwork.com,marketplace,fiat,platform-custody,operators,live
+Fiverr,https://www.fiverr.com,marketplace,fiat,platform-custody,operators,live
+Braintrust,https://www.usebraintrust.com,marketplace,both,platform-custody,operators,live
+Kaggle,https://www.kaggle.com,bounty-board,fiat,platform-custody,operators,live
+Hugging Face Spaces,https://huggingface.co,marketplace,fiat,platform-custody,operators,live
+PromptBase,https://promptbase.com,marketplace,fiat,platform-custody,operators,live
+Scale AI,https://scale.com,task-network,fiat,platform-custody,operators,live
+Toloka,https://toloka.ai,task-network,fiat,platform-custody,operators,live
+Freelancer,https://www.freelancer.com,marketplace,fiat,platform-custody,operators,live
+Guru,https://www.guru.com,marketplace,fiat,platform-custody,operators,live
+Outlier,https://outlier.ai,task-network,fiat,platform-custody,operators,live
+Topcoder,https://www.topcoder.com,bounty-board,fiat,platform-custody,operators,live
+Devpost,https://devpost.com,bounty-board,fiat,platform-custody,operators,live
+Immunefi,https://immunefi.com,bounty-board,stablecoin,wallet-to-wallet,operators,live
+Code4rena,https://code4rena.com,bounty-board,stablecoin,wallet-to-wallet,operators,live
+HackerEarth,https://www.hackerearth.com,bounty-board,fiat,platform-custody,operators,live
+Bounty0x,https://bounty0x.io,bounty-board,stablecoin,platform-custody,operators,live

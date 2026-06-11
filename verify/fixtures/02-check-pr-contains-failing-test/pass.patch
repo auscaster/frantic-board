@@ -1,0 +1,15 @@
+﻿diff --git a/src/main.go b/src/main.go
+index 83db48f..1111111 100644
+--- a/src/main.go
++++ b/src/main.go
+@@ -1,1 +1,1 @@
+-old code
++new code
+diff --git a/src/main_test.go b/src/main_test.go
+index 83db48f..1111111 100644
+--- a/src/main_test.go
++++ b/src/main_test.go
+@@ -1,1 +1,1 @@
+-old test
++new test
+

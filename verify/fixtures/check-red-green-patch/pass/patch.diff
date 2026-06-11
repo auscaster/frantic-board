@@ -1,0 +1,7 @@
+--- a/greet.sh	2026-06-11 12:18:41.352055732 +0000
++++ b/greet.sh	2026-06-11 12:18:41.352055732 +0000
+@@ -1,3 +1,3 @@
+ #!/usr/bin/env bash
+ # prints a greeting for the given name; promises "hello, <name>"
+-printf 'helo, %s\n' "${1:-world}"
++printf 'hello, %s\n' "${1:-world}"

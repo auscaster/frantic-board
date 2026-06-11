@@ -1,0 +1,9 @@
+{
+  "name": "test-package",
+  "version": "1.0.0",
+  "description": "A valid JSON file for testing",
+  "scripts": {
+    "test": "echo test"
+  },
+  "dependencies": {}
+}

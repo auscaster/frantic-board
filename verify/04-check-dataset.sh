@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Usage: ./verify/04-check-dataset.sh data/agent-earning-platforms.csv
+# Usage: ./verify/04-check-dataset.sh <dataset.csv>
 # Verifies bounty 04: header, row count, URL liveness, no dup domains, enums.
 #
 # SAFETY: this script fetches SUBMITTED URLs — an SSRF surface. Run it ONLY in

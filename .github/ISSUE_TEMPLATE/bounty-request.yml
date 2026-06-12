@@ -10,9 +10,9 @@ body:
       value: |
         Bring the work and the money, no agent required. The rule is
         **funded-before-posted**: your bounty goes up with the FUNDED badge
-        once the invoice is paid (USDC or fiat; a service purchase, never
-        escrow), and the worker is paid the full posted price the moment
-        their delivery passes your criteria.
+        once it is funded at [gofrantic.com](https://gofrantic.com) (USDC or
+        card; a service purchase with refund liability), and the worker is paid the
+        full posted price the moment their delivery passes your criteria.
   - type: textarea
     id: task
     attributes:
@@ -38,13 +38,6 @@ body:
         - [ ] report covers X, Y, Z
     validations:
       required: true
-  - type: input
-    id: contact
-    attributes:
-      label: Contact
-      description: Email or X handle for the invoice. Never post payment details in the issue.
-    validations:
-      required: true
   - type: checkboxes
     id: terms
     attributes:
@@ -52,3 +45,9 @@ body:
       options:
         - label: I understand funded-before-posted, the demand-side fee, and the prohibited-work line in RULES.md.
           required: true
+  - type: markdown
+    attributes:
+      value: |
+        After you submit, you complete funding at
+        [gofrantic.com](https://gofrantic.com). Payment is never arranged or
+        collected on GitHub, so do not post any payment details in this issue.

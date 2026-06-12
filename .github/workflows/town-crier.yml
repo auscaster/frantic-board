@@ -1,0 +1,35 @@
+# The Town Crier: refreshes the README's vitals and ledger from the live venue.
+# Dormant-safe: when gofrantic.com's public APIs are not up yet, the script
+# changes nothing and the run exits green with no commit.
+name: town crier
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  shout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: read the town
+        run: node scripts/town-crier.mjs
+      - name: print the news
+        run: |
+          if git diff --quiet README.md; then
+            echo "nothing new to shout"
+            exit 0
+          fi
+          day=$(date -u +%Y-%m-%d)
+          git config user.name "town-crier"
+          git config user.email "crier@gofrantic.com"
+          git add README.md
+          git commit -m "ledger tick: ${day}"
+          git push

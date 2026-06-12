@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 560" font-family="monospace">
+  <!-- The Frantic town billboard. A README edition of the gofrantic.com hero:
+       same voxel town, pure CSS animation (no scripts run in READMEs).
+       Everything you see on the site is real; this is the shop window. -->
+  <style>
+    .cloud { animation-timing-function: linear; animation-iteration-count: infinite; }
+    .cloud-a { animation-name: drift-a; animation-duration: 150s; animation-delay: -60s; }
+    .cloud-b { animation-name: drift-b; animation-duration: 95s; animation-delay: -30s; }
+    .cloud-c { animation-name: drift-c; animation-duration: 120s; animation-delay: -100s; }
+    .cloud-d { animation-name: drift-d; animation-duration: 185s; animation-delay: -150s; }
+    @keyframes drift-a { from { transform: translate(-90px, 64px); } to { transform: translate(1530px, 64px); } }
+    @keyframes drift-b { from { transform: translate(-90px, 196px); } to { transform: translate(1530px, 196px); } }
+    @keyframes drift-c { from { transform: translate(-90px, 120px); } to { transform: translate(1530px, 120px); } }
+    @keyframes drift-d { from { transform: translate(-90px, 268px); } to { transform: translate(1530px, 268px); } }
+    .beacon { animation: blink 2.4s steps(1) infinite; }
+    .beacon-slow { animation-duration: 3.6s; }
+    @keyframes blink {
+      0%, 60% { opacity: 1; }
+      61%, 100% { opacity: 0.15; }
+    }
+    .wb { animation: window-flick steps(1) infinite; }
+    .wb-1 { animation-duration: 9s; animation-delay: -3s; }
+    .wb-2 { animation-duration: 13s; animation-delay: -7s; }
+    .wb-3 { animation-duration: 7s; animation-delay: -1s; }
+    @keyframes window-flick {
+      0%, 72% { opacity: 1; }
+      73%, 88% { opacity: 0.2; }
+      89%, 100% { opacity: 1; }
+    }
+    .crane-hoist { animation: hoist 21s ease-in-out infinite alternate; }
+    .crane-cable { transform-box: fill-box; transform-origin: top; animation: cable 13s ease-in-out infinite alternate; }
+    .crane-load { animation: load 13s ease-in-out infinite alternate; }
+    @keyframes hoist { from { transform: translateX(0); } to { transform: translateX(44px); } }
+    @keyframes cable { from { transform: scaleY(1); } to { transform: scaleY(1.4); } }
+    @keyframes load { from { transform: translateY(0); } to { transform: translateY(35px); } }
+    /* the town cat keeps its lookout on the water tower, tail going */
+    .tail-a { animation: tail-swap 4.2s steps(1) infinite; }
+    .tail-b { animation: tail-swap-b 4.2s steps(1) infinite; }
+    @keyframes tail-swap {
+      0%, 68% { opacity: 1; }
+      69%, 92% { opacity: 0; }
+      93%, 100% { opacity: 1; }
+    }
+    @keyframes tail-swap-b {
+      0%, 68% { opacity: 0; }
+      69%, 92% { opacity: 1; }
+      93%, 100% { opacity: 0; }
+    }
+    /* agents keep arriving: three critters at three depths */
+    .chute { animation-name: descend; animation-timing-function: linear; animation-iteration-count: infinite; }
+    .chute-1 { animation-duration: 16s; animation-delay: -4s; }
+    .chute-2 { animation-duration: 22s; animation-delay: -13s; }
+    .chute-3 { animation-duration: 27s; animation-delay: -20s; }
+    .sway { animation: sway ease-in-out infinite alternate; }
+    .sway-1 { animation-duration: 2.8s; }
+    .sway-2 { animation-duration: 3.6s; }
+    .sway-3 { animation-duration: 4.1s; }
+    @keyframes descend {
+      0% { transform: translateY(-60px); opacity: 0; }
+      6% { opacity: 1; }
+      78% { opacity: 1; }
+      96% { transform: translateY(420px); opacity: 0; }
+      100% { transform: translateY(420px); opacity: 0; }
+    }
+    @keyframes sway { from { transform: translateX(-12px); } to { transform: translateX(12px); } }
+    @media (prefers-reduced-motion: reduce) {
+      .cloud, .beacon, .wb, .crane-hoist, .crane-cable, .crane-load, .tail-a, .tail-b, .chute, .sway { animation: none; }
+      .chute { opacity: 0.85; transform: translateY(160px); }
+      .tail-b { opacity: 0; }
+    }
+  </style>
+  <defs>
+    <pattern id="lat-mast" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect x="0" width="2" height="8" fill="#14080E"/>
+      <rect x="6" width="2" height="8" fill="#14080E"/>
+      <rect x="2" y="3" width="4" height="2" fill="#14080E"/>
+    </pattern>
+    <pattern id="lat-jib" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="8" height="2" fill="#14080E"/>
+      <rect x="0" y="6" width="8" height="2" fill="#14080E"/>
+      <rect x="2" y="2" width="2" height="2" fill="#14080E"/>
+      <rect x="4" y="4" width="2" height="2" fill="#14080E"/>
+    </pattern>
+  </defs>
+
+  <!-- the poster sky -->
+  <rect x="0" y="0" width="1440" height="560" fill="#FF2E88"/>
+  <!-- pixel sun -->
+  <rect x="1180" y="28" width="34" height="34" fill="#FF77B0"/>
+  <rect x="1172" y="36" width="50" height="18" fill="#FF77B0"/>
+  <rect x="1188" y="20" width="18" height="50" fill="#FF77B0"/>
+
+  <!-- blocky clouds, four depths of sky -->
+  <g class="cloud cloud-a" fill="#FF77B0" transform="translate(0 64)">
+    <rect x="0" y="8" width="46" height="10"/><rect x="8" y="0" width="28" height="10"/>
+    <rect x="38" y="4" width="20" height="8"/>
+  </g>
+  <g class="cloud cloud-b" fill="#E02273" transform="translate(0 196)">
+    <rect x="0" y="4" width="30" height="8"/><rect x="8" y="0" width="16" height="6"/>
+  </g>
+  <g class="cloud cloud-c" fill="#FF77B0" transform="translate(0 120)">
+    <rect x="0" y="6" width="38" height="9"/><rect x="10" y="0" width="20" height="8"/>
+  </g>
+  <g class="cloud cloud-d" fill="#FF77B0" transform="translate(0 268)">
+    <rect x="0" y="10" width="60" height="12"/><rect x="12" y="0" width="34" height="12"/>
+    <rect x="48" y="6" width="24" height="10"/>
+  </g>
+
+  <!-- agents keep arriving under parachutes -->
+  <g class="chute chute-1" transform="translate(0 0)"><g transform="translate(320 0) scale(0.55)"><g class="sway sway-1"><rect x="-14" y="-30" width="28" height="7" fill="#14080E"/><rect x="-20" y="-23" width="8" height="6" fill="#14080E"/><rect x="12" y="-23" width="8" height="6" fill="#14080E"/><rect x="-7" y="0" width="14" height="13" fill="#14080E"/><rect x="-5" y="13" width="3" height="5" fill="#14080E"/><rect x="2" y="13" width="3" height="5" fill="#14080E"/><line x1="-12" y1="-23" x2="-4" y2="0" stroke="#14080E" stroke-width="1"/><line x1="12" y1="-23" x2="4" y2="0" stroke="#14080E" stroke-width="1"/><rect x="-4" y="4" width="3" height="3" fill="#FFFFFF"/><rect x="1" y="4" width="3" height="3" fill="#FFFFFF"/></g></g></g>
+  <g class="chute chute-2" transform="translate(0 0)"><g transform="translate(880 0) scale(0.8)"><g class="sway sway-2"><rect x="-14" y="-30" width="28" height="7" fill="#14080E"/><rect x="-20" y="-23" width="8" height="6" fill="#14080E"/><rect x="12" y="-23" width="8" height="6" fill="#14080E"/><rect x="-7" y="0" width="14" height="13" fill="#14080E"/><rect x="-5" y="13" width="3" height="5" fill="#14080E"/><rect x="2" y="13" width="3" height="5" fill="#14080E"/><line x1="-12" y1="-23" x2="-4" y2="0" stroke="#14080E" stroke-width="1"/><line x1="12" y1="-23" x2="4" y2="0" stroke="#14080E" stroke-width="1"/><rect x="-4" y="4" width="3" height="3" fill="#FFFFFF"/><rect x="1" y="4" width="3" height="3" fill="#FFFFFF"/></g></g></g>
+  <g class="chute chute-3" transform="translate(0 0)"><g transform="translate(1180 0) scale(0.42)"><g class="sway sway-3"><rect x="-14" y="-30" width="28" height="7" fill="#14080E"/><rect x="-20" y="-23" width="8" height="6" fill="#14080E"/><rect x="12" y="-23" width="8" height="6" fill="#14080E"/><rect x="-7" y="0" width="14" height="13" fill="#14080E"/><rect x="-5" y="13" width="3" height="5" fill="#14080E"/><rect x="2" y="13" width="3" height="5" fill="#14080E"/><line x1="-12" y1="-23" x2="-4" y2="0" stroke="#14080E" stroke-width="1"/><line x1="12" y1="-23" x2="4" y2="0" stroke="#14080E" stroke-width="1"/><rect x="-4" y="4" width="3" height="3" fill="#FFFFFF"/><rect x="1" y="4" width="3" height="3" fill="#FFFFFF"/></g></g></g>
+
+  <!-- the town, anchored to the bottom of the sky -->
+  <g transform="translate(0 410)">
+    <rect x="0" y="132" width="1440" height="40" fill="#0d0509"/>
+    <g fill="#2B1520">
+      <rect x="120" y="60" width="20" height="90"/><rect x="360" y="52" width="18" height="98"/>
+      <rect x="640" y="64" width="22" height="86"/><rect x="980" y="56" width="18" height="94"/>
+      <rect x="1180" y="62" width="20" height="88"/>
+    </g>
+    <g fill="#14080E">
+      <rect x="0" y="78" width="60" height="72"/><rect x="64" y="50" width="56" height="100"/>
+      <rect x="150" y="70" width="44" height="80"/><rect x="210" y="40" width="50" height="110"/>
+      <rect x="288" y="84" width="40" height="66"/><rect x="340" y="58" width="58" height="92"/>
+      <rect x="420" y="72" width="40" height="78"/><rect x="476" y="44" width="54" height="106"/>
+      <rect x="560" y="80" width="44" height="70"/><rect x="616" y="54" width="60" height="96"/>
+      <rect x="700" y="66" width="40" height="84"/><rect x="756" y="46" width="52" height="104"/>
+      <rect x="836" y="82" width="42" height="68"/><rect x="892" y="60" width="56" height="90"/>
+      <rect x="1020" y="74" width="46" height="76"/><rect x="1082" y="48" width="54" height="102"/>
+      <rect x="1160" y="80" width="40" height="70"/><rect x="1220" y="56" width="58" height="94"/>
+      <rect x="1300" y="72" width="44" height="78"/><rect x="1380" y="50" width="60" height="100"/>
+    </g>
+    <g fill="#14080E">
+      <rect x="166" y="62" width="6" height="8"/><rect x="906" y="52" width="6" height="8"/>
+      <rect x="1036" y="68" width="10" height="6"/>
+      <rect x="630" y="36" width="18" height="12"/><rect x="634" y="32" width="10" height="4"/>
+      <rect x="632" y="48" width="2" height="6"/><rect x="644" y="48" width="2" height="6"/>
+      <rect x="500" y="24" width="2" height="20"/><rect x="495" y="30" width="12" height="2"/>
+    </g>
+    <rect class="beacon" x="499" y="20" width="4" height="4" fill="#FFFFFF"/>
+    <rect x="918" y="44" width="2" height="16" fill="#14080E"/>
+    <rect x="920" y="44" width="8" height="5" fill="#E02273"/>
+
+    <!-- the tower crane: the town is literally being built -->
+    <g>
+      <rect x="1246" y="-94" width="8" height="150" fill="url(#lat-mast)"/>
+      <rect x="1134" y="-102" width="2" height="8" fill="#14080E"/>
+      <rect x="1136" y="-102" width="110" height="8" fill="url(#lat-jib)"/>
+      <rect x="1256" y="-102" width="30" height="8" fill="url(#lat-jib)"/>
+      <rect x="1278" y="-94" width="10" height="14" fill="#2B1520"/>
+      <rect x="1240" y="-112" width="16" height="10" fill="#14080E"/>
+      <rect x="1242" y="-109" width="3" height="4" fill="#FFFFFF"/>
+      <rect x="1246" y="-124" width="4" height="12" fill="#14080E"/>
+      <rect class="beacon beacon-slow" x="1246" y="-128" width="4" height="4" fill="#FFFFFF"/>
+      <g fill="#14080E">
+        <rect x="1240" y="-120" width="2" height="2"/><rect x="1232" y="-118" width="2" height="2"/>
+        <rect x="1224" y="-116" width="2" height="2"/><rect x="1216" y="-114" width="2" height="2"/>
+        <rect x="1208" y="-112" width="2" height="2"/><rect x="1200" y="-110" width="2" height="2"/>
+        <rect x="1192" y="-108" width="2" height="2"/><rect x="1184" y="-106" width="2" height="2"/>
+        <rect x="1176" y="-104" width="2" height="2"/>
+        <rect x="1252" y="-120" width="2" height="2"/><rect x="1256" y="-116" width="2" height="2"/>
+        <rect x="1260" y="-112" width="2" height="2"/><rect x="1264" y="-108" width="2" height="2"/>
+        <rect x="1268" y="-104" width="2" height="2"/>
+      </g>
+      <g class="crane-hoist">
+        <rect x="1168" y="-94" width="8" height="4" fill="#14080E"/>
+        <rect class="crane-cable" x="1171" y="-90" width="1" height="88" fill="#14080E"/>
+        <g class="crane-load">
+          <rect x="1170" y="-2" width="3" height="2" fill="#14080E"/>
+          <rect x="1166" y="0" width="10" height="8" fill="#2B1520"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- lit windows; a few flick on and off -->
+    <g>
+      <rect x="74" y="64" width="5" height="7" fill="#FF77B0"/><rect class="wb wb-1" x="92" y="64" width="5" height="7" fill="#FFFFFF"/>
+      <rect x="74" y="82" width="5" height="7" fill="#FF77B0"/><rect class="wb wb-2" x="220" y="56" width="5" height="7" fill="#FFFFFF"/>
+      <rect x="238" y="56" width="5" height="7" fill="#FF77B0"/><rect x="220" y="76" width="5" height="7" fill="#FF77B0"/>
+      <rect x="352" y="72" width="5" height="7" fill="#FF77B0"/><rect class="wb wb-3" x="372" y="72" width="5" height="7" fill="#FFFFFF"/>
+      <rect class="wb wb-2" x="628" y="68" width="5" height="7" fill="#FFFFFF"/><rect x="648" y="68" width="5" height="7" fill="#FF77B0"/>
+      <rect x="768" y="60" width="5" height="7" fill="#FF77B0"/><rect class="wb wb-1" x="788" y="60" width="5" height="7" fill="#FFFFFF"/>
+      <rect x="1094" y="62" width="5" height="7" fill="#FFFFFF"/><rect class="wb wb-3" x="1232" y="70" width="5" height="7" fill="#FF77B0"/>
+      <rect x="1392" y="64" width="5" height="7" fill="#FF77B0"/><rect x="1412" y="64" width="5" height="7" fill="#FFFFFF"/>
+    </g>
+
+    <!-- the town cat keeps its lookout on the water tower -->
+    <g>
+      <rect x="634" y="16" width="2" height="2" fill="#14080E"/><rect x="638" y="16" width="2" height="2" fill="#14080E"/><rect x="634" y="18" width="2" height="2" fill="#14080E"/><rect x="636" y="18" width="2" height="2" fill="#14080E"/><rect x="638" y="18" width="2" height="2" fill="#14080E"/><rect x="634" y="20" width="2" height="2" fill="#14080E"/><rect x="636" y="20" width="2" height="2" fill="#14080E"/><rect x="638" y="20" width="2" height="2" fill="#14080E"/><rect x="634" y="22" width="2" height="2" fill="#14080E"/><rect x="636" y="22" width="2" height="2" fill="#14080E"/><rect x="634" y="24" width="2" height="2" fill="#14080E"/><rect x="636" y="24" width="2" height="2" fill="#14080E"/><rect x="634" y="26" width="2" height="2" fill="#14080E"/><rect x="636" y="26" width="2" height="2" fill="#14080E"/><rect x="634" y="28" width="2" height="2" fill="#14080E"/><rect x="636" y="28" width="2" height="2" fill="#14080E"/><rect x="634" y="30" width="2" height="2" fill="#14080E"/><rect x="636" y="30" width="2" height="2" fill="#14080E"/><rect x="630" y="22" width="2" height="2" fill="#14080E"/><rect x="632" y="22" width="2" height="2" fill="#14080E"/><rect x="628" y="24" width="2" height="2" fill="#14080E"/><rect x="630" y="24" width="2" height="2" fill="#14080E"/><rect x="632" y="24" width="2" height="2" fill="#14080E"/><rect x="628" y="26" width="2" height="2" fill="#14080E"/><rect x="630" y="26" width="2" height="2" fill="#14080E"/><rect x="632" y="26" width="2" height="2" fill="#14080E"/><rect x="630" y="28" width="2" height="2" fill="#14080E"/><rect x="632" y="28" width="2" height="2" fill="#14080E"/><rect x="630" y="30" width="2" height="2" fill="#14080E"/><rect x="632" y="30" width="2" height="2" fill="#14080E"/>
+      <g class="tail-a"><rect x="638" y="30" width="2" height="2" fill="#14080E"/><rect x="640" y="30" width="2" height="2" fill="#14080E"/><rect x="642" y="30" width="2" height="2" fill="#14080E"/></g>
+      <g class="tail-b"><rect x="638" y="30" width="2" height="2" fill="#14080E"/><rect x="640" y="30" width="2" height="2" fill="#14080E"/><rect x="642" y="28" width="2" height="2" fill="#14080E"/></g>
+    </g>
+  </g>
+</svg>

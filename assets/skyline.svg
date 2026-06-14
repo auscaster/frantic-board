@@ -33,19 +33,15 @@
     @keyframes hoist { from { transform: translateX(0); } to { transform: translateX(44px); } }
     @keyframes cable { from { transform: scaleY(1); } to { transform: scaleY(1.4); } }
     @keyframes load { from { transform: translateY(0); } to { transform: translateY(35px); } }
-    /* the town cat keeps its lookout on the water tower, tail going */
-    .tail-a { animation: tail-swap 4.2s steps(1) infinite; }
-    .tail-b { animation: tail-swap-b 4.2s steps(1) infinite; }
-    @keyframes tail-swap {
-      0%, 68% { opacity: 1; }
-      69%, 92% { opacity: 0; }
-      93%, 100% { opacity: 1; }
-    }
-    @keyframes tail-swap-b {
-      0%, 68% { opacity: 0; }
-      69%, 92% { opacity: 1; }
-      93%, 100% { opacity: 0; }
-    }
+    /* the rooftop cat's tail moves like a real one: each joint runs its own slow
+       clock at a slightly different period, so a wave travels base to tip and the
+       curve is forever bending (an S, then a C) instead of swinging stiff. */
+    .tail-s1 { animation: tail-w1 6.5s ease-in-out infinite; }
+    .tail-s2 { animation: tail-w2 5.3s ease-in-out infinite; }
+    .tail-s3 { animation: tail-w3 7.9s ease-in-out infinite; }
+    @keyframes tail-w1 { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(4deg); } }
+    @keyframes tail-w2 { 0%, 100% { transform: rotate(4deg); } 50% { transform: rotate(-6deg); } }
+    @keyframes tail-w3 { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(11deg); } }
     /* agents keep arriving: three critters at three depths */
     .chute { animation-name: descend; animation-timing-function: linear; animation-iteration-count: infinite; }
     .chute-1 { animation-duration: 16s; animation-delay: -4s; }
@@ -64,9 +60,8 @@
     }
     @keyframes sway { from { transform: translateX(-12px); } to { transform: translateX(12px); } }
     @media (prefers-reduced-motion: reduce) {
-      .cloud, .beacon, .wb, .crane-hoist, .crane-cable, .crane-load, .tail-a, .tail-b, .chute, .sway { animation: none; }
+      .cloud, .beacon, .wb, .crane-hoist, .crane-cable, .crane-load, .chute, .sway, .tail-s1, .tail-s2, .tail-s3 { animation: none; }
       .chute { opacity: 0.85; transform: translateY(160px); }
-      .tail-b { opacity: 0; }
     }
   </style>
   <defs>
@@ -185,11 +180,14 @@
       <rect x="1392" y="64" width="5" height="7" fill="#FF77B0"/><rect x="1412" y="64" width="5" height="7" fill="#FFFFFF"/>
     </g>
 
-    <!-- the town cat keeps its lookout on the water tower -->
+    <!-- the town cat keeps its lookout from a rooftop, looking straight at
+         you: the face-forward pose the site cat settles into, with a tail that
+         sweeps on a slow, easy clock. tail pivots at its base via the wrapper
+         translate, so it works in any renderer (no transform-box needed). -->
     <g>
-      <rect x="634" y="16" width="2" height="2" fill="#14080E"/><rect x="638" y="16" width="2" height="2" fill="#14080E"/><rect x="634" y="18" width="2" height="2" fill="#14080E"/><rect x="636" y="18" width="2" height="2" fill="#14080E"/><rect x="638" y="18" width="2" height="2" fill="#14080E"/><rect x="634" y="20" width="2" height="2" fill="#14080E"/><rect x="636" y="20" width="2" height="2" fill="#14080E"/><rect x="638" y="20" width="2" height="2" fill="#14080E"/><rect x="634" y="22" width="2" height="2" fill="#14080E"/><rect x="636" y="22" width="2" height="2" fill="#14080E"/><rect x="634" y="24" width="2" height="2" fill="#14080E"/><rect x="636" y="24" width="2" height="2" fill="#14080E"/><rect x="634" y="26" width="2" height="2" fill="#14080E"/><rect x="636" y="26" width="2" height="2" fill="#14080E"/><rect x="634" y="28" width="2" height="2" fill="#14080E"/><rect x="636" y="28" width="2" height="2" fill="#14080E"/><rect x="634" y="30" width="2" height="2" fill="#14080E"/><rect x="636" y="30" width="2" height="2" fill="#14080E"/><rect x="630" y="22" width="2" height="2" fill="#14080E"/><rect x="632" y="22" width="2" height="2" fill="#14080E"/><rect x="628" y="24" width="2" height="2" fill="#14080E"/><rect x="630" y="24" width="2" height="2" fill="#14080E"/><rect x="632" y="24" width="2" height="2" fill="#14080E"/><rect x="628" y="26" width="2" height="2" fill="#14080E"/><rect x="630" y="26" width="2" height="2" fill="#14080E"/><rect x="632" y="26" width="2" height="2" fill="#14080E"/><rect x="630" y="28" width="2" height="2" fill="#14080E"/><rect x="632" y="28" width="2" height="2" fill="#14080E"/><rect x="630" y="30" width="2" height="2" fill="#14080E"/><rect x="632" y="30" width="2" height="2" fill="#14080E"/>
-      <g class="tail-a"><rect x="638" y="30" width="2" height="2" fill="#14080E"/><rect x="640" y="30" width="2" height="2" fill="#14080E"/><rect x="642" y="30" width="2" height="2" fill="#14080E"/></g>
-      <g class="tail-b"><rect x="638" y="30" width="2" height="2" fill="#14080E"/><rect x="640" y="30" width="2" height="2" fill="#14080E"/><rect x="642" y="28" width="2" height="2" fill="#14080E"/></g>
+      <g transform="translate(234 36)" fill="#14080E"><g class="tail-s1"><rect x="0" y="0" width="2" height="2"/><rect x="0" y="-2" width="2" height="2"/><g transform="translate(0 -4)"><g class="tail-s2"><rect x="2" y="0" width="2" height="2"/><rect x="2" y="-2" width="2" height="2"/><rect x="2" y="-4" width="2" height="2"/><g transform="translate(2 -4)"><g class="tail-s3"><rect x="2" y="-2" width="2" height="2"/><rect x="4" y="-2" width="2" height="2"/><rect x="6" y="0" width="2" height="2"/></g></g></g></g></g></g>
+      <g fill="#14080E"><rect x="224" y="18" width="2" height="2"/><rect x="232" y="18" width="2" height="2"/><rect x="224" y="20" width="2" height="2"/><rect x="226" y="20" width="2" height="2"/><rect x="230" y="20" width="2" height="2"/><rect x="232" y="20" width="2" height="2"/><rect x="224" y="22" width="2" height="2"/><rect x="226" y="22" width="2" height="2"/><rect x="228" y="22" width="2" height="2"/><rect x="230" y="22" width="2" height="2"/><rect x="232" y="22" width="2" height="2"/><rect x="224" y="24" width="2" height="2"/><rect x="226" y="24" width="2" height="2"/><rect x="228" y="24" width="2" height="2"/><rect x="230" y="24" width="2" height="2"/><rect x="232" y="24" width="2" height="2"/><rect x="224" y="26" width="2" height="2"/><rect x="226" y="26" width="2" height="2"/><rect x="228" y="26" width="2" height="2"/><rect x="230" y="26" width="2" height="2"/><rect x="232" y="26" width="2" height="2"/><rect x="226" y="28" width="2" height="2"/><rect x="228" y="28" width="2" height="2"/><rect x="230" y="28" width="2" height="2"/><rect x="224" y="30" width="2" height="2"/><rect x="226" y="30" width="2" height="2"/><rect x="228" y="30" width="2" height="2"/><rect x="230" y="30" width="2" height="2"/><rect x="232" y="30" width="2" height="2"/><rect x="224" y="32" width="2" height="2"/><rect x="226" y="32" width="2" height="2"/><rect x="228" y="32" width="2" height="2"/><rect x="230" y="32" width="2" height="2"/><rect x="232" y="32" width="2" height="2"/><rect x="224" y="34" width="2" height="2"/><rect x="226" y="34" width="2" height="2"/><rect x="228" y="34" width="2" height="2"/><rect x="230" y="34" width="2" height="2"/><rect x="232" y="34" width="2" height="2"/><rect x="224" y="36" width="2" height="2"/><rect x="226" y="36" width="2" height="2"/><rect x="228" y="36" width="2" height="2"/><rect x="230" y="36" width="2" height="2"/><rect x="232" y="36" width="2" height="2"/><rect x="224" y="38" width="2" height="2"/><rect x="226" y="38" width="2" height="2"/><rect x="230" y="38" width="2" height="2"/><rect x="232" y="38" width="2" height="2"/></g>
+      <rect x="224" y="24" width="2" height="2" fill="#FFFFFF"/><rect x="232" y="24" width="2" height="2" fill="#FFFFFF"/>
     </g>
   </g>
 </svg>

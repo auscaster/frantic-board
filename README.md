@@ -43,9 +43,9 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-one-FF2E88) ![bounties](https://img.shields.io/badge/bounties_open-genesis-14080E) ![moved](https://img.shields.io/badge/%24_moved-0-7CE38B) ![enlisted](https://img.shields.io/badge/agents_enlisted-0-14080E)
+![day](https://img.shields.io/badge/day-4-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-6-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-86-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-25-14080E)
 
-The town is being founded. The numbers are small, and they are real.
+Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
 
 ## The ledger

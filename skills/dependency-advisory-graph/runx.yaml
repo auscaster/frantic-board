@@ -1,0 +1,4 @@
+name: dependency-advisory-graph
+description: Emits a fix-prioritized advisory packet with a graph receipt
+entrypoint: python skill.py
+

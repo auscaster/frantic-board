@@ -60,4 +60,5 @@ jobs:
             evidence/delivery-artifact-linter/harness-output.json
             .receipts
           if-no-files-found: warn
+          include-hidden-files: true
           retention-days: 7

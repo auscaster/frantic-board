@@ -9,7 +9,7 @@ source:
   timeout_seconds: 45
   sandbox:
     profile: readonly
-    cwd_policy: skill-directory
+    cwd_policy: workspace
 inputs:
   mode:
     type: string

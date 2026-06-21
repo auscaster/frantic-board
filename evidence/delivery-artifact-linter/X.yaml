@@ -39,6 +39,9 @@ runners:
     command: node
     args:
       - run.mjs
+    sandbox:
+      profile: readonly
+      cwd_policy: workspace
     inputs:
       mode:
         type: string

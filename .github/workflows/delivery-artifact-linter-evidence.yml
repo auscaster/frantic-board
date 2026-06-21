@@ -50,6 +50,14 @@ jobs:
             --receipt-dir "$GITHUB_WORKSPACE/.receipts" \
             --json | tee evidence/delivery-artifact-linter/harness-output.json
 
+      - name: Pack sealed receipts for portable download
+        if: always()
+        shell: bash
+        run: |
+          if [ -d .receipts ]; then
+            tar -czf evidence/delivery-artifact-linter/receipts.tar.gz -C .receipts .
+          fi
+
       - name: Upload public evidence packet
         if: always()
         uses: actions/upload-artifact@v4
@@ -58,7 +66,6 @@ jobs:
           path: |
             evidence/delivery-artifact-linter/runx-version.txt
             evidence/delivery-artifact-linter/harness-output.json
-            .receipts
+            evidence/delivery-artifact-linter/receipts.tar.gz
           if-no-files-found: warn
-          include-hidden-files: true
           retention-days: 7

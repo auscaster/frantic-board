@@ -1,6 +1,7 @@
 # Evidence Redaction Fixture Pack
 
 - Public fixture import path: `verify/fixtures/evidence-redaction/`.
+- Public PR: https://github.com/auscaster/frantic-board/pull/115.
 - Safe JSON fixtures: `safe-redacted-secret.json`, `safe-redacted-local-path.json`, and `safe-redacted-private-url.json`.
 - Unsafe synthetic fixtures: `unsafe-synthetic-secret.json`, `unsafe-local-path.json`, and `unsafe-private-url-email.md`.
 - Secret rule: raw `SYNTHETIC_SECRET_DO_NOT_USE_*` values must be replaced with `[REDACTED_SECRET]`.

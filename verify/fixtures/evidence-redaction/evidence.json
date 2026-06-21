@@ -11,6 +11,14 @@
       "value": "verify/fixtures/evidence-redaction/"
     },
     {
+      "name": "pr_url",
+      "value": "https://github.com/auscaster/frantic-board/pull/115"
+    },
+    {
+      "name": "public_url",
+      "value": "https://github.com/auscaster/frantic-board/pull/115"
+    },
+    {
       "name": "safe_fixtures",
       "value": [
         "safe-redacted-secret.json",

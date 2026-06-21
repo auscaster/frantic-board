@@ -22,6 +22,13 @@ jobs:
       - name: Run deterministic linter fixtures
         run: node scripts/test-delivery-artifact-linter.mjs
 
+      - name: Install runx sandbox dependency
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends bubblewrap
+          bwrap --version
+
       - name: Download and verify runx 0.6.8
         shell: bash
         run: |

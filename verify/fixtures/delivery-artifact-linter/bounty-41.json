@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "bounty": {
+    "number": 41,
+    "title": "Publish a Frantic delivery artifact linter",
+    "requiredArtifacts": [
+      "public_url",
+      "evidence_json",
+      "receipt_ref",
+      "report",
+      "pr_url"
+    ],
+    "criteria": {
+      "artifacts": [
+        "public_url",
+        "evidence_json",
+        "receipt_ref",
+        "report",
+        "pr_url"
+      ],
+      "verification": {
+        "profile": "published_artifact_v1",
+        "artifact_kind": "generic",
+        "runx_cli_min_version": "0.6.6",
+        "requires_public_receipt": true
+      }
+    }
+  }
+}

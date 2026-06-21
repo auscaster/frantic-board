@@ -1,0 +1,34 @@
+{
+  "summary": "Delivery artifact linter fixture evidence showing that the tool can read bounty-required artifact names, validate submitted refs, and emit stable JSON before a worker submits a Frantic delivery.",
+  "observations": [
+    {
+      "name": "runx_cli_version",
+      "value": "runx-cli 0.6.8",
+      "source": "local command: runx --version"
+    },
+    {
+      "name": "script_path",
+      "value": "scripts/delivery-artifact-linter.mjs"
+    },
+    {
+      "name": "input_schema",
+      "value": "--bounty <url|file> plus --artifact name=value or --artifacts-file <json>"
+    },
+    {
+      "name": "live_bounty_source",
+      "value": "Captured public API response for Frantic bounty #41 in bounty-41.json"
+    },
+    {
+      "name": "valid_case",
+      "value": "pass-artifacts.json provides all required keys and readable local evidence/report fixtures"
+    },
+    {
+      "name": "invalid_case",
+      "value": "fail-artifacts.json demonstrates missing keys, bad evidence_json, bad receipt_ref, dead local PR ref, and package mismatch"
+    },
+    {
+      "name": "command",
+      "value": "node scripts/delivery-artifact-linter.mjs --bounty verify/fixtures/delivery-artifact-linter/bounty-41.json --artifacts-file verify/fixtures/delivery-artifact-linter/pass-artifacts.json --no-network"
+    }
+  ]
+}

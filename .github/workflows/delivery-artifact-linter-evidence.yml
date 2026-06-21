@@ -28,8 +28,8 @@ jobs:
           set -euo pipefail
           base=https://github.com/runxhq/runx/releases/download/cli-v0.6.8
           archive=runx-0.6.8-x86_64-unknown-linux-musl.tar.gz
-          curl -fsSLO "$base/$archive"
-          curl -fsSLO "$base/$archive.sha256"
+          curl -fsSLO --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 20 "$base/$archive"
+          curl -fsSLO --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 20 "$base/$archive.sha256"
           sha256sum --check "$archive.sha256"
           mkdir -p .runx-bin
           tar -xzf "$archive" -C .runx-bin

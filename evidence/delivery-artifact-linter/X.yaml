@@ -1,0 +1,46 @@
+skill: delivery-linter-validation
+version: "0.1.0"
+
+catalog:
+  kind: skill
+  audience: public
+  visibility: public
+  role: canonical
+
+harness:
+  cases:
+    - name: delivery-linter-pass-and-fail-fixtures
+      runner: default
+      inputs:
+        mode: full
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+    - name: delivery-linter-unsupported-mode-fails
+      runner: default
+      inputs:
+        mode: ""
+      expect:
+        status: failure
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_failed
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - run.mjs
+    inputs:
+      mode:
+        type: string
+        required: true
+        description: Use full to execute all committed fixtures.

@@ -146,7 +146,7 @@ function expectedPackageName(bounty) {
   ];
   for (const pattern of patterns) {
     const match = description.match(pattern);
-    if (match) return match[1];
+    if (match) return match[1].replace(/[.,;:]+$/, "");
   }
   return null;
 }

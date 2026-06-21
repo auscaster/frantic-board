@@ -1,7 +1,7 @@
 # Governed validation
 
-This wrapper runs the committed delivery artifact linter fixtures with read-only
-authority and emits a sealed runx receipt.
+This wrapper runs the committed delivery artifact linter fixtures in-process,
+with read-only authority and no network access, and emits a sealed runx receipt.
 
 ```bash
 runx harness evidence/delivery-artifact-linter --json

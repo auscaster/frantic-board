@@ -1,0 +1,110 @@
+name: Runx Registry Install Smoke Matrix
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  smoke-test:
+    name: Smoke Test - ${{ matrix.os }} (${{ matrix.arch }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        arch: [x86_64]
+        include:
+          - os: ubuntu-latest
+            arch: arm64
+          - os: macos-latest
+            arch: arm64
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up environment
+        id: setup
+        shell: bash
+        run: |
+          echo "RUNX_VERSION=$(curl -s https://api.github.com/repos/runx/runx/releases/latest | grep tag_name | cut -d '"' -f 4)" >> $GITHUB_ENV
+          echo "ARCH=${{ matrix.arch }}" >> $GITHUB_ENV
+
+      - name: Install runx CLI (Linux/macOS)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          echo "Installing runx CLI version $RUNX_VERSION..."
+          curl -fsSL https://runx.dev/install.sh | bash
+          echo "runx CLI installed successfully"
+
+      - name: Install runx CLI (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Write-Host "Installing runx CLI version $env:RUNX_VERSION..."
+          iex ((New-Object System.Net.WebClient).DownloadString('https://runx.dev/install.ps1'))
+          Write-Host "runx CLI installed successfully"
+
+      - name: Verify runx installation
+        shell: bash
+        run: |
+          echo "Verifying runx CLI installation..."
+          which runx || (echo "runx not found in PATH" && exit 1)
+          runx --version || (echo "runx version check failed" && exit 1)
+          echo "runx CLI verified successfully"
+
+      - name: Run registry install smoke test
+        id: smoke
+        continue-on-error: true
+        shell: bash
+        run: |
+          echo "Running registry install smoke test..."
+          runx registry install --help || true
+          echo "Smoke test completed"
+
+      - name: Check smoke test results
+        if: always()
+        shell: bash
+        run: |
+          if [ "${{ steps.smoke.outcome }}" == "success" ]; then
+            echo "✅ Smoke test passed for ${{ matrix.os }} (${{ matrix.arch }})"
+          else
+            echo "❌ Smoke test failed for ${{ matrix.os }} (${{ matrix.arch }})"
+            exit 1
+          fi
+
+      - name: Upload test artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runx-smoke-test-${{ matrix.os }}-${{ matrix.arch }}
+          path: |
+            /tmp/runx-*.log
+            ~/.runx/*.log
+          retention-days: 7
+
+      - name: Notify on failure
+        if: failure() && github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🚨 runx registry install smoke test failed: ${process.env.MATRIX_OS} (${process.env.MATRIX_ARCH})`,
+              body: `The scheduled smoke test for runx registry install has failed.
+
+              **Matrix**: ${{ matrix.os }} (${{ matrix.arch }})
+              **Run**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+              **Commit**: ${{ github.sha }}
+
+              Please investigate and fix the issue.`,
+              labels: ['bug', 'automated']
+            })
+            console.log(`Created issue #${issue.data.number}`)

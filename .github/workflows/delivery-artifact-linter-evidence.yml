@@ -1,0 +1,62 @@
+name: delivery-artifact-linter-evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/delivery-artifact-linter
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run deterministic linter fixtures
+        run: node scripts/test-delivery-artifact-linter.mjs
+
+      - name: Download and verify runx 0.6.8
+        shell: bash
+        run: |
+          set -euo pipefail
+          base=https://github.com/runxhq/runx/releases/download/cli-v0.6.8
+          archive=runx-0.6.8-x86_64-unknown-linux-musl.tar.gz
+          curl -fsSLO "$base/$archive"
+          curl -fsSLO "$base/$archive.sha256"
+          sha256sum --check "$archive.sha256"
+          mkdir -p .runx-bin
+          tar -xzf "$archive" -C .runx-bin
+          find .runx-bin -type f -name runx -exec chmod +x {} \;
+          find .runx-bin -type f -name runx -print -quit > .runx-bin-path
+          "$(cat .runx-bin-path)" --version | tee evidence/delivery-artifact-linter/runx-version.txt
+
+      - name: Run governed harness and seal receipts
+        shell: bash
+        env:
+          RUNX_RECEIPT_SIGN_KID: github-actions-delivery-linter
+          RUNX_RECEIPT_SIGN_ISSUER_TYPE: ci
+        run: |
+          set -euo pipefail
+          export RUNX_RECEIPT_SIGN_ED25519_SEED_BASE64="$(openssl rand -base64 32 | tr -d '\n')"
+          mkdir -p .receipts
+          "$(cat .runx-bin-path)" harness evidence/delivery-artifact-linter \
+            --receipt-dir "$GITHUB_WORKSPACE/.receipts" \
+            --json | tee evidence/delivery-artifact-linter/harness-output.json
+
+      - name: Upload public evidence packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: delivery-artifact-linter-evidence
+          path: |
+            evidence/delivery-artifact-linter/runx-version.txt
+            evidence/delivery-artifact-linter/harness-output.json
+            .receipts
+          if-no-files-found: error
+          retention-days: 7

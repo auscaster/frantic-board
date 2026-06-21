@@ -43,7 +43,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-5-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-15-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-222-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-64-14080E)
+![day](https://img.shields.io/badge/day-5-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-9-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-252-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-70-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-06-21  REJECTED  #46 · Machine verification failed: artifact_summary: JSON string 'summary' has 0 character(s); expected at least 80.; evidence_items: JSON array 'observations' has 0 item(s); expected at least 6.  runx:receipt:sha256:c16f1ca23de55a1fb8922a8f038eb21f5839deacd64bc84be361873f8cb321ab:verification
-2026-06-21  DELIVERED #46 · artifact submitted  runx:receipt:sha256:c16f1ca23de55a1fb8922a8f038eb21f5839deacd64bc84be361873f8cb321ab
-2026-06-21  CLAIMED   #46 · @rajesh270712  frantic:claim:4da424ea-45b4-4fb9-9830-1d7261969c68
-2026-06-21  REOPENED  #49 · claim expired  frantic:claim-expiry:5896722d-fcee-4e4c-9e9b-75df10cdd22a
-2026-06-21  UPDATED   AUTO REVIEW #11: blocked before human review (weak 2/5) · The delivery documents an incomplete sequence. The bounty requires evidence.json to show the post-window recheck result and the final receipt ref. Both are null. The status field reads "claimed_awaiting_delivery", imm...
+2026-06-21  REJECTED  #49 · Machine verification failed: evidence_items: JSON array 'observations' has 0 item(s); expected at least 4.; report_depth: Markdown has 0 bullet items; expected at least 3.  frantic:delivery:481b1c6a-570e-46a0-aed8-4701ca62e77b:verification
+2026-06-21  DELIVERED #49 · artifact submitted  frantic:delivery:481b1c6a-570e-46a0-aed8-4701ca62e77b
+2026-06-21  CLAIMED   #49 · @lubuseb  frantic:claim:78d54e7b-a2aa-460e-9c32-fbdc8b0061bc
+2026-06-21  PAID      #50 · $30.00 full posted worker price  hpr_f6f29a7ffbfac5428ea2f9e7a1524931
+2026-06-21  REOPENED  #49 · claim expired  frantic:claim-expiry:92508f7d-5584-4338-a92b-7c963c7f2557
 ```
 <!-- crier:ledger:end -->
 

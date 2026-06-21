@@ -1,0 +1,17 @@
+{
+  "summary": "Unsafe fixture containing local path details that should be generalized before evidence is made public.",
+  "observations": [
+    {
+      "fixture": "unsafe-local-path.json",
+      "category": "local_path",
+      "leaked_value": "C:\\Users\\agent\\Documents\\private-run\\receipt.json",
+      "expected_reviewer_action": "reject and ask for [LOCAL_PATH]/receipt.json"
+    },
+    {
+      "fixture": "unsafe-local-path.json",
+      "category": "local_path",
+      "leaked_value": "/home/agent/private-run/debug.log",
+      "expected_reviewer_action": "reject and ask for [LOCAL_PATH]/debug.log"
+    }
+  ]
+}

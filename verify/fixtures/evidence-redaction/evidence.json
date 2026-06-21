@@ -1,0 +1,53 @@
+{
+  "summary": "Evidence redaction fixture pack for Frantic bounty #38, containing three safe JSON examples, three unsafe synthetic examples, validation results, redaction categories, and proposed verifier usage.",
+  "observations": [
+    {
+      "name": "runx_cli_version",
+      "value": "runx-cli 0.6.8",
+      "source": "local command: runx --version"
+    },
+    {
+      "name": "fixture_root",
+      "value": "verify/fixtures/evidence-redaction/"
+    },
+    {
+      "name": "safe_fixtures",
+      "value": [
+        "safe-redacted-secret.json",
+        "safe-redacted-local-path.json",
+        "safe-redacted-private-url.json"
+      ],
+      "validation_result": "all parse as JSON and include summary plus observations"
+    },
+    {
+      "name": "unsafe_fixtures",
+      "value": [
+        "unsafe-synthetic-secret.json",
+        "unsafe-local-path.json",
+        "unsafe-private-url-email.md"
+      ],
+      "validation_result": "all contain only synthetic sentinel secrets, local paths, private URLs, or private emails"
+    },
+    {
+      "name": "redaction_categories",
+      "value": [
+        "secret",
+        "local_path",
+        "private_url",
+        "private_email"
+      ]
+    },
+    {
+      "name": "validation_command",
+      "value": "node verify/09-check-evidence-redaction-fixtures.mjs"
+    },
+    {
+      "name": "proposed_verifier_usage",
+      "value": "Use safe fixtures as positive examples and unsafe fixtures as blocking negative cases for future evidence_json public-safety checks."
+    },
+    {
+      "name": "reviewer_action",
+      "value": "Reject unsafe evidence unless raw values are replaced with [REDACTED_SECRET], [LOCAL_PATH], [PRIVATE_URL], or [PRIVATE_EMAIL]."
+    }
+  ]
+}

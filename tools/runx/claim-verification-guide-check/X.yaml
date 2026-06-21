@@ -1,0 +1,46 @@
+skill: claim-verification-guide-check
+version: "0.1.0"
+
+catalog:
+  kind: skill
+  audience: public
+  visibility: public
+  role: canonical
+
+harness:
+  cases:
+    - name: guide-and-evidence-present
+      runner: default
+      inputs:
+        repo_root: ../../..
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+    - name: missing-repo-fails
+      runner: default
+      inputs:
+        repo_root: /tmp/no-such-frantic-board
+      expect:
+        status: failure
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_failed
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - run.mjs
+    inputs:
+      repo_root:
+        type: string
+        required: true
+        description: Absolute path to the frantic-board checkout.

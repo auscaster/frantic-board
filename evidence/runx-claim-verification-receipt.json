@@ -1,0 +1,135 @@
+{
+  "acts": [
+    {
+      "artifact_refs": [],
+      "closure": {
+        "closed_at": "2026-06-21T03:58:28.347Z",
+        "disposition": "closed",
+        "reason_code": "process_exit",
+        "summary": "cli-tool exited successfully"
+      },
+      "criterion_bindings": [
+        {
+          "criterion_id": "process_exit",
+          "evidence_refs": [],
+          "status": "verified",
+          "summary": "cli-tool exited successfully",
+          "verification_refs": []
+        }
+      ],
+      "form": "observation",
+      "id": "act_default",
+      "intent": {
+        "constraints": [],
+        "derived_from": [],
+        "legitimacy": "Runtime graph execution was admitted by the local harness",
+        "purpose": "Run graph step default",
+        "success_criteria": [
+          {
+            "criterion_id": "process_exit",
+            "required": true,
+            "statement": "cli-tool exits successfully"
+          }
+        ]
+      },
+      "source_refs": [],
+      "summary": "Executed graph step default",
+      "target_refs": []
+    }
+  ],
+  "authority": {
+    "actor_ref": {
+      "type": "principal",
+      "uri": "runx:principal:local_runtime"
+    },
+    "attenuation": {
+      "parent_authority_ref": null,
+      "subset_proof": null
+    },
+    "authority_proof_refs": [],
+    "enforcement": {
+      "profile_hash": "sha256:runtime-skeleton-enforcement",
+      "redaction_refs": [],
+      "setup_refs": [],
+      "teardown_refs": []
+    },
+    "grant_refs": [],
+    "scope_refs": [],
+    "terms": []
+  },
+  "canonicalization": "runx.receipt.c14n.v1",
+  "created_at": "2026-06-21T03:58:28.347Z",
+  "decisions": [
+    {
+      "artifact_refs": [],
+      "choice": "open",
+      "closure": null,
+      "decision_id": "dec_default",
+      "inputs": {
+        "opportunity_refs": [],
+        "selection_ref": null,
+        "signal_refs": [],
+        "target_ref": null
+      },
+      "justification": {
+        "evidence_refs": [],
+        "summary": "runtime graph planner selected this node"
+      },
+      "proposed_intent": {
+        "constraints": [],
+        "derived_from": [],
+        "legitimacy": "Local graph execution requested this node",
+        "purpose": "Open runtime node default",
+        "success_criteria": []
+      },
+      "selected_act_id": "act_default",
+      "selected_harness_ref": null
+    }
+  ],
+  "digest": "sha256:8ebb5e870b871c57d80ede653b383ddf099576d491746dd4832896c60c003ebc",
+  "id": "sha256:c8378de63b80228df93723af1d35bb5aa8205bb85fed3a63d0747a7765c3f241",
+  "idempotency": {
+    "content_hash": "sha256:run_default_92b32aed0392-default-content",
+    "intent_key": "sha256:run_default_92b32aed0392-default-intent",
+    "trigger_fingerprint": "sha256:run_default_92b32aed0392-default-trigger"
+  },
+  "issuer": {
+    "kid": "harold-frantic-claim-guide-20260621",
+    "public_key_sha256": "sha256:5b813954c451eb0d53e976d3000130d3316e652cb0fd72f4339bb66a1943b927",
+    "type": "hosted"
+  },
+  "lineage": {
+    "children": [],
+    "sync": []
+  },
+  "schema": "runx.receipt.v1",
+  "seal": {
+    "closed_at": "2026-06-21T03:58:28.347Z",
+    "criteria": [
+      {
+        "criterion_id": "process_exit",
+        "evidence_refs": [],
+        "status": "verified",
+        "summary": "cli-tool exited successfully",
+        "verification_refs": []
+      }
+    ],
+    "disposition": "closed",
+    "last_observed_at": "2026-06-21T03:58:28.347Z",
+    "reason_code": "process_closed",
+    "summary": "cli-tool default completed"
+  },
+  "signals": [],
+  "signature": {
+    "alg": "Ed25519",
+    "value": "base64:8s3lJx8RYpiGjmCUEoh2EDK-ObnV7OnmrEFKJZOJ-xroeCp1MiMI053HwMzHpoXCO_h2sStNGWsG7nuKemqBCw"
+  },
+  "subject": {
+    "commitments": [],
+    "kind": "skill",
+    "ref": {
+      "type": "harness",
+      "uri": "hrn_run_default_92b32aed0392_default"
+    }
+  }
+}

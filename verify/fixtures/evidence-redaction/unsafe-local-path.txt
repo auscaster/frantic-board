@@ -1,0 +1,8 @@
+Unsafe synthetic local path example.
+
+The worker copied a local diagnostic path into public evidence:
+
+  C:\Users\ExampleOperator\AppData\Local\Temp\frantic\claim-0000\secret.log
+
+Expected reviewer action: revise.
+Expected redaction: [REDACTED:LOCAL_PATH]\secret.log

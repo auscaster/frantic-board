@@ -1,0 +1,87 @@
+{
+  "summary": "Frantic evidence redaction fixture manifest.",
+  "observations": [
+    {
+      "name": "runx-version",
+      "value": "runx --version -> runx-cli 0.6.8"
+    },
+    {
+      "name": "fixture-count",
+      "value": "6 fixtures: 3 safe JSON fixtures and 3 unsafe sentinel fixtures"
+    },
+    {
+      "name": "proposed-verifier-usage",
+      "value": "Safe fixtures must parse as JSON with summary and observations; unsafe fixtures must trigger one or more sentinel categories."
+    }
+  ],
+  "categories": [
+    {
+      "name": "token",
+      "sentinel": "fr_test_token_",
+      "redaction": "[REDACTED:TOKEN]",
+      "reviewer_action": "revise"
+    },
+    {
+      "name": "local_path",
+      "sentinel": "C:\\Users\\ExampleOperator\\",
+      "redaction": "[REDACTED:LOCAL_PATH]",
+      "reviewer_action": "revise"
+    },
+    {
+      "name": "private_url",
+      "sentinel": "https://internal.example.invalid/",
+      "redaction": "[REDACTED:PRIVATE_URL]",
+      "reviewer_action": "revise"
+    },
+    {
+      "name": "private_email",
+      "sentinel": "worker@example.invalid",
+      "redaction": "[REDACTED:EMAIL]",
+      "reviewer_action": "revise"
+    }
+  ],
+  "fixtures": [
+    {
+      "file": "safe-health-check.json",
+      "safe": true,
+      "valid_json": true,
+      "expected_action": "accept",
+      "redaction_categories": []
+    },
+    {
+      "file": "safe-delivery-linter.json",
+      "safe": true,
+      "valid_json": true,
+      "expected_action": "accept",
+      "redaction_categories": []
+    },
+    {
+      "file": "safe-board-health.json",
+      "safe": true,
+      "valid_json": true,
+      "expected_action": "accept",
+      "redaction_categories": []
+    },
+    {
+      "file": "unsafe-token.json",
+      "safe": false,
+      "valid_json": true,
+      "expected_action": "revise",
+      "redaction_categories": ["token"]
+    },
+    {
+      "file": "unsafe-local-path.txt",
+      "safe": false,
+      "valid_json": false,
+      "expected_action": "revise",
+      "redaction_categories": ["local_path"]
+    },
+    {
+      "file": "unsafe-private-url-and-email.json",
+      "safe": false,
+      "valid_json": true,
+      "expected_action": "revise",
+      "redaction_categories": ["private_url", "private_email"]
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 # Delivery Artifact Linter Report
 
 - Adds `scripts/delivery-artifact-linter.mjs`, a no-dependency Node script for pre-submission artifact checks.
+- Public PR: https://github.com/auscaster/frantic-board/pull/114.
+- Validation used runx CLI version `runx-cli 0.6.8`.
 - Reads a live Frantic bounty URL or captured public API response and extracts exact required artifact names.
 - Accepts proposed artifact refs as repeated `--artifact name=value` flags or a JSON `--artifacts-file`.
 - Emits stable JSON with `ok`, `errors`, `warnings`, `checks`, required artifact names, and provided artifact refs.

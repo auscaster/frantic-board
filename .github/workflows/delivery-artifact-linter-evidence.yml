@@ -52,6 +52,8 @@ jobs:
         run: |
           set -euo pipefail
           export RUNX_RECEIPT_SIGN_ED25519_SEED_BASE64="$(openssl rand -base64 32 | tr -d '\n')"
+          export RUNX_RECEIPT_VERIFY_ED25519_PUBLIC_KEY_BASE64="$(node -e 'const {createPrivateKey,createPublicKey}=require("node:crypto");const seed=Buffer.from(process.env.RUNX_RECEIPT_SIGN_ED25519_SEED_BASE64,"base64");const prefix=Buffer.from("302e020100300506032b657004220420","hex");const key=createPrivateKey({key:Buffer.concat([prefix,seed]),format:"der",type:"pkcs8"});const pub=createPublicKey(key).export({format:"der",type:"spki"});process.stdout.write(pub.subarray(-32).toString("base64"));')"
+          printf '%s\n' "$RUNX_RECEIPT_VERIFY_ED25519_PUBLIC_KEY_BASE64" > evidence/delivery-artifact-linter/receipt-public-key-base64.txt
           mkdir -p .receipts
           sandbox_source="$GITHUB_WORKSPACE/evidence/delivery-artifact-linter"
           path="$sandbox_source"
@@ -66,7 +68,15 @@ jobs:
             --json | tee evidence/delivery-artifact-linter/harness-output.json
           status=${PIPESTATUS[0]}
           sudo chown -R "$(id -u):$(id -g)" .receipts
-          exit "$status"
+          if [ "$status" -ne 0 ]; then
+            exit "$status"
+          fi
+          set -e
+          receipt_id="$(node -e 'const h=require("./evidence/delivery-artifact-linter/harness-output.json");process.stdout.write(h.receipt_ids[0])')"
+          RUNX_RECEIPT_VERIFY_KID="$RUNX_RECEIPT_SIGN_KID" \
+          RUNX_RECEIPT_VERIFY_ED25519_PUBLIC_KEY_BASE64="$RUNX_RECEIPT_VERIFY_ED25519_PUBLIC_KEY_BASE64" \
+            "$(cat .runx-bin-path)" verify --receipt ".receipts/${receipt_id}.json" --json \
+            | tee evidence/delivery-artifact-linter/verification.json
 
       - name: Pack sealed receipts for portable download
         if: always()
@@ -84,6 +94,8 @@ jobs:
           path: |
             evidence/delivery-artifact-linter/runx-version.txt
             evidence/delivery-artifact-linter/harness-output.json
+            evidence/delivery-artifact-linter/receipt-public-key-base64.txt
+            evidence/delivery-artifact-linter/verification.json
             evidence/delivery-artifact-linter/receipts.tar.gz
           if-no-files-found: warn
           retention-days: 7

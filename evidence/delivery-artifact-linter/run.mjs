@@ -21,8 +21,17 @@ async function fixtureFetch(input) {
   const rawUrl = typeof input === "string" ? input : input instanceof URL ? input.href : input.url;
   const url = new URL(rawUrl);
   const fixture = fixtureBodies.get(url.pathname);
-  if (!fixture) return new Response('{"error":"not found"}', { status: 404, headers: { "content-type": "application/json" } });
-  return new Response(fixture.body, { status: 200, headers: { "content-type": fixture.type } });
+  const status = fixture ? 200 : 404;
+  const type = fixture?.type ?? "application/json";
+  const body = fixture?.body.toString("utf8") ?? '{"error":"not found"}';
+  return {
+    ok: status >= 200 && status < 300,
+    status,
+    headers: { get: (name) => name.toLowerCase() === "content-type" ? type : null },
+    body: { cancel: async () => {} },
+    text: async () => body,
+    json: async () => JSON.parse(body),
+  };
 }
 
 const valid = await lintDelivery({

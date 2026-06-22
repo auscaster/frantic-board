@@ -1,0 +1,52 @@
+{
+  "summary": "The delivery artifact linter is implemented, documented, fixture-tested, and validated by a signed runx 0.6.8 receipt in GitHub Actions.",
+  "observations": [
+    {
+      "id": "implementation",
+      "status": "passed",
+      "detail": "scripts/delivery-artifact-linter.mjs provides a dependency-free Node.js 20+ CLI with stable JSON output and pass/fail exit codes."
+    },
+    {
+      "id": "live_bounty_input",
+      "status": "passed",
+      "detail": "The CLI accepts a public Frantic bounty URL and normalizes it to the live API, with an optional captured JSON response for deterministic tests."
+    },
+    {
+      "id": "required_artifacts",
+      "status": "passed",
+      "detail": "Required artifact names are read from bounty criteria and checked exactly, including public_url, pr_url, evidence_json, receipt_ref, and report for bounty 41."
+    },
+    {
+      "id": "artifact_validation",
+      "status": "passed",
+      "detail": "The linter checks HTTP(S) reachability, evidence JSON shape, receipt reference format, and an exact package name when the bounty specifies one."
+    },
+    {
+      "id": "passing_fixture",
+      "status": "passed",
+      "detail": "The committed bounty-41 packet exits 0 with zero errors."
+    },
+    {
+      "id": "failing_fixture",
+      "status": "passed",
+      "detail": "The committed invalid packet exits 1 and reports ARTIFACT_URL_UNREACHABLE, EVIDENCE_JSON_INVALID, PACKAGE_NAME_MISMATCH, RECEIPT_REF_INVALID, and REQUIRED_ARTIFACT_MISSING."
+    },
+    {
+      "id": "governed_harness",
+      "status": "passed",
+      "detail": "runx-cli 0.6.8 executed two governed cases under a read-only workspace policy; the expected pass case closed successfully and the unsupported-mode case failed closed."
+    },
+    {
+      "id": "receipt_verification",
+      "status": "passed",
+      "detail": "runx verify reported valid digest, content address, and production-mode Ed25519 signature for receipt sha256:d8882825eb33f5de705b77814ef587c30554ffadc2e298eae1b673ff162e279a."
+    },
+    {
+      "id": "continuous_integration",
+      "status": "passed",
+      "detail": "GitHub Actions run 27933774019 completed successfully: https://github.com/jjuyjuju/frantic-board/actions/runs/27933774019"
+    }
+  ],
+  "receipt_ref": "runx:receipt:sha256:d8882825eb33f5de705b77814ef587c30554ffadc2e298eae1b673ff162e279a",
+  "pull_request": "https://github.com/auscaster/frantic-board/pull/113"
+}

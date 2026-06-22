@@ -38,7 +38,7 @@ runners:
     type: cli-tool
     command: node
     args:
-      - run.mjs
+      - evidence/delivery-artifact-linter/run.mjs
     sandbox:
       profile: readonly
       cwd_policy: workspace

@@ -5,7 +5,7 @@ source:
   type: cli-tool
   command: node
   args:
-    - run.mjs
+    - evidence/delivery-artifact-linter/run.mjs
   timeout_seconds: 45
   sandbox:
     profile: readonly

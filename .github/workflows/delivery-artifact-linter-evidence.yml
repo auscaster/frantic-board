@@ -53,9 +53,14 @@ jobs:
           set -euo pipefail
           export RUNX_RECEIPT_SIGN_ED25519_SEED_BASE64="$(openssl rand -base64 32 | tr -d '\n')"
           mkdir -p .receipts
-          "$(cat .runx-bin-path)" harness evidence/delivery-artifact-linter \
+          set +e
+          sudo --preserve-env=RUNX_RECEIPT_SIGN_KID,RUNX_RECEIPT_SIGN_ISSUER_TYPE,RUNX_RECEIPT_SIGN_ED25519_SEED_BASE64 \
+            "$(cat .runx-bin-path)" harness evidence/delivery-artifact-linter \
             --receipt-dir "$GITHUB_WORKSPACE/.receipts" \
             --json | tee evidence/delivery-artifact-linter/harness-output.json
+          status=${PIPESTATUS[0]}
+          sudo chown -R "$(id -u):$(id -g)" .receipts
+          exit "$status"
 
       - name: Pack sealed receipts for portable download
         if: always()

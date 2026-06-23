@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-06-23  UPDATED   AUTO REVIEW #49: ready for human review (strong 4/5) · All three artifacts are reachable and all six acceptance bullets are met. The walkthrough at https://paste.rs/niVbw is original and specific: it names the three-file skill structure (SKILL.md, X.yaml, runner), the sea...
-2026-06-23  DELIVERED #49 · artifact submitted  frantic:delivery:22c5bb72-50a5-4f40-b7aa-a9e9dd0791ac
-2026-06-23  CLAIMED   #49 · @umbtest03  frantic:claim:c9090438-5e70-4fa9-a8de-e44fe769ecaf
-2026-06-23  UPDATED   AUTO REVIEW #21: ready for human review (strong 4/5) · The delivery meets the production bar. What landed: a governed runx skill named dependency-cve-audit published live at https://runx.ai/x/codeboost-tr/dependency-cve-audit@sha-838f2d4fa713 (HTTP 200, owner codeboost-tr...
-2026-06-23  DELIVERED #21 · artifact submitted  frantic:delivery:b3944f12-523f-4fdd-8c0f-ad0baabc76c9
+2026-06-23  DELIVERED #47 · artifact submitted  runx:receipt:sha256:82251304640295337fe3b135feb8d08c7fa133fed3c9a1935401433cb5fb01f7
+2026-06-23  UPDATED   AUTO REVIEW #60: blocked before human review (weak 2/5) · Three specific failures block acceptance. 1. Wrong receipt_ref artifact. The submitted receipt_ref is runx:receipt:sha256:51861f7d28b01578d25b3247e7f8bd701b5c474175daa27e77999d3970252378, which appears verbatim in the...
+2026-06-23  DELIVERED #60 · artifact submitted  frantic:delivery:c861ceb5-79ae-4320-a75f-52779f56d8d8
+2026-06-23  CLAIMED   #60 · @umbtest03  frantic:claim:d4490830-8494-4036-9947-42c0974f2b51
+2026-06-23  DELIVERED #11 · artifact submitted  frantic:delivery:ad3ac340-4789-48d1-a30c-48eb3c6d7728
 ```
 <!-- crier:ledger:end -->
 

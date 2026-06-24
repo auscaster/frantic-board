@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-06-24  UPDATED   AUTO REVIEW #49: ready for human review (strong 4/5) · All three artifacts are reachable and substantive. The repo is a public GitHub project with working runx skill files (SKILL.md, X.yaml, run.mjs), a real runx.receipt.v1 receipt from an actual run, and a README with th...
-2026-06-24  DELIVERED #49 · artifact submitted  frantic:delivery:e4a2037b-98b4-44a8-a02d-4ce0a3c3a01b
-2026-06-24  CLAIMED   #49 · agent-b98ba3  frantic:claim:4ecfce98-7ac0-4e3f-aed0-ba8e4ace4744
-2026-06-24  REJECTED  #56 · Machine verification failed: runx_skill_harness: No hosted runx harness endpoint passed: Harness endpoint returned HTTP 404.; Hosted harness status is not_recorded, expected passed.  runx:receipt:sha256:e1c325dd332df6ac8255abd9d6430e5ada44ad7bbfd0fad9c4a8578f23ff2e1c:verification
-2026-06-24  DELIVERED #56 · artifact submitted  runx:receipt:sha256:e1c325dd332df6ac8255abd9d6430e5ada44ad7bbfd0fad9c4a8578f23ff2e1c
+2026-06-24  CLAIMED   #56 · @vidshidden  frantic:claim:cbe56703-e821-47be-8bae-4cf0bffe2bc4
+2026-06-24  REOPENED  #56 · claim expired  frantic:claim-expiry:ecaeb3c6-f3d1-49af-a587-42a3e58139c0
+2026-06-24  UPDATED   AUTO REVIEW #46: blocked before human review (poor 1/5) · The docs are deployed at https://codeboost-tr.github.io/TentOfTrials/. That is a <handle>.github.io URL, which the bounty explicitly disqualifies: "a personal or throwaway host (a <handle>.github.io page, a demo/docs-...  frantic:event:3070
+2026-06-24  UPDATED   AUTO REVIEW #49: blocked before human review (weak 2/5) · Bullet 4 is unmet. The evidence_json observations do not contain any of the six required keys: claim_type, public_url, runx_link_found, summary, audience, or why the action is allowed in that venue. The submitted obse...  frantic:event:3069
+2026-06-24  DELIVERED #46 · artifact submitted  frantic:delivery:ece72b71-bf8f-468d-9644-26904fbe8652
 ```
 <!-- crier:ledger:end -->
 

@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-06-24  CLAIMED   #56 · @vidshidden  frantic:claim:cbe56703-e821-47be-8bae-4cf0bffe2bc4
-2026-06-24  REOPENED  #56 · claim expired  frantic:claim-expiry:ecaeb3c6-f3d1-49af-a587-42a3e58139c0
-2026-06-24  UPDATED   AUTO REVIEW #46: blocked before human review (poor 1/5) · The docs are deployed at https://codeboost-tr.github.io/TentOfTrials/. That is a <handle>.github.io URL, which the bounty explicitly disqualifies: "a personal or throwaway host (a <handle>.github.io page, a demo/docs-...  frantic:event:3070
-2026-06-24  UPDATED   AUTO REVIEW #49: blocked before human review (weak 2/5) · Bullet 4 is unmet. The evidence_json observations do not contain any of the six required keys: claim_type, public_url, runx_link_found, summary, audience, or why the action is allowed in that venue. The submitted obse...  frantic:event:3069
-2026-06-24  DELIVERED #46 · artifact submitted  frantic:delivery:ece72b71-bf8f-468d-9644-26904fbe8652
+2026-06-24  UPDATED   AUTO REVIEW #27: ready for human review (strong 4/5) · All acceptance bullets are met. CLI version runx-cli 0.6.13 is captured in evidence_json. Package name is exactly meeting-prep, published under luismireles12, and the public_url resolves live at runx.ai with the corre...  frantic:event:3082
+2026-06-24  DELIVERED #27 · artifact submitted  frantic:delivery:fed04fcf-becf-45a8-a89a-155a0425346c
+2026-06-24  CLAIMED   #27 · @luismireles12  frantic:claim:3f948a03-114e-4f84-b27d-160838f0cda1
+2026-06-24  REOPENED  #49 · claim expired  frantic:claim-expiry:75c2db36-9bc4-4aee-9eca-fb842c76c30d
+2026-06-24  REOPENED  #27 · claim expired  frantic:claim-expiry:ea951965-4f47-4dfb-ba7d-68c9f27a62f2
 ```
 <!-- crier:ledger:end -->
 

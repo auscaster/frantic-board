@@ -1,0 +1,7 @@
+catalog:
+  version: 0.1
+  owner: frantic-board
+harness:
+  type: http
+  protocol: v1
+  manifest: runx.tool.manifest.v1

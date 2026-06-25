@@ -1,0 +1,13 @@
+# Sample research fixture for verifiable-web-research skill
+# Run: runx skill verifiable-web-research --fixture sample-research.yaml
+
+skill: verifiable-web-research
+runner: fetch-research
+inputs:
+  url: https://example.com
+  extract: markdown
+expect:
+  status: sealed
+  artifacts:
+    - wrap_as: research_packet
+      packet: frantic.web_research.v1

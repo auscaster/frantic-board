@@ -1,0 +1,44 @@
+skill: verifiable-web-research
+version: 0.1.0
+
+catalog:
+  kind: graph
+  audience: public
+  visibility: public
+  role: canonical
+  provider: frantic-board
+  runtime_path: http
+
+harness:
+  cases:
+    - name: sample-web-research
+      runner: fetch-research
+      inputs:
+        url: https://example.com
+        extract: markdown
+      expect:
+        status: sealed
+
+runners:
+  fetch-research:
+    default: true
+    type: graph
+    inputs:
+      url:
+        type: string
+        required: true
+        description: The public HTTP(S) URL to fetch and verify.
+      extract:
+        type: string
+        required: false
+        description: Output format — markdown (default) or raw.
+    graph:
+      name: verifiable-web-research
+      steps:
+        - id: fetch
+          tool: frantic.http_fetch
+          inputs:
+            url: "$input.url"
+          artifacts:
+            wrap_as: research_packet
+            packet: frantic.web_research.v1

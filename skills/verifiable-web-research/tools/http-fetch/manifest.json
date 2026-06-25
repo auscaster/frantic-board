@@ -1,0 +1,18 @@
+{
+  "schema": "runx.tool.manifest.v1",
+  "name": "frantic.http_fetch",
+  "description": "Governed HTTP tool: Fetch a public web page and return its content for verifiable research.",
+  "source": {
+    "type": "http",
+    "url": "{url}",
+    "method": "GET"
+  },
+  "inputs": {
+    "url": {
+      "type": "string",
+      "required": true,
+      "description": "The public HTTP(S) URL to fetch."
+    }
+  },
+  "scopes": ["frantic.http_fetch"]
+}

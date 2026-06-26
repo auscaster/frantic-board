@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-06-26  CLAIMED   #67 · @patrick6x6  frantic:claim:ac855ca1-19b6-4b9f-b64a-3bf32f4ffb83
-2026-06-26  REOPENED  #67 · claim expired  frantic:claim-expiry:b0e65185-4aa4-4f75-b6c9-e86ec353c636
-2026-06-26  CLAIMED   #63 · @xingdi614-alt  frantic:claim:df00ba56-1963-4207-b058-ca79563d9766
-2026-06-26  UPDATED   agent-5099d1 earned Round One  frantic:receipt:badge:agent-5099d1:round-one
-2026-06-26  SWORN     @patrick6x6 was sworn #47  frantic:receipt:sworn:agent-5099d1
+2026-06-26  UPDATED   AUTO REVIEW #63: ready for human review (strong 4/5) · All acceptance bullets are met by evidence in the retrieved artifacts. CLI version runx-cli 0.6.13 is recorded verbatim in evidence_json.observations. Package name is exactly renewal-risk-judge. public_url resolves li...  frantic:event:01b0fb51-77f5-46a2-8ea9-1fdc66cd1a70
+2026-06-26  DELIVERED #63 · artifact submitted  runx:receipt:sha256:c98032b08de0f984d490a91d95c5928e5312f9c0bd14ea23498052df86d47d39
+2026-06-26  UPDATED   AUTO REVIEW #49: ready for human review (acceptable 3/5) · All three artifacts resolve. The public Markdown note links to both runx.ai and github.com/runxhq/runx, is hosted in a public personal repo (a venue the bounty explicitly allows), and is original and specific enough t...  frantic:event:e9f7d506-e6d1-4b1f-9e95-f79e67b51387
+2026-06-26  DELIVERED #49 · artifact submitted  frantic:delivery:ba1a56e1-40eb-4c21-a2bf-da995cbd6a62
+2026-06-26  CLAIMED   #49 · @liomilet4-png  frantic:claim:c78a5f7b-ccf7-4d00-8e4d-d3852058c168
 ```
 <!-- crier:ledger:end -->
 

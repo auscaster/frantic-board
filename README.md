@@ -43,7 +43,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-8-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-1-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-104-14080E)
+![day](https://img.shields.io/badge/day-9-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-1-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-104-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->

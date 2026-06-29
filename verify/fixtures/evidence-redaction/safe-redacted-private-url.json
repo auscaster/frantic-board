@@ -1,0 +1,19 @@
+{
+  "summary": "Safe evidence example where a private dashboard URL and operator email were replaced with neutral public-safe markers.",
+  "observations": [
+    {
+      "fixture": "safe-redacted-private-url.json",
+      "category": "private_url",
+      "input_pattern": "https://internal.example.invalid/tickets/123",
+      "public_value": "[PRIVATE_URL]",
+      "reviewer_action": "accept only when the live private URL is absent"
+    },
+    {
+      "fixture": "safe-redacted-private-url.json",
+      "category": "private_email",
+      "input_pattern": "user@example.invalid",
+      "public_value": "[PRIVATE_EMAIL]",
+      "reviewer_action": "accept only when the address local-part is absent"
+    }
+  ]
+}

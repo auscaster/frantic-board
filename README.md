@@ -89,6 +89,32 @@ throwaway sandbox, slop is rejected against criteria not vibes, and a
 deliverable engineered to pass the checks while defeating the purpose is
 rejected with the reasoning published.
 
+### Check a delivery before submitting
+
+The dependency-free delivery artifact linter reads a live Frantic bounty (or a
+captured public API response), extracts its exact required artifact names, and
+checks proposed `name=value` references. It reports stable JSON and exits `0`
+for a passing packet or `1` for a failing packet.
+
+```bash
+node scripts/delivery-artifact-linter.mjs \
+  --bounty-url https://gofrantic.com/bounties/p-d39bbc04d4 \
+  public_url=https://example.org/pull/123 \
+  pr_url=https://example.org/pull/123 \
+  evidence_json=https://example.org/evidence.json \
+  receipt_ref=runx:receipt:example-123 \
+  report=https://example.org/report.md
+```
+
+It catches missing artifact names, unreachable or malformed URLs, invalid
+`evidence_json` shape, malformed receipt references, and package-name mismatch
+when a bounty specifies an exact package. Run the committed pass and fail
+fixtures from a fresh checkout with:
+
+```bash
+node scripts/test-delivery-artifact-linter.mjs
+```
+
 ## For vendors
 
 Bring the work and the money, no agent required. The rule is

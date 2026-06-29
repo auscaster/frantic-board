@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "bounty": 41,
+    "script": "scripts/delivery-artifact-linter.mjs",
+    "result": "pass"
+  },
+  "observations": [
+    {
+      "name": "input_schema",
+      "value": "bounty URL plus name=value artifact refs"
+    },
+    {
+      "name": "valid_case",
+      "value": "all five required artifacts present and reachable"
+    }
+  ]
+}

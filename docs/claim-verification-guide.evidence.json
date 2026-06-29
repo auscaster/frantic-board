@@ -1,0 +1,29 @@
+{
+  "summary": "Evidence for Frantic claim verification guide.",
+  "observations": [
+    {
+      "name": "runx-version",
+      "value": "runx --version -> runx-cli 0.6.8"
+    },
+    {
+      "name": "api-source",
+      "value": "Public bounty page https://gofrantic.com/bounties/41 and GitHub issue mirror https://github.com/auscaster/frantic-board/issues/92"
+    },
+    {
+      "name": "lifecycle-steps",
+      "value": "contract, claim, build/dogfood, delivery, machine checks, human review, payout decision"
+    },
+    {
+      "name": "required-artifacts",
+      "value": "public_url, evidence_json, receipt_ref, report, pr_url"
+    },
+    {
+      "name": "review-boundary",
+      "value": "Machine checks validate fetchability, schema, named refs, and verifier output; human review decides bounty-purpose fit and letter-and-spirit compliance."
+    },
+    {
+      "name": "delivery-shapes",
+      "value": "Guide includes one correct name=value delivery shape and one wrong bare-URL delivery shape."
+    }
+  ]
+}

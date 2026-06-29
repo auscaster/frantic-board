@@ -1,0 +1,44 @@
+skill: draft-email
+version: "0.1.0"
+
+catalog:
+  kind: skill
+  audience: public
+  visibility: public
+  role: canonical
+
+harness:
+  cases:
+    - name: draft-email-normal
+      runner: default
+      inputs:
+        email_data: '{"recipient":"test@example.com","subject":"Hello","body":"World"}'
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - run.mjs
+    inputs:
+      email_data:
+        type: string
+        required: true
+        description: JSON object of email data.
+    outputs:
+      status:
+        type: string
+      gated_proposal:
+        type: boolean
+      classification_labels:
+        type: array
+      schema_validation:
+        type: string
+      stop_condition:
+        type: string

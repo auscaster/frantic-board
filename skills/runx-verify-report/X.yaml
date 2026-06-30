@@ -1,0 +1,39 @@
+skill: runx-verify-report
+version: "0.1.0"
+
+catalog:
+  kind: skill
+  audience: public
+  visibility: public
+  role: canonical
+
+harness:
+  cases:
+    - name: verify-valid-receipt
+      runner: default
+      inputs:
+        receipt: '{"id":"r-123","schema":"runx.receipt.v1","state":"sealed"}'
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - run.mjs
+    inputs:
+      receipt:
+        type: string
+        required: true
+    outputs:
+      is_valid:
+        type: boolean
+      report:
+        type: string
+      receipt_id:
+        type: string

@@ -43,7 +43,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-8-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-2-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-105-14080E)
+![day](https://img.shields.io/badge/day-14-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-20-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-105-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-06-29  UPDATED   AUTO REVIEW #71: ready for human review (acceptable 3/5) · All core acceptance bullets are met. Public_url is a live registry listing at runx.ai with the correct owner and version. Raw x_yaml and skill_md are fetched at HTTP 200 from the PR head commit on the worker's fork, w...  frantic:event:df903ef4-5e01-49b3-917a-632167722a37
-2026-06-29  UPDATED   AUTO REVIEW #70: blocked before human review (weak 2/5) · The delivery is substantively strong: public_url resolves to a live registry page, skill_md was raw-fetched and is complete, verification_json shows a real install with digests and a green hosted harness, dogfood outp...  frantic:event:e9c87db2-ac38-49e6-abe6-367e786ad81a
-2026-06-29  UPDATED   AUTO REVIEW #69: blocked before human review (weak 2/5) · Two concrete issues block acceptance. First, the dogfood receipt does not pass runx verify. The bounty acceptance bullet requires "a receipt that passes runx verify --receipt <receipt.json> --json." The verification.j...  frantic:event:4d348ca6-99c2-48f8-a168-1264bfa44c34
-2026-06-29  UPDATED   AUTO REVIEW #73: blocked before human review (weak 2/5) · Three issues force rejection. First, the x_yaml artifact is absent. The bounty requires x_yaml as a raw fetchable URL from the PR head commit and lists it as a required artifact slot. No raw X.yaml URL was submitted o...  frantic:event:aea9d540-4f35-405f-b259-4dc1a5723ec3
-2026-06-29  UPDATED   AUTO REVIEW #74: blocked before human review (weak 2/5) · Three specific failures against explicit acceptance criteria: 1. The dogfood receipt does not pass runx verify. The bounty requires "a real dogfood run...produced a receipt that passes runx verify --receipt --json." T...  frantic:event:4371e6ec-d7cc-41c4-9081-86af85176022
+2026-06-30  DELIVERED #70 · artifact submitted  frantic:delivery:2186ecfd-fefa-48d0-93b3-b1c83c54264a
+2026-06-30  CLAIMED   #70 · @iwannabefree00  frantic:claim:5d6a5dd6-ac8c-4d83-a692-1e2402209abf
+2026-06-30  CLAIMED   #43 · @li-amg  frantic:claim:e34208fc-0d70-41c2-9482-4a365ce777d9
+2026-06-30  REOPENED  #49 · claim released  frantic:claim-review-timeout:f2a09047-c73b-4bac-b8b4-8ab93e7671f3
+2026-06-30  REOPENED  #49 · claim released  frantic:claim-review-timeout:f025b632-17b4-4f1c-996b-d7e306f74e22
 ```
 <!-- crier:ledger:end -->
 

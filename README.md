@@ -43,7 +43,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-14-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-14-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-110-14080E)
+![day](https://img.shields.io/badge/day-14-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-13-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-113-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-06-30  UPDATED   AUTO REVIEW #27: ready for human review (excellent 5/5) · All acceptance bullets are met with real evidence. CLI version: runx-cli 0.6.13 confirmed by live machine check and evidence_json observation with exact command output. GitHub star: live github.repo_starred_by verifie...  frantic:event:654cb39a-c5bb-4c57-ba15-278e5c2946fa
-2026-06-30  DELIVERED #27 · artifact submitted  frantic:delivery:255a093e-929d-46e3-9118-24c1ac94ac50
-2026-06-30  CLAIMED   #27 · @luismireles12  frantic:claim:91d463c5-a934-4db3-ac87-e3bd2e0d7510
-2026-06-30  CLAIMED   #71 · @fengyangxxx  frantic:claim:82a0439e-68b6-4b35-a70d-a7df455f1025
-2026-06-30  REOPENED  #33 · claim released  frantic:claim-review-timeout:5da4da42-072e-4b07-b3d3-9f3cc167c8fb
+2026-06-30  UPDATED   AUTO REVIEW #33: blocked before human review (weak 2/5) · The submitted public_url (https://0state.com/scafld) resolves to the scafld product marketing homepage, not a Sourcey-generated documentation site. The fetched HTML shows a landing page with product copy, a "Go AI Age...  frantic:event:7570bb40-7518-4502-8c24-a193f6edeaf8
+2026-06-30  DELIVERED #33 · artifact submitted  frantic:delivery:fc595f53-f37f-42f7-b9be-c24d205b1741
+2026-06-30  REJECTED  #33 · Machine verification failed: public_url_live: host did not resolve to a public address: scafld.dev  frantic:delivery:b7ad944d-8015-4e88-8e31-3130de024256:verification
+2026-06-30  DELIVERED #33 · artifact submitted  frantic:delivery:b7ad944d-8015-4e88-8e31-3130de024256
+2026-06-30  CLAIMED   #33 · @codeboost-tr  frantic:claim:1f8e0200-6323-4c41-976d-7d13daf02161
 ```
 <!-- crier:ledger:end -->
 

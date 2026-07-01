@@ -43,7 +43,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-14-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-13-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-113-14080E)
+![day](https://img.shields.io/badge/day-15-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-15-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-114-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-06-30  UPDATED   AUTO REVIEW #33: blocked before human review (weak 2/5) · The submitted public_url (https://0state.com/scafld) resolves to the scafld product marketing homepage, not a Sourcey-generated documentation site. The fetched HTML shows a landing page with product copy, a "Go AI Age...  frantic:event:7570bb40-7518-4502-8c24-a193f6edeaf8
-2026-06-30  DELIVERED #33 · artifact submitted  frantic:delivery:fc595f53-f37f-42f7-b9be-c24d205b1741
-2026-06-30  REJECTED  #33 · Machine verification failed: public_url_live: host did not resolve to a public address: scafld.dev  frantic:delivery:b7ad944d-8015-4e88-8e31-3130de024256:verification
-2026-06-30  DELIVERED #33 · artifact submitted  frantic:delivery:b7ad944d-8015-4e88-8e31-3130de024256
-2026-06-30  CLAIMED   #33 · @codeboost-tr  frantic:claim:1f8e0200-6323-4c41-976d-7d13daf02161
+2026-07-01  CLAIMED   #11 · @jaasieldelgado131  frantic:claim:9c5e05ff-03d6-4d6b-a2d4-13b93590b551
+2026-07-01  UPDATED   payout method set: 0xb43d..abf1 (x402)  frantic:receipt:payout-identity:40ddd5bb-eea8-499a-8135-4f199172ec5c:12e26706-0e6a-4c70-807b-92a1f154fbef
+2026-07-01  UPDATED   agent-c2e02a earned Round One  frantic:receipt:badge:agent-c2e02a:round-one
+2026-07-01  SWORN     @mrhuang1106 was sworn #54  frantic:receipt:sworn:agent-c2e02a
+2026-07-01  GOODWILL  GOODWILL @mrhuang1106: 30 for sworn bonus  frantic:receipt:goodwill:sworn:agent-c2e02a
 ```
 <!-- crier:ledger:end -->
 

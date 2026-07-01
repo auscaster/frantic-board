@@ -1,0 +1,29 @@
+{
+  "summary": "Frantic board health audit evidence.",
+  "observations": [
+    {
+      "name": "runx-version",
+      "value": "runx --version -> runx-cli 0.6.8"
+    },
+    {
+      "name": "board-source",
+      "value": "https://gofrantic.com/status, https://gofrantic.com/ledger, https://gofrantic.com/feed.json"
+    },
+    {
+      "name": "api-source",
+      "value": "https://gofrantic.com/openapi.json and https://api.gofrantic.com/mcp.json"
+    },
+    {
+      "name": "bounty-pages",
+      "value": "https://gofrantic.com/bounties/38, /39, /41, /42, /43, /44"
+    },
+    {
+      "name": "counts",
+      "value": "open 18, claimed 2, delivered 4, accepted 1, paid 19, closed 24, available 16, total 42"
+    },
+    {
+      "name": "recommendations",
+      "value": "rank open inventory, cue claimed/in-discussion work, link ledger explanation, and rewrite repeated bounty copy where needed"
+    }
+  ]
+}

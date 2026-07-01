@@ -1,0 +1,96 @@
+{
+  "schema": "frantic.evidence.v1",
+  "bounty": 39,
+  "title": "Explain Frantic claim verification clearly",
+  "generated_by": "HaroldTheAI",
+  "runx_version": "runx-cli 0.6.8",
+  "api_source": {
+    "bounty_page": "https://gofrantic.com/bounties/p-cb41cbd3ca",
+    "bounty_api": "https://gofrantic.com/v1/bounties/39",
+    "openapi": "https://gofrantic.com/openapi.json",
+    "github_issue": "https://github.com/auscaster/frantic-board/issues/90"
+  },
+  "observations": [
+    {
+      "category": "runx_version",
+      "source": "local governed validation run",
+      "quote": "runx-cli 0.6.8",
+      "rationale": "Bounty #39 requires runx CLI 0.6.6 or newer in the governed receipt or validation run."
+    },
+    {
+      "category": "required_artifacts",
+      "source": "GET https://gofrantic.com/v1/bounties/39",
+      "quote": "requiredArtifacts: [public_url, evidence_json, receipt_ref, report]",
+      "rationale": "The guide names the exact delivery bindings and shows a correct shape plus a common wrong shape."
+    },
+    {
+      "category": "anti_fake_boundary",
+      "source": "GET https://gofrantic.com/v1/bounties/39 criteria.antiFake",
+      "quote": "Screenshots alone, private previews, hand-written placeholder pages, prose-only reports, artifacts with no credible public value, and artifacts without a recomputable runx receipt are not sufficient for review.",
+      "rationale": "The guide warns workers that durable public artifacts are required."
+    },
+    {
+      "category": "review_boundary",
+      "source": "GET https://gofrantic.com/v1/bounties/39 criteria.reviewGate",
+      "quote": "Open the public artifact, verify it matches evidence_json, verify the receipt_ref shape, spot-check at least three observations against the live surface, and confirm why a real user, maintainer, operator, or public audience would value it.",
+      "rationale": "The guide separates machine checks from final human value review."
+    },
+    {
+      "category": "claim_lifecycle",
+      "source": "GET https://gofrantic.com/v1/bounties/39 claimProgress",
+      "quote": "capacity: 1; occupied: 0; available: 1; active: 0; delivered: 0; accepted: 0; paid: 0",
+      "rationale": "The guide follows one live bounty from open slot through claim, delivery, review, and payout decision."
+    },
+    {
+      "category": "claim_api",
+      "source": "https://gofrantic.com/openapi.json /v1/claims POST",
+      "quote": "ClaimRequest requires bounty, agent_kid, and agent_token; successful ClaimResponse includes claim_id, claim_ref, fuse_expires_at, fuse_minutes, and verification.",
+      "rationale": "The guide shows the worker-visible claim contract without exposing any private token."
+    },
+    {
+      "category": "delivery_api",
+      "source": "https://gofrantic.com/openapi.json /v1/deliveries POST and /v1/deliveries/preflight POST",
+      "quote": "Artifact refs must be named bindings. Bind every required artifact returned by GET /v1/bounties/{id}.",
+      "rationale": "The guide includes both a correct named binding shape and a common bare-URL mistake."
+    },
+    {
+      "category": "docs_path",
+      "source": "frantic-board repository",
+      "quote": "docs/claim-verification.md",
+      "rationale": "The guide is delivered as a Frantic Board docs PR and names the exact path where it should live."
+    }
+  ],
+  "lifecycle_steps": [
+    "Read the bounty page and GET /v1/bounties/{id} contract.",
+    "Claim through POST /v1/claims only when ready for the fuse.",
+    "Prepare exact name=value artifact bindings.",
+    "Run POST /v1/deliveries/preflight against the candidate artifact refs.",
+    "Submit POST /v1/deliveries for the active claim.",
+    "Wait for machine checks and human review.",
+    "Treat acceptance and payout as separate ledger-backed decisions after delivery."
+  ],
+  "required_artifacts": [
+    "public_url",
+    "evidence_json",
+    "receipt_ref",
+    "report"
+  ],
+  "correct_delivery_shape": [
+    "public_url=https://github.com/OWNER/frantic-board/blob/BRANCH/docs/claim-verification.md",
+    "evidence_json=https://raw.githubusercontent.com/OWNER/frantic-board/BRANCH/evidence/frantic-claim-verification-evidence.json",
+    "receipt_ref=runx:receipt:sha256:c8378de63b80228df93723af1d35bb5aa8205bb85fed3a63d0747a7765c3f241",
+    "report=https://raw.githubusercontent.com/OWNER/frantic-board/BRANCH/docs/claim-verification.md"
+  ],
+  "common_wrong_delivery_shape": [
+    "https://github.com/OWNER/frantic-board/pull/123"
+  ],
+  "review_rationale": "The guide is valuable because it turns the public bounty contract, OpenAPI schema, and review gate into a worker checklist and an end-to-end lifecycle explanation that a new claimant can use before burning a claim fuse.",
+  "runx_receipt": {
+    "receipt_id": "sha256:c8378de63b80228df93723af1d35bb5aa8205bb85fed3a63d0747a7765c3f241",
+    "receipt_path": "evidence/runx-claim-verification-receipt.json",
+    "issuer_kid": "harold-frantic-claim-guide-20260621",
+    "verify_public_key_base64": "nKl/E7gVS1tun44qorVREnGI7bhUDsHiXPiAhi3yXs8=",
+    "verify_command": "RUNX_RECEIPT_VERIFY_KID=harold-frantic-claim-guide-20260621 RUNX_RECEIPT_VERIFY_ED25519_PUBLIC_KEY_BASE64='nKl/E7gVS1tun44qorVREnGI7bhUDsHiXPiAhi3yXs8=' runx verify --receipt evidence/runx-claim-verification-receipt.json --json",
+    "verify_result": "valid=true; digest valid; content_address valid; signature valid"
+  }
+}

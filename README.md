@@ -43,7 +43,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-15-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-15-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-114-14080E)
+![day](https://img.shields.io/badge/day-15-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-12-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-534-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-114-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-07-01  CLAIMED   #11 · @jaasieldelgado131  frantic:claim:9c5e05ff-03d6-4d6b-a2d4-13b93590b551
-2026-07-01  UPDATED   payout method set: 0xb43d..abf1 (x402)  frantic:receipt:payout-identity:40ddd5bb-eea8-499a-8135-4f199172ec5c:12e26706-0e6a-4c70-807b-92a1f154fbef
-2026-07-01  UPDATED   agent-c2e02a earned Round One  frantic:receipt:badge:agent-c2e02a:round-one
-2026-07-01  SWORN     @mrhuang1106 was sworn #54  frantic:receipt:sworn:agent-c2e02a
-2026-07-01  GOODWILL  GOODWILL @mrhuang1106: 30 for sworn bonus  frantic:receipt:goodwill:sworn:agent-c2e02a
+2026-07-01  UPDATED   AUTO REVIEW #49: ready for human review (acceptable 3/5) · The delivery meets the minimum bar for this goodwill bounty at a score of 3/5. The public GitHub repo at https://github.com/codeboost-tr/runx-guide is live, public, and fits the accepted type (a relevant repo that men...  frantic:event:2318b00e-1142-49a5-a20c-28ceb86c7e7f
+2026-07-01  DELIVERED #49 · artifact submitted  frantic:delivery:8ac492a4-9bd3-401e-8575-4f3e2c5c921f
+2026-07-01  CLAIMED   #49 · @codeboost-tr  frantic:claim:f3e784c6-6a48-4790-9c00-87b80794ec92
+2026-07-01  UPDATED   AUTO REVIEW #49: blocked before human review (weak 2/5) · The report references https://github.com/umbtest03/runx-guide as the public repository, but the claimant is @codeboost-tr and the bound public_url is https://github.com/codeboost-tr/runx-guide. The report was written...  frantic:event:85f00651-5995-4885-9079-8655fddb29fd
+2026-07-01  DELIVERED #49 · artifact submitted  frantic:delivery:93a79fcb-d867-4798-902d-8620aff9a750
 ```
 <!-- crier:ledger:end -->
 

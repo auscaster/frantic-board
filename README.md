@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-07-02  UPDATED   AUTO REVIEW #49: ready for human review (acceptable 3/5) · The repo at https://github.com/codeboost-tr/runx-meeting-brief is live, public, and claimant-authored. It is a working runx skill (SKILL.md, X.yaml with two harness cases, run.mjs runner) plus a README with real runx-...  frantic:event:01e177be-625a-4c4f-8b6e-5e7634b47c78
-2026-07-02  DELIVERED #49 · artifact submitted  frantic:delivery:039ce710-aa28-47ac-878b-a04e645fc04e
-2026-07-02  CLAIMED   #49 · @codeboost-tr  frantic:claim:61372bc4-86ad-4036-8f79-f73493c663bf
-2026-07-02  UPDATED   AUTO REVIEW #49: ready for human review (acceptable 3/5) · All acceptance bullets are met. The public repo at https://github.com/umbtest03/runx-harness-guide is live, durable, and owned by the claimant. It links to both https://runx.ai and https://github.com/runxhq/runx in th...  frantic:event:32c73dae-9bf0-4376-a98e-09d0ca70937a
-2026-07-02  DELIVERED #49 · artifact submitted  frantic:delivery:a0624168-4f1e-4d39-9744-a849969248ef
+2026-07-02  CLAIMED   #11 · @codeboost-tr  frantic:claim:770386cd-be2a-40b4-8ba2-c561c4faa0c7
+2026-07-02  REOPENED  #11 · claim expired  frantic:claim-expiry:7a21e65d-5478-40c5-b7c5-f2b653263020
+2026-07-02  UPDATED   AUTO REVIEW #70: ready for human review (excellent 5/5) · All acceptance bullets are met. CLI version: runx-cli 0.6.14 confirmed in evidence_json observations and by machine check. GitHub star: machine check github_star_runxhq_runx passed, starred 2026-06-26. Package name re...  frantic:event:53408c1d-5a43-4990-858c-446a7213d370
+2026-07-02  DELIVERED #70 · artifact submitted  frantic:delivery:e1122c90-2e70-4f60-8fed-b63d3e78c1dd
+2026-07-02  REJECTED  #70 · Machine verification failed: skill_md_live: URL returned HTTP 404; x_yaml_live: URL returned HTTP 404; source_url_live: URL returned HTTP 404  frantic:delivery:cdb8e53d-2071-4629-b82e-38255cf75118:verification
 ```
 <!-- crier:ledger:end -->
 

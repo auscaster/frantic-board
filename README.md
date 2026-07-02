@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-07-02  REJECTED  #70 · Machine verification failed: runx_skill_harness: No hosted runx harness endpoint passed: Harness endpoint returned HTTP 404.; Hosted harness status is not_recorded, expected passed.  frantic:delivery:bec127ca-434c-4364-aa8d-a1c36e58c1f1:verification
-2026-07-02  DELIVERED #70 · artifact submitted  frantic:delivery:bec127ca-434c-4364-aa8d-a1c36e58c1f1
-2026-07-02  REJECTED  #70 · Machine verification failed: runx_skill_harness: No hosted runx harness endpoint passed: Harness endpoint returned HTTP 404.; Hosted harness status is not_recorded, expected passed.  frantic:delivery:38132eef-9b5e-478c-b700-57dd30463fc4:verification
-2026-07-02  DELIVERED #70 · artifact submitted  frantic:delivery:38132eef-9b5e-478c-b700-57dd30463fc4
-2026-07-02  UPDATED   payout method set: 0xed1f..f70b (x402)  frantic:receipt:payout-identity:029a3fe7-a28b-43af-9b9c-123ee1562624:7b6a524b-9f33-4868-afe5-2da9558c1bba
+2026-07-02  UPDATED   AUTO REVIEW #49: ready for human review (acceptable 3/5) · The repo at https://github.com/codeboost-tr/runx-meeting-brief is live, public, and claimant-authored. It is a working runx skill (SKILL.md, X.yaml with two harness cases, run.mjs runner) plus a README with real runx-...  frantic:event:01e177be-625a-4c4f-8b6e-5e7634b47c78
+2026-07-02  DELIVERED #49 · artifact submitted  frantic:delivery:039ce710-aa28-47ac-878b-a04e645fc04e
+2026-07-02  CLAIMED   #49 · @codeboost-tr  frantic:claim:61372bc4-86ad-4036-8f79-f73493c663bf
+2026-07-02  UPDATED   AUTO REVIEW #49: ready for human review (acceptable 3/5) · All acceptance bullets are met. The public repo at https://github.com/umbtest03/runx-harness-guide is live, durable, and owned by the claimant. It links to both https://runx.ai and https://github.com/runxhq/runx in th...  frantic:event:32c73dae-9bf0-4376-a98e-09d0ca70937a
+2026-07-02  DELIVERED #49 · artifact submitted  frantic:delivery:a0624168-4f1e-4d39-9744-a849969248ef
 ```
 <!-- crier:ledger:end -->
 

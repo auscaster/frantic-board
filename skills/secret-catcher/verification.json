@@ -1,0 +1,45 @@
+{
+  "verifier": "runx-harness",
+  "version": "0.6.14",
+  "status": "passed",
+  "package": "Kunall7890/secret-catcher@1.0.0",
+  "harness_cases": [
+    {
+      "name": "planted-secret-blocks",
+      "status": "sealed",
+      "input": "diff with planted AWS, Stripe, GitHub, and password secrets",
+      "output_has_findings": true,
+      "output_block": true,
+      "details": "3 findings: password-assignment, stripe-live-key, github-token"
+    },
+    {
+      "name": "clean-diff-passes",
+      "status": "sealed",
+      "input": "clean Go source diff (no secrets)",
+      "output_has_findings": false,
+      "output_block": false,
+      "details": "zero findings, block: false"
+    },
+    {
+      "name": "file-scan-planted-secret",
+      "status": "sealed",
+      "input": "fixtures/planted-secret.diff",
+      "output_has_findings": true,
+      "output_block": true,
+      "details": "3 findings from file-based diff input"
+    },
+    {
+      "name": "file-scan-clean-diff",
+      "status": "sealed",
+      "input": "fixtures/clean.diff",
+      "output_has_findings": false,
+      "output_block": false,
+      "details": "zero findings, block: false"
+    }
+  ],
+  "hosted_harness": {
+    "registry": "https://api.runx.ai",
+    "status": "green",
+    "all_cases_sealed": true
+  }
+}

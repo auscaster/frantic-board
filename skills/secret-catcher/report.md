@@ -39,7 +39,7 @@ Secret Catcher is a governed runx skill that scans code diffs for hardcoded cred
 - Public source: https://github.com/Kunall7890/frantic-board/tree/bounty-92-runx-secret-catcher/skills/secret-catcher
 
 ### pr_url
-- https://github.com/runxhq/runx/pull/NNN — Open PR against `runxhq/runx` with skill package
+- https://github.com/runxhq/runx/pull/224 — Open PR against `runxhq/runx` with skill package
 
 ### x_yaml / skill_md
 - `x_yaml`: `https://raw.githubusercontent.com/Kunall7890/frantic-board/bounty-92-runx-secret-catcher/skills/secret-catcher/X.yaml`

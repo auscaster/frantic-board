@@ -6,6 +6,11 @@
   "publisher_owner": "Kunall7890",
   "registry_ref": "Kunall7890/secret-catcher@1.0.0",
   "runx_cli_version": "runx-cli 0.6.14",
+  "public_url": "https://runx.ai/x/Kunall7890/secret-catcher@1.0.0",
+  "source_url": "https://github.com/Kunall7890/frantic-board/tree/bounty-92-runx-secret-catcher/skills/secret-catcher",
+  "pr_url": "https://github.com/runxhq/runx/pull/224",
+  "x_yaml": "https://raw.githubusercontent.com/Kunall7890/frantic-board/8a1f1153eb9854f20076f859da58ac4d1682090c/skills/secret-catcher/X.yaml",
+  "skill_md": "https://raw.githubusercontent.com/Kunall7890/frantic-board/8a1f1153eb9854f20076f859da58ac4d1682090c/skills/secret-catcher/SKILL.md",
   "observations": [
     {
       "type": "runx_cli_version",

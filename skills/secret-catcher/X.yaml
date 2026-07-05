@@ -1,0 +1,165 @@
+skill: secret-catcher
+version: "1.0.0"
+
+catalog:
+  kind: skill
+  audience: public
+  visibility: public
+  role: canonical
+
+harness:
+  cases:
+    - name: detects-aws-key-pair
+      runner: default
+      inputs:
+        source: |
+          aws_access_key_id = AKIAIOSFODNN7EXAMPLE
+          aws_secret_access_key = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: detects-github-token
+      runner: default
+      inputs:
+        source: |
+          GITHUB_TOKEN=ghp_abcdefghijklmnopqrstuvwxyzABCD0123456789
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: clean-text-no-secrets
+      runner: default
+      inputs:
+        source: |
+          This is a clean configuration file.
+          server_name = example.com
+          port = 8080
+          debug = false
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: detects-jwt-token
+      runner: default
+      inputs:
+        source: |
+          auth_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: detects-ssh-private-key
+      runner: default
+      inputs:
+        source: |
+          -----BEGIN OPENSSH PRIVATE KEY-----
+          b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+          NhAAAAAwEAAQAAAYEAp7K0aK2kKv8KyhxqJGM4eFjn2hVcPqRfBKahP+4YCPQoU4DNyh
+          -----END OPENSSH PRIVATE KEY-----
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: cleans-known-test-keys
+      runner: default
+      inputs:
+        source: |
+          # These should not trigger alerts
+          password = "test"
+          api_key = "YOUR_API_KEY_HERE"
+          token = "<replace-with-your-token>"
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: file-scan-mode
+      runner: default
+      inputs:
+        path: fixtures/sample-with-secrets.env
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: json-format-output
+      runner: default
+      inputs:
+        source: "GITHUB_TOKEN=ghp_abcdefghijklmnopqrstuvwxyzABCD0123456789"
+        format: json
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: text-report-format
+      runner: default
+      inputs:
+        source: |
+          AWS_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE
+          SECRET_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+        format: report
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - run.mjs
+    inputs:
+      source:
+        type: string
+        required: false
+        description: Text content to scan for secrets.
+      path:
+        type: string
+        required: false
+        description: File or directory path to scan.
+      format:
+        type: string
+        required: false
+        default: json
+        description: Output format (json, text, or report).
+      severity:
+        type: string
+        required: false
+        default: all
+        description: Minimum severity level.

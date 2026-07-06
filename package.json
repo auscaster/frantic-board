@@ -1,0 +1,12 @@
+{
+  "name": "quote-guard",
+  "version": "1.0.0",
+  "description": "A runx skill to guard quotes in strings.",
+  "main": "quoteGuard.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}

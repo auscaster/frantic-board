@@ -1,0 +1,12 @@
+{
+  "name": "frantic-bounty-81-launch-guard",
+  "version": "1.0.0",
+  "description": "runx skill: launch guard - Frantic bounty #81",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["runx", "skill", "launch-guard"],
+  "author": "",
+  "license": "MIT"
+}

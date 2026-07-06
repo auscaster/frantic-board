@@ -1,0 +1,12 @@
+{
+  "name": "runx-skill-bookkeeper",
+  "version": "1.0.0",
+  "description": "RunX skill: Bookkeeper - track transactions",
+  "main": "bookkeeper.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

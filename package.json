@@ -1,0 +1,15 @@
+{
+  "name": "runx-schema-guard",
+  "version": "1.0.0",
+  "description": "Schema guard skill for runx",
+  "main": "schema-guard.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

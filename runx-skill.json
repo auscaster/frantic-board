@@ -1,0 +1,14 @@
+{
+  "name": "firewatch",
+  "version": "1.0.0",
+  "description": "runx skill to support firewatch monitoring and event handling",
+  "entrypoint": "firewatch.py",
+  "events": ["fire_alarm", "smoke_detected", "heat_sensor_triggered"],
+  "config": {
+    "alert_webhook": {
+      "type": "string",
+      "description": "Webhook URL for high-severity alerts",
+      "default": ""
+    }
+  }
+}

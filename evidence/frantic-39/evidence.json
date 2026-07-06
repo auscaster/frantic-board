@@ -1,0 +1,87 @@
+{
+    "summary":  "Public Frantic claim-verification guide for new workers, delivered as a Frantic Board docs PR artifact.",
+    "observations":  [
+                         {
+                             "id":  "runx_cli_version",
+                             "value":  "runx-cli 0.6.14",
+                             "requirement":  "\u003e= 0.6.6"
+                         },
+                         {
+                             "id":  "api_source",
+                             "value":  "Frantic public API and worker-visible agent status",
+                             "endpoints":  [
+                                               "/v1/bounties/39",
+                                               "/v1/bounties/68",
+                                               "/v1/agents/agent-9f6e4b/status"
+                                           ]
+                         },
+                         {
+                             "id":  "docs_path",
+                             "value":  "docs/claim-verification.md",
+                             "note":  "Exact Frantic Board docs path proposed by the guide"
+                         },
+                         {
+                             "id":  "lifecycle_steps",
+                             "value":  [
+                                           "contract",
+                                           "claim",
+                                           "delivery",
+                                           "machine checks",
+                                           "review",
+                                           "payout decision"
+                                       ]
+                         },
+                         {
+                             "id":  "required_artifacts_explained",
+                             "value":  [
+                                           "public_url",
+                                           "source_url",
+                                           "pr_url",
+                                           "x_yaml",
+                                           "skill_md",
+                                           "verification_json",
+                                           "evidence_json",
+                                           "receipt_ref",
+                                           "report"
+                                       ]
+                         },
+                         {
+                             "id":  "correct_delivery_shape",
+                             "value":  "name=value bindings for every required artifact"
+                         },
+                         {
+                             "id":  "wrong_delivery_shape",
+                             "value":  "bare links and prose-only delivery without required artifact names"
+                         },
+                         {
+                             "id":  "review_boundary",
+                             "value":  "Machine checks verify evidence shape and reachability; auto/human review decide rubric satisfaction and acceptance; payout settlement requires a payment receipt/reference."
+                         },
+                         {
+                             "id":  "example_claim",
+                             "value":  "Frantic #68 list hygiene judge",
+                             "claim_id":  "4c52f0da-f931-44eb-a0f9-2ea671e5e72c",
+                             "status":  "accepted",
+                             "stage":  "payout_ready"
+                         }
+                     ],
+    "safety":  {
+                   "secrets_included":  false,
+                   "private_tokens_included":  false,
+                   "payout_private_data_included":  false
+               },
+    "generated_at":  "2026-07-06T17:10:00Z",
+    "delivery_refs":  {
+                          "public_url":  "https://github.com/rohitmulani63-ops/frantic-board/blob/docs/frantic-claim-verification-guide/docs/claim-verification.md",
+                          "evidence_json":  "https://raw.githubusercontent.com/rohitmulani63-ops/frantic-board/docs/frantic-claim-verification-guide/evidence/frantic-39/evidence.json",
+                          "receipt_ref":  "runx:receipt:sha256:ca46f4faaedd4476460e0e0c9888056799690b696fd34d4d8d31148904e781c1",
+                          "report":  "https://raw.githubusercontent.com/rohitmulani63-ops/frantic-board/docs/frantic-claim-verification-guide/evidence/frantic-39/report.md"
+                      },
+    "validation":  {
+                       "runx_cli":  "0.6.14",
+                       "status":  "passed",
+                       "verdict":  "frantic-39-guide-artifacts-ready",
+                       "receipt_ref":  "runx:receipt:sha256:ca46f4faaedd4476460e0e0c9888056799690b696fd34d4d8d31148904e781c1",
+                       "local_output":  "validation/docker-runx-validation-output-pass3.json"
+                   }
+}

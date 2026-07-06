@@ -1,0 +1,10 @@
+{
+  "name": "docs-doctor",
+  "version": "1.0.0",
+  "description": "Runx skill to analyze documentation quality",
+  "main": "docs-doctor.js",
+  "runx": {
+    "skill": true
+  },
+  "license": "MIT"
+}

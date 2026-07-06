@@ -1,0 +1,21 @@
+name: data-doctor
+description: A skill that cleans and prepares data for analysis. Detects missing values, duplicates, and type inconsistencies.
+version: 1.0.0
+inputs:
+  - name: data
+    type: csv
+    description: Input CSV data.
+outputs:
+  - name: cleaned_data
+    type: csv
+    description: Cleaned CSV data.
+parameters:
+  - name: fill_strategy
+    type: string
+    default: mean
+    enum: [mean, median, mode, drop]
+    description: Strategy for handling missing values.
+  - name: remove_duplicates
+    type: boolean
+    default: true
+    description: Whether to remove duplicate rows.

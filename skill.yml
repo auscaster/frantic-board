@@ -1,0 +1,33 @@
+name: contract-drafter
+version: "1.0"
+description: A runx skill that drafts simple legal contracts based on input parameters.
+trigger:
+  type: command
+  command: draft
+inputs:
+  client_name:
+    type: string
+    description: Name of the client
+  contractor_name:
+    type: string
+    description: Name of the contractor
+  scope:
+    type: string
+    description: Description of work to be performed
+  payment_amount:
+    type: number
+    description: Payment amount in USD
+  duration_days:
+    type: integer
+    description: Contract duration in days
+steps:
+  - run: python contract_drafter.py
+    args:
+      client_name: "{{ inputs.client_name }}"
+      contractor_name: "{{ inputs.contractor_name }}"
+      scope: "{{ inputs.scope }}"
+      payment_amount: "{{ inputs.payment_amount }}"
+      duration_days: "{{ inputs.duration_days }}"
+output:
+  type: file
+  path: contract.txt

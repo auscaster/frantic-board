@@ -1,0 +1,8 @@
+{
+  "name": "secret-catcher",
+  "version": "1.0.0",
+  "description": "A runx skill to catch and redact secrets from output.",
+  "main": "index.js",
+  "keywords": ["runx", "secret", "catcher", "skill"],
+  "license": "MIT"
+}

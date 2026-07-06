@@ -1,0 +1,9 @@
+{
+  "name": "compliance-pack",
+  "version": "1.0.0",
+  "description": "Runx skill for compliance checks",
+  "author": "auscaster",
+  "entry": "main.js",
+  "permissions": ["read", "write"],
+  "dependencies": {}
+}

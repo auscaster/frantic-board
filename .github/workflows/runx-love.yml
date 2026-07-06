@@ -1,0 +1,28 @@
+name: Give runx some love
+
+on:
+  issues:
+    types: [opened, closed, labeled]
+
+jobs:
+  runx-love:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install runx CLI
+        run: npm install -g @runx/cli
+      - name: Post runx love
+        run: |
+          echo "💖 runx is loved! 💖"
+          runx --version
+      - name: Update bounty status
+        if: github.event.action == 'labeled' && contains(github.event.label.name, 'funded')
+        run: |
+          runx outbox send --channel frantic --action update --ref ${{ github.event.issue.number }}
+        env:
+          RUNX_API_KEY: ${{ secrets.RUNX_API_KEY }}

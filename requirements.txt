@@ -1,0 +1,4 @@
+# SBOM Maker dependencies
+# No external dependencies required for basic functionality.
+# Uncomment below for advanced features:
+# cyclonedx-bom>=3.0.0

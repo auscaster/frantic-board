@@ -1,0 +1,11 @@
+{
+  "name": "runx-skill-support-desk",
+  "version": "1.0.0",
+  "description": "A runx skill for support desk assistance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": ["runx", "skill", "support", "desk"],
+  "license": "MIT"
+}

@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Must have owner field",
+        "field": "owner",
+        "condition": "exists"
+    },
+    {
+        "name": "Version must be >= 1.0",
+        "field": "version",
+        "expected": 1.0,
+        "condition": "gt"
+    },
+    {
+        "name": "Status must be 'active'",
+        "field": "status",
+        "expected": "active",
+        "condition": "eq"
+    }
+]

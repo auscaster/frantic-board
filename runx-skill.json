@@ -1,0 +1,10 @@
+{
+  "name": "compliance-pack",
+  "version": "1.0.0",
+  "description": "Compliance pack for runx skill",
+  "main": "skill.js",
+  "runx": {
+    "type": "skill",
+    "actions": ["check-compliance"]
+  }
+}

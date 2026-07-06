@@ -1,0 +1,13 @@
+rules:
+  - id: no-secrets
+    description: Check for exposed secrets
+    pattern: "(?i)(password|secret|token|api_key)"
+    severity: high
+  - id: lint-errors
+    description: Ensure code passes linting
+    command: "npm run lint"
+    severity: medium
+  - id: dependency-check
+    description: Check for known vulnerabilities
+    command: "npm audit"
+    severity: high

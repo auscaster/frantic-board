@@ -1,0 +1,8 @@
+name: docs-doctor
+version: 1
+skills:
+  - path: ./docs-doctor.js
+    name: docs-doctor
+    description: Checks documentation files for common issues
+    inputs:
+      - glob: "**/*.md"

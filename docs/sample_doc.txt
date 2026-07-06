@@ -1,0 +1,4 @@
+Frantic is a platform for bounty hunters.
+Runx is a skill that answers questions from documentation.
+This is a sample document for testing.
+Keywords: bounty, runx, skill, answer, docs.

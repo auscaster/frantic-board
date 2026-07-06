@@ -1,0 +1,16 @@
+{
+  "name": "contract-drafter",
+  "version": "1.0.0",
+  "description": "Smart contract for drafting and signing agreements",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.0",
+    "chai": "^4.3.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.0",
+    "hardhat": "^2.9.0"
+  }
+}

@@ -1,0 +1,4 @@
+# No external dependencies for this basic implementation
+# In production, you might add:
+# requests
+# boto3 (for AWS Lambda)

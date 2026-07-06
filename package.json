@@ -1,0 +1,7 @@
+{
+  "name": "runx-reply-router",
+  "version": "1.0.0",
+  "description": "Reply router skill for runx",
+  "main": "reply-router.js",
+  "license": "MIT"
+}

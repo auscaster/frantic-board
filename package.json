@@ -1,0 +1,8 @@
+{
+  "name": "runx-skill-support-firewatch",
+  "version": "1.0.0",
+  "description": "RunX skill for firewatch support",
+  "main": "index.js",
+  "dependencies": {},
+  "license": "MIT"
+}

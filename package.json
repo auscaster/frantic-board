@@ -1,0 +1,16 @@
+{
+  "name": "runx-skill-bookkeeper",
+  "version": "1.0.0",
+  "description": "Runx skill: bookkeeper - a simple ledger for recording transactions",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/index.js"
+  },
+  "keywords": ["runx", "bookkeeper", "ledger"],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}

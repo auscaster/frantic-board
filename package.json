@@ -1,0 +1,15 @@
+{
+  "name": "secret-catcher-skill",
+  "version": "1.0.0",
+  "description": "A runx skill to catch and securely store secrets shared in chat.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["runx", "skill", "secret", "catcher"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "runx-sdk": "^1.0.0"
+  }
+}

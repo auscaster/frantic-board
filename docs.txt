@@ -1,0 +1,9 @@
+Frantic is a bounty platform for developers.
+
+Bounties are tasks with a fixed price.
+
+Skills are used to automate tasks on Frantic.
+
+runx is a skill runner that executes skills in a sandbox.
+
+To claim a bounty, visit the bounty page and click Claim.

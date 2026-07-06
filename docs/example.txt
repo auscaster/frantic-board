@@ -1,0 +1,3 @@
+Frantic is a platform for bounties.
+Runx skills allow users to automate tasks.
+To use runx, install the CLI.

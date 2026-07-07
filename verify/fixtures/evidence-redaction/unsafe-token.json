@@ -1,0 +1,17 @@
+{
+  "summary": "Unsafe synthetic token example that must be redacted.",
+  "observations": [
+    {
+      "name": "bad-token-capture",
+      "value": "authorization header was Bearer fr_test_token_DO_NOT_SUBMIT_000000"
+    },
+    {
+      "name": "expected-redaction",
+      "value": "authorization header was Bearer [REDACTED:TOKEN]"
+    },
+    {
+      "name": "runx-version",
+      "value": "runx --version -> runx-cli 0.6.8"
+    }
+  ]
+}

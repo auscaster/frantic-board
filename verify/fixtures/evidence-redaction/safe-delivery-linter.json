@@ -1,0 +1,17 @@
+{
+  "summary": "Delivery artifact linter fixture passed with all required refs.",
+  "observations": [
+    {
+      "name": "bounty-url",
+      "value": "https://gofrantic.com/bounties/41"
+    },
+    {
+      "name": "required-artifacts",
+      "value": "public_url, evidence_json, receipt_ref, report, pr_url"
+    },
+    {
+      "name": "runx-version",
+      "value": "runx --version -> runx-cli 0.6.8"
+    }
+  ]
+}

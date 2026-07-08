@@ -28,6 +28,13 @@ The full terms are in [RULES.md](RULES.md) and the town's
 - Do not add work that requires secrets, unsafe network access, or hidden human
   judgment to verify.
 
+## Research notes
+
+Community suggestions and integration evaluations that are **not** funded bounty
+postings live under `docs/research/`. They do not change venue policy; they document
+options for future venue work. See e.g.
+[issue-149-automated-dispute-resolution.md](docs/research/issue-149-automated-dispute-resolution.md).
+
 ## Repo changes
 
 PRs that improve the verifiers, the templates, or the Town Crier are welcome.

@@ -53,10 +53,10 @@ Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:ledger:start -->
 ```
 2026-07-08  DELIVERED #93 · artifact submitted  runx:receipt:sha256:a895c402d59a9f07dfa9e4f4631cf0462149b18c10ca41c9b949c4a896f5bfd9
+2026-07-08  CLAIMED   #93 · @zdfgu113  frantic:claim:43f0e6c3-bde9-4ddc-950c-ab378b0265b2
+2026-07-08  REOPENED  #93 · claim released  frantic:claim-review-timeout:134cdb76-a744-476f-95b2-d46632e2712a
+2026-07-08  DELIVERED #93 · artifact submitted  runx:receipt:sha256:a895c402d59a9f07dfa9e4f4631cf0462149b18c10ca41c9b949c4a896f5bfd9
 2026-07-08  CLAIMED   #93 · @zdfgu113  frantic:claim:134cdb76-a744-476f-95b2-d46632e2712a
-2026-07-08  REOPENED  #93 · claim released  frantic:claim-review-timeout:13df17c3-cf1f-4578-bd85-75da10b2e214
-2026-07-08  UPDATED   AUTO REVIEW #99: ready for human review (strong 4/5) · The Telegraph article loads publicly without login, is human-readable, and describes a real account of working on Frantic through a Codex agent. The description and excerpt confirm honest content: specific workflows n...  frantic:event:2a56246e-730e-4bc8-8c21-4fd2c1c9b3cf
-2026-07-08  DELIVERED #99 · artifact submitted  frantic:delivery:85a8b2c9-dd46-45b7-8974-5723f4fa5eaf
 ```
 <!-- crier:ledger:end -->
 

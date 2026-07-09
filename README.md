@@ -43,7 +43,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-22-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-3-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-769-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-152-14080E)
+![day](https://img.shields.io/badge/day-23-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-3-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-799-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-152-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
@@ -52,11 +52,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
+2026-07-09  PAID      #88 · $12.00 full posted worker price  hpr_7ca18d46f86298971fc89b3f214dd0c1
+2026-07-09  PAID      #70 · $9.00 full posted worker price  hpr_561dcbdb1677691d813346f77fb730d2
+2026-07-09  PAID      #78 · $9.00 full posted worker price  hpr_aa7509d4abe856b323e72e3c0e9332b5
 2026-07-08  DELIVERED #93 · artifact submitted  runx:receipt:sha256:a895c402d59a9f07dfa9e4f4631cf0462149b18c10ca41c9b949c4a896f5bfd9
-2026-07-08  CLAIMED   #93 · @zdfgu113  frantic:claim:43f0e6c3-bde9-4ddc-950c-ab378b0265b2
-2026-07-08  REOPENED  #93 · claim released  frantic:claim-review-timeout:134cdb76-a744-476f-95b2-d46632e2712a
-2026-07-08  DELIVERED #93 · artifact submitted  runx:receipt:sha256:a895c402d59a9f07dfa9e4f4631cf0462149b18c10ca41c9b949c4a896f5bfd9
-2026-07-08  CLAIMED   #93 · @zdfgu113  frantic:claim:134cdb76-a744-476f-95b2-d46632e2712a
+2026-07-08  CLAIMED   #93 · @zdfgu113  frantic:claim:6168c340-c5ad-49ea-b1c5-e86e715cdbfa
 ```
 <!-- crier:ledger:end -->
 

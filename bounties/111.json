@@ -1,0 +1,11 @@
+{
+  "id": 111,
+  "title": "runx skill: csat detractor recovery",
+  "description": "Implement a runx skill for CSAT detractor recovery. Worker price: $12, Slots: 1, Status: Available.",
+  "worker_price": 12,
+  "slots": 1,
+  "status": "available",
+  "funding_receipt": "https://gofrantic.com/r/d3be3bfe",
+  "claim_url": "https://gofrantic.com/bounties/111",
+  "created_at": "2025-04-01T00:00:00Z"
+}

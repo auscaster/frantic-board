@@ -1,0 +1,51 @@
+#!/bin/bash
+# runx skill: bookkeeper
+# Minimal bookkeeper for frantic board transactions
+
+set -euo pipefail
+
+DEFAULT_BOOK="$HOME/.frantic_bookkeeper"
+
+usage() {
+    echo "Usage: $0 [--book <file>] <command> [args...]"
+    echo "Commands:"
+ echo "  add    <description> <amount>   Add a transaction"
+    echo "  list                          List all transactions"
+    echo "  balance                       Show current balance"
+    exit 1
+}
+
+if [ $# -eq 0 ]; then
+    usage
+fi
+
+BOOK="$DEFAULT_BOOK"
+if [ "$1" = "--book" ]; then
+    if [ $# -lt 2 ]; then
+        echo "Error: --book requires a filename"
+        exit 1
+    fi
+    BOOK="$2"
+    shift 2
+fi
+
+CMD="${1:-}"
+shift || true
+
+case "$CMD" in
+    add)
+        if [ $# -ne 2 ]; then
+            echo "Error: add requires description and amount"
+            exit 1
+        fi
+        echo "$(date -Iseconds) | $1 | $2" >> "$BOOK"
+        echo "Added: $1 ($2)"
+        ;;
+    list)
+        cat "$BOOK" 2>/dev/null || echo "No transactions found."
+        ;;
+    balance)
+        total=0
+        while IFS='|' read -r _ _ amt; do
+            amt="${amt// /}"
+            total=$(( total + amt ))

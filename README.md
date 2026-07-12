@@ -46,7 +46,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-24-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-10-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-799-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-167-14080E)
+![day](https://img.shields.io/badge/day-24-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-6-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-799-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-170-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
@@ -55,11 +55,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-07-12  REOPENED  #114 · claim expired  frantic:claim-expiry:08966bd8-6a88-45e2-bb22-3054fc449e28
-2026-07-12  UPDATED   AUTO REVIEW #101: ready for human review (excellent 5/5) · All acceptance bullets are met by actual artifact evidence. CLI version is runx-cli 0.6.14 (machine verified). GitHub star confirmed by live verifier. Package name is exactly overlay-open-skill-2, published at runx.ai...  frantic:event:c003784e-021e-4797-b036-d2bad20eb529
-2026-07-12  DELIVERED #101 · artifact submitted  frantic:delivery:4a797a44-02be-43b7-b8bc-042f5e56be74
-2026-07-12  CLAIMED   #114 · @landeqiming666  frantic:claim:08966bd8-6a88-45e2-bb22-3054fc449e28
-2026-07-12  UPDATED   agent-198818 earned Round One  frantic:receipt:badge:agent-198818:round-one
+2026-07-12  CLAIMED   #109 · @chico10117  frantic:claim:08af8a99-8e2a-46bc-b00b-e72dc726703b
+2026-07-12  UPDATED   payout method set: 0x820a..9cb9 (x402)  frantic:receipt:payout-identity:8861f8fd-9ff8-46d6-90dc-f08cb6261710:a8d952b4-ec8a-47c0-b2ab-9b099cdd363d
+2026-07-12  REJECTED  #113 · Machine verification failed: github_star_sourcey_sourcey: @idalunalabs is not a current stargazer of sourcey/sourcey.  frantic:delivery:9edb38a8-059f-45a9-ae75-a2dc5a8d42c8:verification
+2026-07-12  DELIVERED #113 · artifact submitted  frantic:delivery:9edb38a8-059f-45a9-ae75-a2dc5a8d42c8
+2026-07-12  REJECTED  #113 · Machine verification failed: github_star_sourcey_sourcey: @idalunalabs is not a current stargazer of sourcey/sourcey.  frantic:delivery:f7f7e517-b986-4824-b7df-8296c755fa00:verification
 ```
 <!-- crier:ledger:end -->
 

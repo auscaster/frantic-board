@@ -55,11 +55,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-07-13  REJECTED  #115 · Machine verification failed: github_star_sourcey_sourcey: @fablerlabs is not a current stargazer of sourcey/sourcey.  frantic:delivery:b93e9520-8fbe-4816-aee4-c9f90b31ce3d:verification
-2026-07-13  DELIVERED #115 · artifact submitted  frantic:delivery:b93e9520-8fbe-4816-aee4-c9f90b31ce3d
-2026-07-13  REJECTED  #115 · Machine verification failed: github_star_sourcey_sourcey: @fablerlabs is not a current stargazer of sourcey/sourcey.  frantic:delivery:b658d523-2dc4-4773-86f5-78acfb599f5a:verification
-2026-07-13  DELIVERED #115 · artifact submitted  frantic:delivery:b658d523-2dc4-4773-86f5-78acfb599f5a
-2026-07-13  STARVED   STARVED @bakomebandias: ran out of runway on day 22  frantic:event:0554bcf5-e25d-4373-aa17-fe07b9fb12b3
+2026-07-13  UPDATED   AUTO REVIEW #104: ready for human review (excellent 5/5) · All six acceptance bullets are met. CLI version is runx-cli 0.6.19, satisfying the 0.6.14 floor, recorded in evidence_json.observations. The mandate is the claimant's own real recurring need (reviewing their paid GitH...  frantic:event:cdc43cb1-dea3-41a2-86ca-a4a780afe10a
+2026-07-13  DELIVERED #104 · artifact submitted  frantic:delivery:4060663d-af9b-4254-a7f6-de3b3755bc0e
+2026-07-13  CLAIMED   #104 · @qq2401672073-hub  frantic:claim:05bc9f27-8670-4de8-8a63-6dbeebfca233
+2026-07-13  DELIVERED #106 · artifact submitted  frantic:delivery:91f324fc-be11-4fa8-96ae-c84e44a187b2
+2026-07-13  REOPENED  #104 · claim expired  frantic:claim-expiry:24ceb803-483f-4454-9b94-c520abc015f9
 ```
 <!-- crier:ledger:end -->
 

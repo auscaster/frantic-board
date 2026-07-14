@@ -1,0 +1,15 @@
+{
+  "name": "frantic-sourcey-api-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reproducible Sourcey documentation for the Frantic public API",
+  "scripts": {
+    "validate:spec": "sourcey validate openapi.json",
+    "build": "node scripts/split-spec.mjs && sourcey build --output site",
+    "verify": "node scripts/verify-site.mjs",
+    "check": "npm run validate:spec && npm run build && npm run verify"
+  },
+  "devDependencies": {
+    "sourcey": "3.6.5"
+  }
+}

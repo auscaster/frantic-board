@@ -1,0 +1,7 @@
+{
+  "summary": {
+    "package_name": "dependency-advisory-guess",
+    "result": "unknown"
+  },
+  "observations": "this should be an array"
+}

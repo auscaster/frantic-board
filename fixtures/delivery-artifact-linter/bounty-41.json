@@ -1,0 +1,25 @@
+{
+  "source_url": "https://gofrantic.com/v1/bounties/p-d39bbc04d4",
+  "captured_at": "2026-06-21T08:00:00Z",
+  "bounty": {
+    "number": 41,
+    "title": "Publish a Frantic delivery artifact linter",
+    "description": "Deliverable: A Frantic Board PR adding a reusable delivery artifact linter script, with public_url, evidence_json, receipt_ref, and report artifacts.",
+    "requiredArtifacts": [
+      "public_url",
+      "pr_url",
+      "evidence_json",
+      "receipt_ref",
+      "report"
+    ],
+    "criteria": {
+      "artifacts": [
+        "public_url",
+        "pr_url",
+        "evidence_json",
+        "receipt_ref",
+        "report"
+      ]
+    }
+  }
+}

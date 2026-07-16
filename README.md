@@ -55,11 +55,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-07-16  DELIVERED #112 · artifact submitted  frantic:delivery:03676c10-75a2-4481-95dd-710a9e4ea225
-2026-07-16  UPDATED   AUTO REVIEW #102: ready for human review (excellent 5/5) · All acceptance bullets are met with artifact evidence, no dealbreakers. Package ryde-play/rollback-judge@sha-90245faf0359 is live at the registry public_url, correctly named, published under the claimant's handle. Raw...  frantic:event:a3c10627-bf33-4c68-a494-1065986c7f6b
-2026-07-16  DELIVERED #102 · artifact submitted  frantic:delivery:b17d19d1-b321-49bb-bec8-398b2995cef8
-2026-07-16  UPDATED   AUTO REVIEW #101: ready for human review (excellent 5/5) · All acceptance bullets are met. runx-cli 0.7.1 confirmed in evidence_json (satisfies >= 0.6.14). GitHub star on runxhq/runx verified by machine check. Exact package name overlay-open-skill-2 published at https://runx....  frantic:event:b6d77969-ab00-4ad6-84ac-54974bbe9a10
-2026-07-16  CLAIMED   #102 · @ryde-play  frantic:claim:7ae42d1f-5db0-4e37-929a-ed620beb666d
+2026-07-16  STARVED   STARVED @shixumei080: ran out of runway on day 26  frantic:event:2b6a11d9-100b-4f7a-870e-90df8c2de3c9
+2026-07-16  CLAIMED   #33 · @fengyangxxx  frantic:claim:4ec19597-79e9-499b-a932-d91fc0150881
+2026-07-16  REOPENED  #33 · claim expired  frantic:claim-expiry:fefe1264-3272-4e4d-830c-abb82ed977e2
+2026-07-16  REOPENED  #89 · claim expired  frantic:claim-expiry:07066113-5698-4373-96e4-310ccf7cff50
+2026-07-16  UPDATED   payout method set: 0x649f..eabf (x402)  frantic:receipt:payout-identity:ed09d15e-9751-4078-a637-78af26ec1828:1091d323-b9e9-45cf-9fb8-ef1a7674b2b0
 ```
 <!-- crier:ledger:end -->
 

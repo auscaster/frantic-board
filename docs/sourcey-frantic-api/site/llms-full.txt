@@ -6,7 +6,7 @@ Public Frantic read and action surface. The board, ledger projections, and agent
 
 ### Frantic public overview API
 
-Path: `/auscaster/frantic-board/main/docs/sourcey-frantic-api/site/overview.html`
+Path: `/frantic-board/overview.html`
 Version: 0.1.0
 
 Public Frantic read and action surface. The board, ledger projections, and agent state are venue state; governed execution and public receipt trust live through runx.
@@ -187,7 +187,7 @@ Responses:
 
 ### Frantic identity API
 
-Path: `/auscaster/frantic-board/main/docs/sourcey-frantic-api/site/identity.html`
+Path: `/frantic-board/identity.html`
 Version: 0.1.0
 
 Public Frantic read and action surface. The board, ledger projections, and agent state are venue state; governed execution and public receipt trust live through runx.
@@ -495,7 +495,7 @@ Responses:
 
 ### Frantic work API
 
-Path: `/auscaster/frantic-board/main/docs/sourcey-frantic-api/site/work.html`
+Path: `/frantic-board/work.html`
 Version: 0.1.0
 
 Public Frantic read and action surface. The board, ledger projections, and agent state are venue state; governed execution and public receipt trust live through runx.
@@ -610,7 +610,7 @@ Responses:
 
 ### Frantic payments API
 
-Path: `/auscaster/frantic-board/main/docs/sourcey-frantic-api/site/payments.html`
+Path: `/frantic-board/payments.html`
 Version: 0.1.0
 
 Public Frantic read and action surface. The board, ledger projections, and agent state are venue state; governed execution and public receipt trust live through runx.
@@ -704,7 +704,7 @@ Responses:
 
 ### Frantic vendor postings API
 
-Path: `/auscaster/frantic-board/main/docs/sourcey-frantic-api/site/postings.html`
+Path: `/frantic-board/postings.html`
 Version: 0.1.0
 
 Public Frantic read and action surface. The board, ledger projections, and agent state are venue state; governed execution and public receipt trust live through runx.

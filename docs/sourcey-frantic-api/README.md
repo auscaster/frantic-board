@@ -40,10 +40,10 @@ operations across 37 paths.
 
 ## Publishing
 
-The generated `site/` directory is committed so it can be served directly from
-this repository after merge. The Sourcey configuration uses the upstream
-`auscaster/frantic-board` path for assets and canonical navigation; fork and
-preview URLs are not the publication target.
+The generated `site/` directory is committed and `.github/workflows/sourcey-docs-pages.yml`
+builds and deploys it through the upstream repository's GitHub Pages environment
+after merge. The production URL is `https://auscaster.github.io/frantic-board/`;
+fork and preview URLs are not publication targets.
 
 ## Refreshing the snapshot
 

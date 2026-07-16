@@ -2,8 +2,8 @@ import { defineConfig, openapi } from "sourcey";
 
 export default defineConfig({
   name: "Frantic Public API",
-  siteUrl: "https://raw.githack.com",
-  baseUrl: "/auscaster/frantic-board/main/docs/sourcey-frantic-api/site",
+  siteUrl: "https://auscaster.github.io",
+  baseUrl: "/frantic-board",
   prettyUrls: false,
   repo: "https://github.com/auscaster/frantic-board",
   editBranch: "main",

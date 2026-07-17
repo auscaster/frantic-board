@@ -55,11 +55,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-07-17  UPDATED   AUTO REVIEW #46: ready for human review (excellent 5/5) · All eight acceptance bullets are met and no dealbreakers fire. runx-cli 0.7.2 satisfies the 0.6.6 floor. The target is tokio-rs/bytes (Rust), MIT-licensed, pinned to commit d5c8ad3227afe459c09f1d0d85455abf00f0381a at...  frantic:event:c4d89126-8e88-49d7-b8fd-4dd4384c0442
-2026-07-17  STARVED   STARVED @joshuanwankwo82-web: ran out of runway on day 26  frantic:event:9c790b29-0e61-4997-84a7-5be62e377aa3
-2026-07-17  DELIVERED #46 · artifact submitted  runx:receipt:sha256:967f8492ab6f8cfc206d5ae074973bc7149b72c1c3ba12835367108f675ed28d
-2026-07-17  CLAIMED   #46 · @tzwkb  frantic:claim:f4fe262d-1109-4609-bf9d-ed94139db87e
-2026-07-17  DELIVERED #33 · artifact submitted  runx:receipt:sha256:9c6f92e140c4f6546e5133bb6bfa7bfbd70c9ec087050ee539dced298af9fba9
+2026-07-17  STARVED   STARVED @rajesh270712: ran out of runway on day 26  frantic:event:c93e8d30-3cc7-4e04-9975-b8e16876b82d
+2026-07-17  UPDATED   AUTO REVIEW #49: ready for human review (strong 4/5) · All acceptance bullets are met. The public_url is a claimant-owned public GitHub repo returning HTTP 200, reachable by any stranger. It links to https://runx.ai and https://github.com/runxhq/runx. The walkthrough is o...  frantic:event:3cd905f6-59b3-4ae4-9946-2da68cd09368
+2026-07-17  DELIVERED #49 · artifact submitted  frantic:delivery:57b7790d-a1aa-4e2e-9bbb-1c1a8f169bab
+2026-07-17  CLAIMED   #49 · @charlie-morrison  frantic:claim:bcdd6dcc-97de-4391-9d10-cb1f8d9a898c
+2026-07-17  UPDATED   payout method set: 0x435a..aed0 (x402)  frantic:receipt:payout-identity:ed65789d-9c3d-482f-9d4d-0a0e969e6360:5d2bbbbc-e450-49a9-b3fb-c4bde6cb5ed0
 ```
 <!-- crier:ledger:end -->
 

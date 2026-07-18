@@ -1,0 +1,53 @@
+skill: standup-digest
+version: "0.1.0"
+
+catalog:
+  kind: skill
+  audience: public
+  visibility: public
+  role: canonical
+
+harness:
+  cases:
+    - name: standup-digest-normal
+      runner: default
+      inputs:
+        work_events: '[{"id":"evt1","type":"pr_merged","text":"Shipped new login page","timestamp":"2026-06-20T10:00:00Z","link":"https://github.com/org/repo/pull/1"},{"id":"evt2","type":"issue_comment","text":"Blocked on design approval for checkout","timestamp":"2026-06-20T11:00:00Z"},{"id":"evt3","type":"note","text":"Risk: DB migration might be slow","timestamp":"2026-06-20T12:00:00Z"},{"id":"evt4","type":"task_added","text":"Next: update dependencies","timestamp":"2026-06-20T13:00:00Z"}]'
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+    - name: standup-digest-noisy
+      runner: default
+      inputs:
+        work_events: '[{"id":"evt1","type":"pr_merged","text":"Shipped new login page","timestamp":"2026-06-20T10:00:00Z","link":"https://github.com/org/repo/pull/1"},{"id":"evt1","type":"pr_merged","text":"Shipped new login page","timestamp":"2026-06-20T10:00:00Z","link":"https://github.com/org/repo/pull/1"},{"id":"evt2","type":"issue_comment","text":"I am blocked on design approval","timestamp":"2026-06-20T11:00:00Z"}]'
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - run.mjs
+    inputs:
+      work_events:
+        type: string
+        required: true
+        description: JSON array of work events.
+    outputs:
+      shipped:
+        type: array
+      blockers:
+        type: array
+      risks:
+        type: array
+      next_actions:
+        type: array
+      source_map:
+        type: object

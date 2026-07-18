@@ -1,0 +1,106 @@
+skill: secret-catcher
+version: "1.0.0"
+
+catalog:
+  kind: skill
+  audience: public
+  visibility: public
+  role: canonical
+
+harness:
+  cases:
+    - name: planted-secret-blocks
+      runner: default
+      inputs:
+        diff: |
+          diff --git a/config/env.example b/config/env.example
+          --- a/config/env.example
+          +++ b/config/env.example
+          @@ -1,3 +1,6 @@
+           APP_NAME=my-app
+           PORT=8080
+          +DB_PASSWORD=sup3rS3cret!
+           DEBUG=false
+          +STRIPE_KEY=sk_live_TEST_TOKEN_NOT_REAL
+          +GITHUB_TOKEN=ghp_abcdefghijklmnopqrstuvwxyzABCD0123456789
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: clean-diff-passes
+      runner: default
+      inputs:
+        diff: |
+          diff --git a/src/main.go b/src/main.go
+          --- a/src/main.go
+          +++ b/src/main.go
+          @@ -1,3 +1,6 @@
+           package main
+          +import "fmt"
+          +
+           func main() {
+          -	println("hello")
+          +	name := os.Getenv("APP_USER")
+          +	fmt.Printf("Hello, %s!\n", name)
+           }
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: file-scan-planted-secret
+      runner: default
+      inputs:
+        diff_path: fixtures/planted-secret.diff
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+    - name: file-scan-clean-diff
+      runner: default
+      inputs:
+        diff_path: fixtures/clean.diff
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+          disposition: closed
+          reason_code: process_closed
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - run.mjs
+    inputs:
+      diff:
+        type: string
+        required: false
+        description: Unified git diff content to scan.
+      diff_path:
+        type: string
+        required: false
+        description: Path to a diff file to scan.
+      scan_context:
+        type: string
+        required: false
+        description: Optional context hint.
+    artifacts:
+      named_emits:
+        findings: findings
+        redaction_proposal: redaction_proposal
+        block: block

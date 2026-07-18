@@ -1,0 +1,109 @@
+{
+  "bounty": "92",
+  "title": "runx skill: secret catcher",
+  "package_name": "secret-catcher",
+  "version": "1.0.0",
+  "publisher_owner": "Kunall7890",
+  "registry_ref": "Kunall7890/secret-catcher@1.0.0",
+  "runx_cli_version": "runx-cli 0.6.14",
+  "public_url": "https://runx.ai/x/Kunall7890/secret-catcher@1.0.0",
+  "source_url": "https://github.com/Kunall7890/frantic-board/tree/bounty-92-runx-secret-catcher/skills/secret-catcher",
+  "pr_url": "https://github.com/runxhq/runx/pull/224",
+  "x_yaml": "https://raw.githubusercontent.com/Kunall7890/frantic-board/8a1f1153eb9854f20076f859da58ac4d1682090c/skills/secret-catcher/X.yaml",
+  "skill_md": "https://raw.githubusercontent.com/Kunall7890/frantic-board/8a1f1153eb9854f20076f859da58ac4d1682090c/skills/secret-catcher/SKILL.md",
+  "observations": [
+    {
+      "type": "runx_cli_version",
+      "summary": "runx-cli 0.6.14",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Required minimum version for publish flow"
+    },
+    {
+      "type": "publish_method",
+      "summary": "runx login --provider github --for publish; runx registry publish ./skills/secret-catcher/SKILL.md --registry https://api.runx.ai",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Canonical publish flow per bounty spec"
+    },
+    {
+      "type": "install_command",
+      "summary": "runx add Kunall7890/secret-catcher@1.0.0",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Standard runx install command"
+    },
+    {
+      "type": "harness_case_names",
+      "summary": "planted-secret-blocks, clean-diff-passes, file-scan-planted-secret, file-scan-clean-diff",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Harness case names from X.yaml"
+    },
+    {
+      "type": "hosted_harness_status",
+      "summary": "green (all 4 cases sealed)",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Hosted registry harness passed after publish"
+    },
+    {
+      "type": "dogfood_command",
+      "summary": "runx skill Kunall7890/secret-catcher@1.0.0 --diff \"$(cat fixtures/planted-secret.diff)\" --json",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Post-publish dogfood run of published package"
+    },
+    {
+      "type": "receipt_ref",
+      "summary": "runx:receipt:sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Sealed receipt from dogfood run"
+    },
+    {
+      "type": "verify_verdict",
+      "summary": "runx verify --receipt receipt.json --json: passed (verified)",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Receipt verification passed"
+    },
+    {
+      "type": "new_user_guide",
+      "summary": "Install: runx add Kunall7890/secret-catcher@1.0.0. Run: git diff HEAD~1 | runx skill Kunall7890/secret-catcher@1.0.0 --json. Verify: runx verify --receipt <(runx skill Kunall7890/secret-catcher@1.0.0 --diff \"test\" --json)",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "How a new user installs, runs, and verifies without private context"
+    },
+    {
+      "type": "finding_types",
+      "summary": "password-assignment, stripe-live-key, github-token",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Types detected in planted-secret fixture"
+    },
+    {
+      "type": "finding_locations",
+      "summary": "config/env.example:8, config/env.example:11, config/env.example:13",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Locations detected in planted-secret fixture"
+    },
+    {
+      "type": "block_decision",
+      "summary": "block: true (planted-secret), block: false (clean-diff)",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Block decision is correct for both cases"
+    },
+    {
+      "type": "clean_path",
+      "summary": "clean.diff produces zero findings and block: false",
+      "audience": "reviewer",
+      "why_allowed_in_venue": "Clean diffs do not false-block"
+    }
+  ],
+  "dogfood": {
+    "package": "Kunall7890/secret-catcher@1.0.0",
+    "input": "fixtures/planted-secret.diff",
+    "command": "runx skill Kunall7890/secret-catcher@1.0.0 --diff \"$(cat fixtures/planted-secret.diff)\" --json",
+    "receipt_ref": "runx:receipt:sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verify_verdict": "passed",
+    "harness_cases": [
+      { "name": "planted-secret-blocks", "status": "sealed" },
+      { "name": "clean-diff-passes", "status": "sealed" },
+      { "name": "file-scan-planted-secret", "status": "sealed" },
+      { "name": "file-scan-clean-diff", "status": "sealed" }
+    ]
+  },
+  "summary": "Secret Catcher is a governed runx skill that scans code diffs for hardcoded credentials. It detects 13+ credential types, emits typed findings with locations (never raw values), a gated redaction proposal, and a block decision. Local harness green, hosted harness green, dogfood receipt verified.",
+  "artifact_summary": "Secret Catcher is a governed runx skill that scans code diffs for hardcoded credentials. It detects 13+ credential types, emits typed findings with locations (never raw values), a gated redaction proposal, and a block decision. Local harness green, hosted harness green, dogfood receipt verified."
+}

@@ -1,0 +1,60 @@
+# runx skill manifest: standup-digest
+# Governed HTTP tool for generating standup digests from work events.
+
+manifest:
+  version: runx.tool.manifest.v1
+  id: standup-digest
+  name: Standup Digest from Work Events
+  description: >
+    Aggregates work events (commits, PRs, issues, deployments, messages) and produces
+    a concise standup digest suitable for daily team sync. Operates as a governed HTTP function.
+
+source:
+  type: http
+  url: https://runx.ai/skills/standup-digest/v1   # Internal runx endpoint; not user-facing.
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    properties:
+      source: { type: string, description: "URL of the work event feed" }
+      since: { type: string, description: "ISO8601 start time for event window" }
+      team: { type: string, description: "Comma-separated member filter" }
+      format: { type: string, description: "Output format: markdown|plain|json", default: "markdown" }
+
+catalog:
+  category: standup
+  tags:
+    - standup
+    - digest
+    - events
+    - team
+  pricing:
+    type: per_execution
+    amount: 0.02
+    currency: USD
+  owner: frantic
+  maintainer: runx-bot
+  lifecycle: active
+
+harness:
+  runtime: runx-skills-runtime
+  timeout_seconds: 120
+  memory_mb: 256
+  network:
+    egress:
+      - allowed_hosts:
+          - pattern: "{{source_host}}"  # dynamically bound to the source URL's host
+        ports: [443]
+      - blocked: all
+  limits:
+    max_input_size_bytes: 1048576  # 1 MB
+    max_output_size_bytes: 1048576
+  retry:
+    max_attempts: 3
+    backoff: exponential
+    initial_delay_ms: 1000
+  environment:
+    - name: RUNX_SKILL_VERSION
+      value: "1.0.0"

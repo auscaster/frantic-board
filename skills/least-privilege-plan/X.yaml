@@ -1,0 +1,45 @@
+skill: least-privilege-plan
+version: "0.1.0"
+
+catalog:
+  kind: skill
+  audience: public
+  visibility: public
+  role: canonical
+
+harness:
+  cases:
+    - name: least-privilege-normal
+      runner: default
+      inputs:
+        run_history: '[{"scope":"read:files"},{"scope":"write:files","requires_review":true}]'
+        declared_policy: '{"scopes":{"read:files":"exact","write:files":"over_broad","admin":"exact"}}'
+      expect:
+        status: sealed
+        receipt:
+          schema: runx.receipt.v1
+          state: sealed
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - run.mjs
+    inputs:
+      run_history:
+        type: string
+        required: true
+      declared_policy:
+        type: string
+        required: true
+    outputs:
+      keep:
+        type: array
+      reduce:
+        type: array
+      revoke:
+        type: array
+      needs_human_review:
+        type: array

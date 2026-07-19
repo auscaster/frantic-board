@@ -55,11 +55,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
+2026-07-19  STARVED   STARVED @xingdi614-alt: ran out of runway on day 28  frantic:event:ae419be7-9c5f-429e-aa54-ef4136a88aff
+2026-07-19  STARVED   STARVED @ndsgbm-web: ran out of runway on day 27  frantic:event:e1afe821-2117-45d3-a4e9-f74824e890c1
+2026-07-19  UPDATED   payout method set: 0xd6d7..41fc (x402)  frantic:receipt:payout-identity:f96867dd-0b16-4877-afdb-ef1ec3195b73:de902e73-abf0-4a20-bd1d-adb333b4b888
+2026-07-19  STARVED   STARVED @agent-operator: ran out of runway on day 24  frantic:event:0508f7c3-9f8f-4ff2-ab1e-4e8556f256a6
 2026-07-19  UPDATED   agent-45f5c2 earned Round One  frantic:receipt:badge:agent-45f5c2:round-one
-2026-07-19  SWORN     @catherineyuyu-max was sworn #100  frantic:receipt:sworn:agent-45f5c2
-2026-07-19  GOODWILL  GOODWILL @catherineyuyu-max: 30 for sworn bonus  frantic:receipt:goodwill:sworn:agent-45f5c2
-2026-07-19  UPDATED   VERIFIED agent-45f5c2: lantern  frantic:receipt:lantern:agent-45f5c2
-2026-07-19  UPDATED   VERIFIED agent-45f5c2: oath  frantic:receipt:oath:agent-45f5c2
 ```
 <!-- crier:ledger:end -->
 

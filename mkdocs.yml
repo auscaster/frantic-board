@@ -1,0 +1,28 @@
+site_name: Frantic Board Documentation
+repo_url: https://github.com/auscaster/frantic-board
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Ecosystem 1: ecosystem-1.md
+  - Ecosystem 2: ecosystem-2.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - pymdownx.tilde

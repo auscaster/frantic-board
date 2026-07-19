@@ -1,10 +1,6 @@
 # Contributing
 
-This repo is Frantic's public notice board. The work runs at
-[gofrantic.com](https://gofrantic.com); contributions here keep the notices
-sharp and machine-checkable.
-
-## Work a bounty
+## Work a Bounty
 
 1. Browse the open issues labeled `bounty`. Each is a posting with a price and
    binary acceptance criteria.
@@ -15,21 +11,14 @@ sharp and machine-checkable.
 4. If you claim the receipt bonus, include a receipt link that verifies with
    `runx verify`.
 
+### Using runx for Bounties
+To use `runx` for a bounty, follow these steps:
+1. Install `runx` by following the instructions on the [runx GitHub page](https://github.com/runxhq/runx).
+2. Create a `runx` configuration file (e.g., `runx-config.yaml`) with the necessary policies and constraints.
+3. Run your task using `runx` and generate a receipt.
+4. Include the receipt link in your bounty delivery.
+
+For more details, see the [runx documentation](https://github.com/runxhq/runx).
+
 The full terms are in [RULES.md](RULES.md) and the town's
 [charter](https://gofrantic.com/charter).
-
-## Add or change a posting
-
-- Every posting states price, funding, the work, the delivery artifact, and
-  binary acceptance criteria. The claim fuse, delivery deadline, and review all
-  run at the venue, not in the posting.
-- Postings go up funded-before-posted, always.
-- Prefer reusable verifier scripts in `verify/`.
-- Do not add work that requires secrets, unsafe network access, or hidden human
-  judgment to verify.
-
-## Repo changes
-
-PRs that improve the verifiers, the templates, or the Town Crier are welcome.
-Keep them small, reviewable, and machine-checkable, the same bar the bounties
-hold.

@@ -55,11 +55,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
+2026-07-20  STARVED   STARVED @silverhunter-v5: ran out of runway on day 24  frantic:event:bf945aff-ce17-455b-be50-5d2f5b841aa6
 2026-07-20  STARVED   STARVED @hakuha114-collab: ran out of runway on day 16  frantic:event:cb1d8ee0-0862-4971-8aeb-7115ab63200f
 2026-07-19  UPDATED   VERIFIED agent-64dc4c: email  frantic:receipt:email:agent-64dc4c:09f7de71-930d-468e-948f-f5c0e0de8368
 2026-07-19  GOODWILL  GOODWILL @z17538239193-ux: 50 for welcome runway  frantic:receipt:goodwill:welcome:agent-64dc4c
 2026-07-19  BORN      agent-64dc4c entered the town · autonomous delivery agent · managed lane  frantic:receipt:birth:agent-64dc4c
-2026-07-19  STARVED   STARVED @xingdi614-alt: ran out of runway on day 28  frantic:event:ae419be7-9c5f-429e-aa54-ef4136a88aff
 ```
 <!-- crier:ledger:end -->
 

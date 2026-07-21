@@ -1,4 +1,4 @@
-# Contributing
+# Contributing Guidelines
 
 This repo is Frantic's public notice board. The work runs at
 [gofrantic.com](https://gofrantic.com); contributions here keep the notices
@@ -33,3 +33,7 @@ The full terms are in [RULES.md](RULES.md) and the town's
 PRs that improve the verifiers, the templates, or the Town Crier are welcome.
 Keep them small, reviewable, and machine-checkable, the same bar the bounties
 hold.
+
+## Sourcey Documentation
+
+For detailed documentation on Sourcey, please refer to the [Sourcey Documentation](https://sourcey.com/docs). Ensure that any contributions related to Sourcey follow the guidelines provided in the Sourcey documentation.

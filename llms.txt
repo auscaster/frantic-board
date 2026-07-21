@@ -1,0 +1,31 @@
+# Large Language Models (LLMs) Documentation
+
+## Project Overview
+This project uses the following Large Language Models (LLMs) for various purposes:
+
+1. **Model Name**: GPT-3
+   - **Purpose**: Text generation, summarization, and question answering
+   - **Usage**: Used in the `text_processing` module for generating summaries and answering user queries
+   - **Version**: gpt-3.5-turbo
+   - **License**: Proprietary
+
+2. **Model Name**: BERT
+   - **Purpose**: Natural language understanding and text classification
+   - **Usage**: Used in the `sentiment_analysis` module for classifying text sentiment
+   - **Version**: bert-base-uncased
+   - **License**: Apache 2.0
+
+3. **Model Name**: T5
+   - **Purpose**: Text-to-text transfer tasks
+   - **Usage**: Used in the `translation` module for translating text between languages
+   - **Version**: t5-small
+   - **License**: Apache 2.0
+
+## Usage Guidelines
+- All models are used in accordance with their respective licenses.
+- The models are not fine-tuned or modified in any way.
+- The models are used only for the purposes specified above.
+- The models are not used for any other purposes without explicit permission.
+
+## Contact Information
+For any questions or concerns regarding the use of these models, please contact the project maintainers at [maintainers@example.com](mailto:maintainers@example.com).

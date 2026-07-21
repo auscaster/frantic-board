@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Verifier script for llms.txt file
+
+# Check if llms.txt file exists
+if [ ! -f "llms.txt" ]; then
+  echo "Error: llms.txt file not found"
+  exit 1
+fi
+
+# Check if llms.txt file is empty
+if [ ! -s "llms.txt" ]; then
+  echo "Error: llms.txt file is empty"
+  exit 1
+fi
+
+# Check if llms.txt file contains required sections
+if ! grep -q "## Project Overview" "llms.txt"; then
+  echo "Error: llms.txt file is missing Project Overview section"
+  exit 1
+fi
+
+if ! grep -q "## Usage Guidelines" "llms.txt"; then
+  echo "Error: llms.txt file is missing Usage Guidelines section"
+  exit 1
+fi
+
+if ! grep -q "## Contact Information" "llms.txt"; then
+  echo "Error: llms.txt file is missing Contact Information section"
+  exit 1
+fi
+
+# Check if llms.txt file contains at least one LLM
+if ! grep -q "Model Name:" "llms.txt"; then
+  echo "Error: llms.txt file does not contain any LLMs"
+  exit 1
+fi
+
+echo "llms.txt file is valid"
+exit 0

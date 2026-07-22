@@ -1,0 +1,7 @@
+{
+  "public_url": "https://runx.ai/x/pqmashiro-commits/not-the-package@0.1.0",
+  "pr_url": "verify/fixtures/delivery-artifact-linter/missing-pr.html",
+  "evidence_json": "verify/fixtures/delivery-artifact-linter/invalid-evidence.json",
+  "receipt_ref": "receipt:totally-not-a-receipt",
+  "report": "verify/fixtures/delivery-artifact-linter/short-report.md"
+}

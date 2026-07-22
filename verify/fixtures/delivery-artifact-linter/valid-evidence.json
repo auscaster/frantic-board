@@ -1,0 +1,50 @@
+{
+  "summary": "Delivery artifact linter evidence for Frantic bounty #41, binding PR #114, runx CLI 0.6.8, the script path, fixture paths, and the exact pass/fail commands used before submitting the delivery.",
+  "observations": [
+    {
+      "name": "runx_cli_version",
+      "value": "runx-cli 0.6.8",
+      "source": "local command: runx --version"
+    },
+    {
+      "name": "pr_url",
+      "value": "https://github.com/auscaster/frantic-board/pull/114"
+    },
+    {
+      "name": "public_url",
+      "value": "https://github.com/auscaster/frantic-board/pull/114"
+    },
+    {
+      "name": "script_path",
+      "value": "scripts/delivery-artifact-linter.mjs"
+    },
+    {
+      "name": "input_schema",
+      "value": "--bounty <url|file> plus --artifact name=value or --artifacts-file <json>"
+    },
+    {
+      "name": "live_bounty_source",
+      "value": "Captured public API response for Frantic bounty #41 in bounty-41.json"
+    },
+    {
+      "name": "valid_case",
+      "value": "pass-artifacts.json provides public_url, pr_url, evidence_json, receipt_ref, and report for bounty #41"
+    },
+    {
+      "name": "invalid_case",
+      "value": "fail-artifacts.json demonstrates missing keys, bad evidence_json, bad receipt_ref, dead local PR ref, and package mismatch"
+    },
+    {
+      "name": "command",
+      "value": "node scripts/delivery-artifact-linter.mjs --bounty verify/fixtures/delivery-artifact-linter/bounty-41.json --artifacts-file verify/fixtures/delivery-artifact-linter/pass-artifacts.json --no-network"
+    },
+    {
+      "name": "failing_command",
+      "value": "node scripts/delivery-artifact-linter.mjs --bounty verify/fixtures/delivery-artifact-linter/bounty-37-runx-skill.json --artifacts-file verify/fixtures/delivery-artifact-linter/fail-artifacts.json --no-network"
+    },
+    {
+      "name": "failing_case_result",
+      "value": "The failing fixture reports missing_artifact, dead_or_unreadable_url, evidence_summary, malformed_receipt_ref, report_too_shallow, and package_name_mismatch."
+    }
+  ]
+}

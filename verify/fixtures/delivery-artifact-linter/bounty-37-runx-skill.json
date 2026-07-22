@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "bounty": {
+    "number": 37,
+    "title": "runx skill: least-privilege grant plan",
+    "requiredArtifacts": [
+      "public_url",
+      "source_url",
+      "pr_url",
+      "x_yaml",
+      "skill_md",
+      "evidence_json",
+      "verification_json",
+      "receipt_ref",
+      "report"
+    ],
+    "criteria": {
+      "artifacts": [
+        "public_url",
+        "source_url",
+        "pr_url",
+        "x_yaml",
+        "skill_md",
+        "evidence_json",
+        "verification_json",
+        "receipt_ref",
+        "report"
+      ],
+      "verification": {
+        "profile": "published_artifact_v1",
+        "artifact_kind": "runx_skill",
+        "expected_package_name": "least-privilege-plan",
+        "runx_cli_min_version": "0.6.6",
+        "requires_public_receipt": true
+      }
+    }
+  }
+}

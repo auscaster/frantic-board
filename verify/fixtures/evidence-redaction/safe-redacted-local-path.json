@@ -1,0 +1,17 @@
+{
+  "summary": "Safe evidence example where a local filesystem path was generalized so the public artifact keeps context without exposing the operator machine.",
+  "observations": [
+    {
+      "fixture": "safe-redacted-local-path.json",
+      "category": "local_path",
+      "input_pattern": "C:\\Users\\agent\\Documents\\private-run\\receipt.json",
+      "public_value": "[LOCAL_PATH]/receipt.json",
+      "reviewer_action": "accept when the path root and username are removed"
+    },
+    {
+      "fixture": "safe-redacted-local-path.json",
+      "category": "evidence_shape",
+      "result": "valid_json_with_summary_and_observations"
+    }
+  ]
+}

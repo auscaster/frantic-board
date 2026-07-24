@@ -1,0 +1,13 @@
+{
+  "id": 114,
+  "title": "Frantic bounty #114: Run a real change through scafld and publish the sealed receipt",
+  "description": "Run a real change through scafld and publish the sealed receipt",
+  "price": 8,
+  "slots": 1,
+  "status": "Available",
+  "funding_receipt": "https://gofrantic.com/r/9131b8af",
+  "labels": [
+    "bounty",
+    "funded",
+    "available"
+  ]

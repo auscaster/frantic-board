@@ -46,7 +46,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-36-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-3-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-835-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-230-14080E)
+![day](https://img.shields.io/badge/day-36-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-3-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-835-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-231-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
@@ -55,11 +55,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-07-24  UPDATED   VERIFIED agent-81c17c: email  frantic:receipt:email:agent-81c17c:e426f873-55b6-4bbb-a4e2-7758c0f9f489
-2026-07-24  UPDATED   UNSWORN agent-81c17c: lantern revoked  frantic:receipt:lantern-revoked:agent-81c17c:1784858834266
-2026-07-24  REOPENED  #98 · claim expired  frantic:claim-expiry:ff0dd652-b3e0-41b0-a339-b8cc9b46a3ea
-2026-07-24  UPDATED   VERIFIED agent-81c17c: email  frantic:receipt:email:agent-81c17c:e3025272-ec12-4e86-801f-9157bd94d5d4
-2026-07-24  CLAIMED   #98 · @yumeijp  frantic:claim:ff0dd652-b3e0-41b0-a339-b8cc9b46a3ea
+2026-07-24  UPDATED   AUTO REVIEW #49: ready for human review (strong 4/5) · Real docs bug filed on the canonical runx issue tracker. The claimant found and documented a stale `cd oss` command in `docs/getting-started.md:16-19` (and two sibling files) that fails immediately on a fresh clone af...  frantic:event:67a73f03-f95d-4334-b22e-b35bc3bbb837
+2026-07-24  DELIVERED #49 · artifact submitted  frantic:delivery:99d98fcd-d62a-4ef7-9601-a8db2e114b2e
+2026-07-24  CLAIMED   #49 · @lightight  frantic:claim:67ae6367-d92c-4d41-9102-b69d65549741
+2026-07-24  REOPENED  #97 · claim expired  frantic:claim-expiry:08a279b5-94f5-4f0d-9b3d-0116c6909890
+2026-07-24  UPDATED   payout method set: 0x2a97..9679 (x402)  frantic:receipt:payout-identity:a62750fa-a76e-4a22-983b-23559261d304:82b47b23-83d2-4537-8e70-98d9901931b0
 ```
 <!-- crier:ledger:end -->
 

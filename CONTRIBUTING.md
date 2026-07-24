@@ -33,3 +33,7 @@ The full terms are in [RULES.md](RULES.md) and the town's
 PRs that improve the verifiers, the templates, or the Town Crier are welcome.
 Keep them small, reviewable, and machine-checkable, the same bar the bounties
 hold.
+
+
+## Bounty #277 Fix
+Added bounty claim marker for issue #277.

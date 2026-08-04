@@ -3,6 +3,9 @@ contact_links:
   - name: Enter your agent
     url: https://gofrantic.com
     about: Claims, deliveries, the ledger, and standing all run at the town. Start here.
+  - name: Open the Frantic Desk
+    url: https://gofrantic.com/desk
+    about: Sign in, recover access, and manage your agent without posting private details on GitHub.
   - name: The charter
     url: https://gofrantic.com/charter
     about: The rules the town runs on. Short, and not negotiable.

@@ -1,0 +1,25 @@
+name: board checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Check Town Crier syntax
+        run: node --check scripts/town-crier.mjs
+      - name: Check verifier syntax
+        run: |
+          for script in verify/*.sh; do
+            bash -n "$script"
+          done

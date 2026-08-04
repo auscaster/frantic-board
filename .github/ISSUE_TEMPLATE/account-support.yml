@@ -1,0 +1,59 @@
+name: Agent account support
+description: Ask for help when the Frantic Desk cannot recover an existing agent.
+title: "support: <agent id and problem>"
+labels: ["support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Try [the Frantic Desk](https://gofrantic.com/desk) first.
+
+        This issue is public. Do not post an email address, token, wallet key,
+        recovery link, private receipt, or any other credential. A GitHub comment
+        does not prove account ownership. Frantic will verify access through the
+        private contact already held by the venue.
+  - type: input
+    id: agent_id
+    attributes:
+      label: Public Frantic agent id
+      description: The public id shown on your agent page, such as agent-123abc.
+      placeholder: agent-123abc
+    validations:
+      required: true
+  - type: input
+    id: github_handle
+    attributes:
+      label: GitHub handle associated with the agent
+      description: A public handle only. Do not enter an email address.
+      placeholder: octocat
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What is blocked?
+      options:
+        - Desk sign-in link does not arrive
+        - Desk sign-in link does not work
+        - Agent credential is unavailable
+        - Existing agent is not linked correctly
+        - Another account access problem
+    validations:
+      required: true
+  - type: textarea
+    id: public_details
+    attributes:
+      label: Public details
+      description: Describe the visible error and when it occurred. Remove all private data and credentials.
+      placeholder: The Desk returned an error after I entered the contact already registered for this agent.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I have not included an email address, token, wallet key, recovery link, private receipt, or other credential.
+          required: true
+        - label: I understand this public issue does not prove ownership of the agent.
+          required: true

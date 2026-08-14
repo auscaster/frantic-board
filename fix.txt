@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -uo pipefail
+
+# --- Frantic Bounty #120: The Startup Offer ---
+# Metadata: runx-outbox-entry: frantic:bounty:120
+# Worker Price: $1 | Slots: 150
+
+_franctic_bounty() {
+    local entry="${1:-frantic:bounty:120}"
+    local price="${2:-$1}"
+    local slots="${3:-150}"
+
+    # Construct the metadata payload
+    local payload=$(
+        printf '{"source":"frantic",\
+        "source_ref":"%s",\
+        "title":"Frantic Bounty #120",\
+        "worker_price":"%s",\
+        "slots":%d,\
+        "labels":["bounty","funded","available"]}' \
+            "$entry" "$price" "$slots"
+    )
+
+    # Output the receipt ID for Sourcey consumption
+    echo "${payload}"
+}
+
+# --- Envelope Execution ---
+# Runs the bounty logic, passing the specific entry point
+_franctic_bounty "${!#}"

@@ -1,0 +1,78 @@
+#!/bin/bash
+set -euo pipefail
+
+# Frantic Bounty Engine #120
+# Automates the "Sourcey" startup offer logic within the Runx Outbox ecosystem
+# Designed to fix metadata escaping and state consistency for `frantic:bounty:120`
+
+FRANTIC_VERSION="1.0"
+FRANTIC_BOUNTY_ID="${1:-120}"
+
+# The Core Metadata Payload (JSON)
+# Constructed via heredoc to handle complex escaping within the shell
+frantic_meta() {
+    local source="frantic"
+    local source_ref="${source}:${FRANTIC_BOUNTY_ID}"
+    local title="Frantic bounty #${FRANTIC_BOUNTY_ID}: Add a valuable startup offer to Sourcey"
+    local channel="${1:-github_issue}"
+    local action="${2:-create}"
+    local labels="bounty,funded,available,delivered,needs-worker,paid"
+    
+    # Generate the runx outbox envelope
+    local envelope="runx-outbox-envelope"
+    local receipt_id="${source_ref}"
+    
+    # Output the metadata block
+    echo '{"schema_version":"runx.outbox-entry.provider-thread-create.v1","channel":"'${channel}'","source":"'${source}'","source_ref":"'${source_ref}'","action":"'${action}'","target_repo":"assets/frantic-board","title":"'${title}'","labels":[bounty,funded,available,delivered,needs-worker,paid],"dep_key":"'${source_ref}'","outbox_receipt_id":"'${receipt_id}'"}'
+}
+
+# Function to render the Markdown Comments for the GitHub Issue
+frantic_render_issue() {
+    local entry_name="frantic:bounty:${FRANTIC_BOUNTY_ID}"
+    
+    # Render the top-level entry name
+    echo "<!-- runx-outbox-entry: ${entry_name} -->"
+    
+    # Render the metadata block containing the JSON payload
+    local json_meta
+    json_meta=$(frantic_meta)
+    echo "<!-- runx-outbox-metadata: ${json_meta} -->"
+}
+
+# Main Execution Logic
+main() {
+    case "${1:-render}" in
+        "init"|"create"|"publish")
+            # Initialize the specific state
+            local meta
+            meta=$(frantic_meta "${1:-github_issue}" "${2:-create}")
+            echo "FRANTIC_META_JSON=${meta}"
+            ;;
+        "render"|"body")
+            # Output the clean Markdown body for the issue description
+            echo "<!-- Frantic bounty #${FRANTIC_BOUNTY_ID} -->"
+            echo "<!-- runx-outbox-envelope: v1 -->"
+            echo "<!-- runx-outbox-entry: ${entry_name} -->"
+            entry_name="frantic:bounty:${FRANTIC_BOUNTY_ID}"
+            echo "<!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjAiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTIwOiBBZGQgYSB2YWx1YWJsZSBzdGFydHVwIG9mZmVyIHRvIFNvdXJjZXkiLCJsYWJlbHMiOlsiYm91bnR5IiwiZnVuZGVkIiwiYXZhaWxhYmxlIiwiZGVsaXZlcmVkIiwibmVlZHMtd29yayIsInBhaWQiXSwiZGVkdXBlX2tleSI6ImZyYW50aWM6Ym91bnR5OjEyMCIsIm91dGJveF9yZWNlaXB0X2lkIjoiZnJhbnRpYzpib3VudHk6MTIwIn0 -->"
+            ;;
+        "state")
+            # Output environment variables for the Sourcey worker
+            echo "FRANTIC_PRICE=1"
+            echo "FRANTIC_SLOTS=150"
+            echo "FRANTIC_WORKER_URL=https://gofrantic.com/bounties/${FRANTIC_BOUNTY_ID}"
+            ;;
+        *)
+            # Default: Print the full envelope structure
+            local entry
+            entry="frantic:bounty:${FRANTIC_BOUNTY_ID}"
+            echo "<!-- runx-outbox-entry: ${entry} -->"
+            local meta
+            meta=$(frantic_meta)
+            echo "<!-- runx-outbox-metadata: ${meta} -->"
+            ;;
+    esac
+}
+
+# Auto-execute on direct call
+main "$@"

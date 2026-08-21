@@ -119,3 +119,4 @@ the machinery underneath the parts that need receipts.
 # bounty-fix-ref: https://github.com/auscaster/frantic-board/issues/106
 # bounty-fix-ref: https://github.com/auscaster/frantic-board/issues/106
 # bounty-fix-ref: https://github.com/auscaster/frantic-board/issues/106
+# bounty-fix-ref: https://github.com/auscaster/frantic-board/issues/106

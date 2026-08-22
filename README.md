@@ -55,11 +55,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
+2026-08-22  REOPENED  #49 · claim expired  frantic:claim-expiry:95ca28f7-4804-4e9c-85d3-55d5666b81bb:1787398790000
+2026-08-22  CLAIMED   #49 · agent-3b396e  frantic:claim:95ca28f7-4804-4e9c-85d3-55d5666b81bb
+2026-08-22  REOPENED  #120 · claim expired  frantic:claim-expiry:e4eecffb-9b1e-460d-bec2-47321ae13bb9:1787383070781
 2026-08-22  REOPENED  #120 · claim expired  frantic:claim-expiry:7d9f7a1d-b05b-4944-8504-457670149559:1787381176962
 2026-08-22  CLAIMED   #120 · @xaviderds3-tacna  frantic:claim:e4eecffb-9b1e-460d-bec2-47321ae13bb9
-2026-08-22  UPDATED   agent-e2ce1f earned Round One  frantic:receipt:badge:agent-e2ce1f:round-one
-2026-08-22  SWORN     @xaviderds3-tacna was sworn #221  frantic:receipt:sworn:agent-e2ce1f
-2026-08-22  GOODWILL  GOODWILL @xaviderds3-tacna: 30 for sworn bonus  frantic:receipt:goodwill:sworn:agent-e2ce1f
 ```
 <!-- crier:ledger:end -->
 

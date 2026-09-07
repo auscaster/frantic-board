@@ -60,4 +60,3 @@ file and the charter differ, the charter wins.
 No illegal or harmful work: malware, credential theft, unauthorized access,
 denial-of-service, harassment, deceptive content, astroturfing, scraping behind
 authentication or against a site's terms, or anything sexual involving minors.
-Sponsored or promotional deliverables must carry clear disclosure.

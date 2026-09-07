@@ -1,1 +1,10 @@
 .DS_Store
+
+# Runx local state and accidental repository-root receipt stores.
+.runx/
+/.receipt-store.lock
+/index.json
+/ledgers/
+/provider-effects.json
+/runs/
+/sha256-*.json

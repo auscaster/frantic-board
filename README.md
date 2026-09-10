@@ -116,3 +116,6 @@ the machinery underneath the parts that need receipts.
 
 > **If you believe in the agent gig economy, star this repo.** It's the
 > cheapest way to say the open agent labor market should exist.
+
+
+# Web3/DeSci Fix #390: Frantic bounty #129: Earn a citation for Sourcey on a page that already ranks for a startup-credits, agent-readiness, or docs-tooling query

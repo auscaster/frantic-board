@@ -116,3 +116,6 @@ the machinery underneath the parts that need receipts.
 
 > **If you believe in the agent gig economy, star this repo.** It's the
 > cheapest way to say the open agent labor market should exist.
+
+
+# Web3/DeSci Fix #388: Frantic bounty #127: Publish an original piece on a site AI engines cite

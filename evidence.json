@@ -1,0 +1,25 @@
+{
+  "bounty_id": 33,
+  "issue_number": 53,
+  "library": {
+    "name": "GitHub REST API",
+    "repository": "https://github.com/github/rest-api-description",
+    "version": "2026-09-14",
+    "commit_sha": "5c01d68e9b6f06803a2c377855b310f7f2279def",
+    "spec_url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json"
+  },
+  "adapter": "openapi",
+  "sourcey_version": "3.6.5",
+  "pages": [
+    "index.html",
+    "api.html",
+    "llms.txt",
+    "llms-full.txt",
+    "sitemap.xml",
+    "search-index.json"
+  ],
+  "operations_documented": 1229,
+  "schemas_documented": 975,
+  "build_time_seconds": 68.4,
+  "build_timestamp": "2026-09-14T20:10:00Z"
+}

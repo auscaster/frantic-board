@@ -1,0 +1,12 @@
+{
+  "supported_methods": [
+    "crypto",
+    "bank_transfer",
+    "nano"
+  ],
+  "nano": {
+    "enabled": true,
+    "description": "Instant, feeless Nano (XNO) payouts",
+    "verification_url": "https://nanexplorer.com"
+  }
+}

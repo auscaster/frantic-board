@@ -1,0 +1,32 @@
+name: MoneyHunter hourly radar
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Query live paid-opportunity radar
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            "https://moneyhunter-preflight.onrender.com/v1/radar?min_reward=5&limit=25&sources=frantic,github,algora,opire" \
+            -o radar.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("radar.json").read_text())
+          print(json.dumps(data, ensure_ascii=False, indent=2)[:50000])
+          PY
+      - name: Save radar snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: moneyhunter-radar-${{ github.run_id }}
+          path: radar.json
+          retention-days: 7

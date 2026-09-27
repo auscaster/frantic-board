@@ -3,6 +3,9 @@ name: MoneyHunter hourly radar
 on:
   schedule:
     - cron: "0 * * * *"
+  push:
+    paths:
+      - ".github/workflows/moneyhunter-radar.yml"
   workflow_dispatch:
 
 permissions:
@@ -13,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Query live paid-opportunity radar
         shell: bash
         run: |
@@ -27,8 +28,64 @@ jobs:
             sleep 5
           done
           test -s radar.json
-          python scripts/moneyhunter-gate.py radar.json decision.json
-          cat decision.json
+
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+
+          data=json.loads(Path("radar.json").read_text())
+
+          def walk(x):
+              if isinstance(x,dict):
+                  yield x
+                  for v in x.values(): yield from walk(v)
+              elif isinstance(x,list):
+                  for v in x: yield from walk(v)
+
+          def num(v):
+              try: return float(v)
+              except (TypeError,ValueError): return None
+
+          def first(d,keys):
+              for k in keys:
+                  if k in d and d[k] not in (None,""): return d[k]
+              return None
+
+          rows=[]
+          for d in walk(data):
+              if not isinstance(d,dict): continue
+              reward=num(first(d,["reward","amount","price","bounty","reward_usd","amount_usd"]))
+              if reward is None: continue
+              source=str(first(d,["source","platform","marketplace"]) or "unknown")
+              title=str(first(d,["title","name","summary","description"]) or "untitled")[:240]
+              slots=num(first(d,["available_slots","slots_available","open_slots","slots"]))
+              claimed=num(first(d,["claims","claim_count","claimed"]))
+              cost=num(first(d,["entry_fee","cost","attempt_cost","execution_cost"])) or 0
+              url=first(d,["url","public_url","href","link"])
+              if slots is not None and slots <= 0: score=-100
+              elif cost > 0.25: score=-100
+              else:
+                  ratio=reward/max(cost,0.01)
+                  score=min(100,20+18*math.log10(max(reward,1))+8*math.log10(max(ratio,1)))
+                  if source.lower()=="frantic": score+=8
+                  if claimed is not None and claimed>10: score-=min(20,claimed-10)
+                  score=max(-100,min(100,round(score,2)))
+              rows.append({"source":source,"title":title,"reward":reward,"cost":cost,
+                           "slots":slots,"claimed":claimed,"score":round(score,2),
+                           "decision":"PASS" if score>=55 else "WATCH","url":url})
+
+          rows.sort(key=lambda x:x["score"],reverse=True)
+          decision={
+              "policy":{"capital":5.0,"max_single_attempt_cost":0.25,
+                        "pass_score":55,"mode":"capital_preservation",
+                        "note":"PASS only means worth entering execution review; it is not a profit guarantee."},
+              "pass":rows[:10],
+              "watch":rows[10:35],
+              "count":len(rows)
+          }
+          Path("decision.json").write_text(json.dumps(decision,ensure_ascii=False,indent=2))
+          print(json.dumps(decision,ensure_ascii=False,indent=2)[:50000])
+          PY
       - name: Save radar and decision
         uses: actions/upload-artifact@v4
         with:

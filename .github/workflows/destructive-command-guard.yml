@@ -1,0 +1,20 @@
+name: destructive-command-guard-tests
+
+on:
+  push:
+    paths:
+      - 'bounty-work/claude-code-destructive-command-hook/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bounty-work/claude-code-destructive-command-hook
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pytest
+      - run: python -m pytest -q

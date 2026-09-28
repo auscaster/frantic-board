@@ -1,0 +1,14 @@
+name: MoneyHunter Keepalive
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake MoneyHunter
+        run: |
+          curl --fail --silent --show-error --max-time 120             https://moneyhunter-preflight.onrender.com/health

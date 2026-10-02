@@ -1,31 +1,34 @@
-import { Startup } from '../types/startup';
+export function validateStartup(startup: Partial<Startup>): Record<string, string> {
+  const errors: Record<string, string> = {};
 
-interface ValidationErrors {
-  [key: string]: string;
-}
-
-export const validateStartup = (startup: Startup): ValidationErrors => {
-  const errors: ValidationErrors = {};
-
-  if (!startup.name) {
+  if (!startup.name?.trim()) {
     errors.name = 'Name is required';
   }
 
-  if (!startup.description) {
+  if (!startup.description?.trim()) {
     errors.description = 'Description is required';
   }
 
-  if (!startup.website) {
+  if (!startup.website?.trim()) {
     errors.website = 'Website is required';
-  } else if (!/^https?:\/\/.+/.test(startup.website)) {
-    errors.website = 'Invalid URL format';
+  } else if (!isValidUrl(startup.website)) {
+    errors.website = 'Invalid website URL';
   }
 
-  if (!startup.email) {
-    errors.email = 'Email is required';
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(startup.email)) {
-    errors.email = 'Invalid email format';
+  if (!startup.foundedYear) {
+    errors.foundedYear = 'Founded year is required';
+  } else if (typeof startup.foundedYear !== 'number' || isNaN(startup.foundedYear)) {
+    errors.foundedYear = 'Invalid year';
   }
 
   return errors;
-};
+}
+
+function isValidUrl(url: string): boolean {
+  try {
+    new URL(url);
+    return url.startsWith('http://') || url.startsWith('https://');
+  } catch (e) {
+    return false;
+  }
+}

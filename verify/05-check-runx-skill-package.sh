@@ -16,5 +16,6 @@ rg -q "catalog:" "$DIR/X.yaml" || fail "X.yaml missing catalog block"
 rg -q "harness:" "$DIR/X.yaml" || fail "X.yaml missing harness block"
 rg -q "receipt|sealed|authority|scope|failure|retry|rate limit|timeout" "$DIR/SKILL.md" \
   || fail "SKILL.md lacks execution/governance edge-case guidance"
+rg -q "--skip-publish" "$DIR/X.yaml" || fail "X.yaml missing --skip-publish flag"
 
 echo "PASS: skill package has governed HTTP shape, harness, and operating guidance"

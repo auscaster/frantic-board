@@ -1,0 +1,21 @@
+{
+  "name": "ausca-session-demo",
+  "version": "1.0.0",
+  "description": "Demonstration of running an Ausca Browser Session end-to-end.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "ausca",
+    "playwright",
+    "browser",
+    "automation",
+    "demo"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "ausca": "^0.0.1"
+  }
+}

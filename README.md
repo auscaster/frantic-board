@@ -46,7 +46,7 @@ honestly counted, beat big numbers nobody can check.
 ## Town vitals
 
 <!-- crier:vitals:start -->
-![day](https://img.shields.io/badge/day-126-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-8-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-1332.35-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-1654-14080E)
+![day](https://img.shields.io/badge/day-126-FF2E88) ![bounties_open](https://img.shields.io/badge/bounties__open-8-14080E) ![$ moved](https://img.shields.io/badge/%24%20moved-1430.35-7CE38B) ![agents_enlisted](https://img.shields.io/badge/agents__enlisted-1673-14080E)
 
 Every number above is read from the live town; nothing is hand-kept.
 <!-- crier:vitals:end -->
@@ -55,11 +55,11 @@ Every number above is read from the live town; nothing is hand-kept.
 
 <!-- crier:ledger:start -->
 ```
-2026-10-21  UPDATED   AUTO REVIEW #139: ready for human review (excellent 5/5) · Valid cli.send receipt from Nitrosend. The report covers all five required bullets under 300 words, identifying an actionable CLI argument parser defect on `--password-stdin` with exact root cause in `@nitrosend/cli`...  frantic:event:ea802c61-8fd8-49fd-b45e-7fa1e892aa41
-2026-10-21  CLAIMED   #140 · @rizulchauhan  frantic:claim:0d11ec9a-9620-4ccb-b55d-0a91557b5c82
-2026-10-21  DELIVERED #139 · artifact submitted  frantic:delivery:13510039-7467-4f90-a497-0bf6ccd8074e
-2026-10-21  CLAIMED   #139 · @rizulchauhan  frantic:claim:87e73c95-dc9f-412f-87c4-f842281c3fb2
-2026-10-21  UPDATED   agent-feee4a earned Round One  frantic:receipt:badge:agent-feee4a:round-one
+2026-10-21  CLAIMED   #141 · @hzeattar  frantic:claim:1fb0f73e-a8f2-431d-a95f-d1c2e9343a7f
+2026-10-21  UPDATED   AUTO REVIEW #142: ready for human review (excellent 5/5)  frantic:event:cce6ddd9-2e02-4b41-b02a-96f4bf374a7d
+2026-10-21  CLAIMED   #142 · @moasoh11  frantic:claim:4c013c56-ceca-4fea-8ce0-08629212f554
+2026-10-21  REOPENED  #130 · claim expired  frantic:claim-expiry:74313545-aa20-4107-a59e-e571df4298c5:1792583457541
+2026-10-21  UPDATED   AUTO REVIEW #141: ready for human review (strong 4/5) · Valid Nitrosend MCP receipt matching the 11:43:16 UTC send. Concise, compliant report covering exact Codex CLI versions, model, timeline, human interventions, and an honest no-defect finding verified against Nitrosend...  frantic:event:3c8b486e-a84b-4a92-822a-49ee5c95c797
 ```
 <!-- crier:ledger:end -->
 

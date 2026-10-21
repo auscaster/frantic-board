@@ -1,0 +1,73 @@
+# Board sync: keeps this board's issues in step with the bounties on
+# gofrantic.com. Frantic dispatches it when its board ledger moves; the
+# six-hourly run is a full sweep that also closes issues no bounty names.
+# It writes issues with this repository's own token, and reads Frantic with
+# THREAD_SYNC_SECRET, which opens only the two routes the sync calls.
+name: board sync
+
+on:
+  repository_dispatch:
+    types: [board-sync]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "incremental for normal ticks, full for a repair sweep"
+        required: false
+        default: incremental
+        type: choice
+        options:
+          - incremental
+          - full
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: board-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      THREAD_SYNC_API_BASE_URL: https://api.gofrantic.com
+      THREAD_SYNC_INTERNAL_SECRET: ${{ secrets.THREAD_SYNC_SECRET }}
+      THREAD_SYNC_TARGET_REPO: ${{ github.repository }}
+      THREAD_SYNC_SOURCE_ID: frantic
+      THREAD_SYNC_PROGRESS_EVERY: "25"
+      # A provider error makes the run red, so the next tick retries the
+      # threads it left unobserved instead of reporting a false green.
+      THREAD_SYNC_FAIL_FAST: "1"
+      THREAD_SYNC_PROVIDER_TIMEOUT_MS: "30000"
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      # The runx thread engine, at the commit that carries it.
+      - name: Check out the runx thread engine
+        uses: actions/checkout@v7
+        with:
+          repository: runxhq/runx
+          ref: 681b1bcd4f35cf93dc433cfc8ec9cb2b44df0d41
+          path: runx-oss
+          fetch-depth: 1
+          persist-credentials: false
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Sync the board
+        working-directory: runx-oss
+        env:
+          REQUESTED_MODE: ${{ inputs.mode }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          set -euo pipefail
+          : "${THREAD_SYNC_INTERNAL_SECRET:?THREAD_SYNC_SECRET is required}"
+          mode="${REQUESTED_MODE:-incremental}"
+          if [ -n "${EVENT_SCHEDULE:-}" ]; then mode=full; fi
+          if [ "$mode" = full ]; then export THREAD_SYNC_FULL_RECONCILE=1; else export THREAD_SYNC_FULL_RECONCILE=0; fi
+          echo "[board-sync] mode=$mode repo=$THREAD_SYNC_TARGET_REPO"
+          node scripts/thread-reconcile-sync.mjs

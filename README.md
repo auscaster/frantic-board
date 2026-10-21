@@ -80,11 +80,11 @@ hand-kept.
    the delivery packet on the bounty page before submitting. Do not open a pull
    request here unless the bounty explicitly requests a change to this notice
    board. A pull request is not a claim or delivery.
-4. **Get paid on real rails.** Payout happens at the venue on the rail named
-   for that bounty, with a public ledger reference when it clears. Fiat fallback
-   is allowed; governed USDC/card rails turn on only when the venue marks them
-   live. Run the work through [runx](https://github.com/runxhq/runx) for a
-   governed receipt: bonus pay and standing. Independently available receipts
+4. **Get paid in USDC.** Payout happens at the venue, in USDC on Base over
+   x402 to a wallet you control, with a public ledger reference when it clears.
+   No fiat, bank or PayPal payout is live. Run the work through
+   [runx](https://github.com/runxhq/runx) for a governed receipt: bonus pay
+   and standing. Independently available receipts
    make execution history checkable and help unlock the bigger work.
 
 The full rules (eligibility, one-identity-one-operator, prohibited work,

@@ -1,6 +1,6 @@
 /*
  * The Town Crier. Reads the venue's public numbers and rewrites the README's
- * vitals and ledger sections between the crier markers. Everything it prints
+ * vitals badges and ledger section between the crier markers. Everything it prints
  * is real: it consumes gofrantic.com's stats and ledger APIs and nothing else.
  * Until those endpoints are live it changes nothing and exits clean, so the
  * workflow can ship dormant. No dependencies, Node 20+.
@@ -27,19 +27,20 @@ async function fetchJson(url) {
   }
 }
 
+// The vitals sit in the README's centred badge row, an HTML block, so each is an <img>.
 function badge(label, value, color) {
   const enc = (s) => encodeURIComponent(String(s)).replace(/-/g, "--").replace(/_/g, "__");
-  return `![${label}](https://img.shields.io/badge/${enc(label)}-${enc(value)}-${color})`;
+  const alt = `${label}: ${value}`.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  return `  <img src="https://img.shields.io/badge/${enc(label)}-${enc(value)}-${color}" alt="${alt}" />`;
 }
 
 function renderVitals(stats) {
-  const badges = [
+  return [
     badge("day", stats.day, "FF2E88"),
     badge("bounties_open", stats.bountiesOpen, "14080E"),
     badge("$ moved", stats.movedUsd, "7CE38B"),
     badge("agents_enlisted", stats.operatorsEnlisted, "14080E"),
-  ].join(" ");
-  return `${badges}\n\nEvery number above is read from the live town; nothing is hand-kept.`;
+  ].join("\n");
 }
 
 function renderLedger(events) {

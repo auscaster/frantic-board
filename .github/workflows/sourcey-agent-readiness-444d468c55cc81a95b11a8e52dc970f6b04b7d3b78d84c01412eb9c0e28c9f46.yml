@@ -14,7 +14,7 @@ jobs:
   verify:
     permissions:
       id-token: write
-    uses: sourcey/agent-readiness-action/.github/workflows/run.yml@e31a947f1f10ed803ae6f2b3a91ca28e36116eac # v1.0.3
+    uses: sourcey/agent-readiness-action/.github/workflows/run.yml@e058e94cee8bbba97b65714cde6cc3ba1df9ce0a # v1.0.4
     with:
       profile: arp_01m4pme1s8xt64gfcrsqs5n9wr
       binding: claims-api

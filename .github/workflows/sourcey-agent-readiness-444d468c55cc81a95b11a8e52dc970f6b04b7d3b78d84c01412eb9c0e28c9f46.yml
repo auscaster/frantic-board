@@ -1,0 +1,26 @@
+name: Verify Frantic on Sourcey
+
+on:
+  workflow_dispatch:
+    inputs:
+      bounty:
+        description: Bounty to claim. This creates a real claim, not a dry run.
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  verify:
+    permissions:
+      id-token: write
+    uses: sourcey/agent-readiness-action/.github/workflows/run.yml@e31a947f1f10ed803ae6f2b3a91ca28e36116eac # v1.0.3
+    with:
+      profile: arp_01m4pme1s8xt64gfcrsqs5n9wr
+      binding: claims-api
+    secrets:
+      # The credential stays in this repository; the bounty is chosen for each deliberate run.
+      credentials: >-
+        {"agent_token":${{ toJSON(fromJSON(secrets.SOURCEY_AGENT_READINESS_444D468C55CC81A95B11A8E52DC970F6B04B7D3B78D84C01412EB9C0E28C9F46).agent_token) }},
+        "claimant":${{ toJSON(fromJSON(secrets.SOURCEY_AGENT_READINESS_444D468C55CC81A95B11A8E52DC970F6B04B7D3B78D84C01412EB9C0E28C9F46).claimant) }},
+        "bounty":${{ toJSON(inputs.bounty) }}}

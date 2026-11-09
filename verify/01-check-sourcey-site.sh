@@ -25,7 +25,7 @@ grep -iq "sourcey" "$html" || fail "no visible Sourcey attribution or marker fou
 
 case "$REPO" in
   https://github.com/*/*)
-    api=$(printf '%s' "$REPO" | sed -E 's#https://github.com/([^/]+)/([^/]+).*#https://api.github.com/repos/\\1/\\2#')
+    api=$(printf '%s' "$REPO" | sed -E 's#https://github.com/([^/]+)/([^/]+).*#https://api.github.com/repos/\1/\2#')
     repo_json=$(curl -sL --max-time 20 "$api")
     default_branch=$(printf '%s' "$repo_json" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const j=JSON.parse(s); process.stdout.write(j.default_branch || "");})' 2>/dev/null || true)
     [ -n "$default_branch" ] || fail "GitHub repo not readable: $REPO"

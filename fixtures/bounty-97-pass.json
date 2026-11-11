@@ -1,0 +1,15 @@
+{
+  "bounty_number": 97,
+  "issue_number": 277,
+  "title": "Frantic bounty #97: Your first bounty is on the house ($10 back when it clears, first five)",
+  "operator_handle": "satoshinakamoto666666",
+  "rebate_amount_usdc": 10,
+  "settlement_rail": "USDC on Base (x402)",
+  "cleared_bounty": {
+    "bounty_number": 33,
+    "issue_number": 53,
+    "title": "Frantic bounty #33: Publish Sourcey docs for a maintained OSS library",
+    "delivery_pr_url": "https://github.com/satoshinakamoto666666/frantic-board/pull/1",
+    "source_repo_url": "https://github.com/satoshinakamoto666666/permit2-rpc-manager"
+  }
+}

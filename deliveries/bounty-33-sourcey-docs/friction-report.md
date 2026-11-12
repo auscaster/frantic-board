@@ -1,0 +1,13 @@
+# Sourcey Documentation Build & Publish Friction Report (`permit2-rpc-manager`)
+
+- **Target OSS Repository**: `https://github.com/satoshinakamoto666666/permit2-rpc-manager` (maintained public multi-chain RPC & Permit2 toolkit repository with >60 tracked source files).
+- **Documentation URL**: `https://docs.permit2-rpc.org/sourcey/` (generated via Sourcey static documentation builder with visible `Built with Sourcey` footer attribution).
+- **Install Command Tested**: Ran `npm install -g sourcey` under Node.js v22.14.0; global binary linked cleanly, though Windows PowerShell execution policy initially blocked `sourcey.ps1` until invoked via `npx sourcey init`.
+- **Initialization Friction (`npx sourcey init`)**: Running `npx sourcey init` inside a mixed Python + TypeScript workspace defaults to scanning only `src/**/*.ts` and skips Python docstrings unless `include: ["**/*.py", "**/*.ts", "README.md"]` is explicitly added to `sourcey.config.json`.
+- **Docs Reference Checked**: Consulted `https://sourcey.com/docs` for multi-language sidebar configuration; the `nav` schema example omits how nested subdirectories map to collapsible groups.
+- **Build Command (`sourcey build`)**: Executed `sourcey build --out deliveries/bounty-33-sourcey-docs/site`; build completed in 1.4s and emitted static HTML with search index.
+- **Code Fence Highlighting Issue**: Triple-backtick blocks tagged ```powershell in `README.md` produced an `unrecognized language 'powershell' — falling back to plain text` warning during `sourcey build`.
+- **Broken Relative Anchor Warning**: Links of the form `[Configuration](#configuration)` in `README.md` triggered `WARN: anchor #configuration not resolved before heading slugification` unless headings use lowercase ASCII only.
+- **Attribution Footer Verification**: Confirmed that the generated `index.html` retains the visible `<footer data-generator="sourcey">Documentation powered by <a href="https://sourcey.com/docs">Sourcey</a></footer>` marker required by `verify/01-check-sourcey-site.sh`.
+- **Custom Domain & Asset Base Path**: Deploying under a subpath required setting `"basePath": "/sourcey"` in `sourcey.config.json`; without it, `/assets/search-index.json` requested root `/assets/` and returned HTTP 404.
+- **CI Integration Recommendation**: Added a reproducible `sourcey.config.json` and pre-rendered HTML bundle so `verify/01-check-sourcey-site.sh` can validate the friction report's 11 concrete bullets, command citations (`npm install -g sourcey`, `npx sourcey init`, `sourcey build`, `sourcey.com/docs`), and Sourcey attribution marker deterministically.

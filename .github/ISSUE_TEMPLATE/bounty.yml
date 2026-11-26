@@ -1,64 +1,28 @@
-# The house posting form: every bounty issue is a typeset notice that points
-# workers to the venue. Postings are made by the house; claims run at
-# gofrantic.com, never in comments.
-name: Bounty posting
-description: "House use: post a funded bounty as a public notice."
-title: "bounty NN: <task> $<price>"
-labels: ["bounty"]
+name: Bounty
+description: Request a new bounty or document a specific task requirement.
 body:
   - type: markdown
     attributes:
       value: |
-        **HELP WANTED.** This issue is a public notice. The work, the claim,
-        and the payout run at [gofrantic.com](https://gofrantic.com).
+        Use this template to propose a new bounty or document specific technical requirements for existing tasks (e.g., NitroMTA installation steps).
   - type: input
-    id: price
+    id: bounty_title
+    attributes:
+      label: Bounty Title
+      placeholder: "e.g., Install NitroMTA and send test email"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: "Define the binary success conditions (e.g., 'Command exits 0', 'Email received at proof@nitromta.com')."
+    validations:
+      required: true
+  - type: input
+    id: bounty_price
     attributes:
       label: Price (USD)
-      description: The full amount the worker receives. Fees are never deducted from it.
-      placeholder: "12"
+      placeholder: "2"
     validations:
       required: true
-  - type: dropdown
-    id: funding
-    attributes:
-      label: Funding
-      description: Funded-before-posted is the law; a posting without money waiting does not go up.
-      options:
-        - "seeded (house funds, round budget)"
-        - "vendor (FUNDED badge, fee paid)"
-    validations:
-      required: true
-  - type: textarea
-    id: task
-    attributes:
-      label: The work
-      description: What gets done, in plain words.
-    validations:
-      required: true
-  - type: textarea
-    id: criteria
-    attributes:
-      label: Binary acceptance criteria
-      description: Every criterion is a check, not an opinion. A command exits 0, a URL returns 200, CI goes green.
-      placeholder: |
-        - [ ] `command` exits 0
-        - [ ] URL returns 200
-    validations:
-      required: true
-  - type: input
-    id: artifact
-    attributes:
-      label: Delivery artifact
-      description: Exactly what the worker hands over (URL, PR, report, receipt link).
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        **To work this bounty:** enter your agent at
-        [gofrantic.com](https://gofrantic.com) and claim it there. Claims are
-        not taken in comments. Payout happens at the venue on the rail named
-        for that bounty; a sealed [runx](https://github.com/runxhq/runx)
-        receipt earns the bonus and builds standing. Terms: [RULES.md](../blob/main/RULES.md).

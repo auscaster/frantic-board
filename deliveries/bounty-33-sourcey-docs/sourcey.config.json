@@ -1,0 +1,14 @@
+{
+  "title": "Permit2 RPC Manager Documentation",
+  "sourceRepo": "https://github.com/satoshinakamoto666666/permit2-rpc-manager",
+  "generator": "sourcey",
+  "docsUrl": "https://sourcey.com/docs",
+  "include": [
+    "README.md",
+    "src/**/*.py",
+    "opentask_deliveries/**/*.py"
+  ],
+  "theme": {
+    "attribution": true
+  }
+}
